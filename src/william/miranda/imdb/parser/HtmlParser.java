@@ -48,9 +48,33 @@ public class HtmlParser
 	
 	public void parseReviews() throws IOException
 	{
+		int reviewPorPagina = 10;
+		
 		docReview = Jsoup.connect(urlReview.toString()).userAgent("Mozilla").get();	
 		
+		//obtem o numero de reviews do filme
+		Element tmp = docReview.getElementsByAttributeValueMatching("href", "reviews-index?").get(0).parent();
+		String[] tmp2 = walkNode(tmp, 1).ownText().trim().split(" ");
+
+		int numReviews = Integer.parseInt(tmp2[0]);
+		
+		//se tem mais de 100 reviews, pegamos apenas os 100 primeiros
+		if (numReviews > 100)
+			numReviews = 100;
+		
+		//ja obtem os reviews da primeira pagina
 		f.setReviews(getReviews());
+		
+		//varre todas as paginas a partir da segunda
+		int numPaginas = (int) Math.ceil((float)numReviews / reviewPorPagina);
+		
+		for (int pagina=1 ; pagina<numPaginas ; pagina++)
+		{
+			URL urlTmp = new URL(urlReview.toString() + ";start=" + pagina*reviewPorPagina);
+			docReview = Jsoup.connect(urlTmp.toString()).userAgent("Mozilla").get();
+			f.addReviews(getReviews());
+		}
+		
 	}
 	
 	//parsing da pagina principal
@@ -140,8 +164,6 @@ public class HtmlParser
 			//chama o metodo para fazer o parsing do <h2>
 			Review r = parseReviewElement(e.parent());
 			res.add(r);
-			
-			System.out.println(r);
 		}
 		
 		return res;
@@ -158,9 +180,18 @@ public class HtmlParser
 		r.setConteudo(e.nextElementSibling().ownText());
 
 		r.setAutor(autorTag.nextElementSibling().ownText());
-		r.setData(walkNode(autorTag, 4).ownText());
 		
-		//parseia a nota
+		//parseia a data... se o autor nao especificou lugar, muda o indice
+		if ("br".equals(walkNode(autorTag, 4).tagName()))
+		{
+			r.setData(walkNode(autorTag, 3).ownText());
+		}
+		else
+		{
+			r.setData(walkNode(autorTag, 4).ownText());
+		}
+		
+		//parseia a nota... pode nao existir nota
 		Element notaNode = walkNode(autorTag, -2);
 		if (!"".equals(notaNode.attr("alt")))
 		{

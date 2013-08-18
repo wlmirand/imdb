@@ -14,14 +14,17 @@ public class Teste
 			String url;
 			
 			url = "http://www.imdb.com/title/tt0113189";//GoldenEye
+			/*
 			url = "http://www.imdb.com/title/tt0082398";//For Your Eyes Only
 			url = "http://www.imdb.com/title/tt1038988";//Rec
+			url = "http://www.imdb.com/title/tt0162930";//Die Hard Dracula
+			*/
 			
 			HtmlParser pick = new HtmlParser(url);
 			pick.parseURL();
 			pick.parseReviews();
 			
-			//System.out.println(pick.getFilme());
+			System.out.println(pick.getFilme());
 		}
 		catch (IOException e)
 		{
