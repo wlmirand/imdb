@@ -11,6 +11,7 @@ public class Filme
 	private List<String> criadores;
 	private List<String> atores;
 	private float rating;
+	private List<Review> reviews;
 	
 	@Override
 	public String toString()
@@ -22,6 +23,7 @@ public class Filme
 		sb.append("Diretores: ").append(diretores).append('\n');
 		sb.append("Criadores: ").append(criadores).append('\n');
 		sb.append("Atores: ").append(atores).append('\n');
+		sb.append("Reviews: ").append(reviews).append('\n');
 		
 		return sb.toString();
 	}
@@ -67,5 +69,13 @@ public class Filme
 	}
 	public void setRating(float rating) {
 		this.rating = rating;
+	}
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<Review> reviews) {
+		this.reviews = reviews;
 	}	
 }

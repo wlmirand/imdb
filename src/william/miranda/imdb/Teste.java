@@ -18,9 +18,10 @@ public class Teste
 			url = "http://www.imdb.com/title/tt1038988";//Rec
 			
 			HtmlParser pick = new HtmlParser(url);
-			Filme f = pick.parseURL();
+			pick.parseURL();
+			pick.parseReviews();
 			
-			System.out.println(f);
+			//System.out.println(pick.getFilme());
 		}
 		catch (IOException e)
 		{
