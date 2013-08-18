@@ -2,6 +2,7 @@ package william.miranda.imdb;
 
 import java.io.IOException;
 
+import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 
 public class Teste
@@ -23,7 +24,9 @@ public class Teste
 			pick.parseURL();
 			pick.parseReviews();
 			
-			System.out.println(pick.getFilme());
+			//neste ponto temos um objeto do tipo Filme preenchido
+			Filme f = pick.getFilme();
+			System.out.println(f);
 		}
 		catch (IOException e)
 		{
