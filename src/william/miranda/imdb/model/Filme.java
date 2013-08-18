@@ -23,7 +23,8 @@ public class Filme
 		sb.append("Diretores: ").append(diretores).append('\n');
 		sb.append("Criadores: ").append(criadores).append('\n');
 		sb.append("Atores: ").append(atores).append('\n');
-		sb.append("Reviews: ").append(reviews).append('\n');
+		sb.append("---------------------------------------------------------------\n");
+		sb.append("Reviews: ").append("\n").append(reviews).append('\n');
 		
 		return sb.toString();
 	}

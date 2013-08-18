@@ -15,7 +15,7 @@ public class Review
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
-		
+		sb.append("---------------------------------------------------------------\n");
 		sb.append("Titulo: ").append(titulo).append(" - ").append("Nota: ").append(rating).append('\n');
 		sb.append("Autor: ").append(autor).append('\n');
 		

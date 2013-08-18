@@ -13,12 +13,22 @@ public class Teste
 		{
 			String url;
 			
-			url = "http://www.imdb.com/title/tt0113189";//GoldenEye
 			/*
+			url = "http://www.imdb.com/title/tt0113189";//GoldenEye
 			url = "http://www.imdb.com/title/tt0082398";//For Your Eyes Only
 			url = "http://www.imdb.com/title/tt1038988";//Rec
 			url = "http://www.imdb.com/title/tt0162930";//Die Hard Dracula
 			*/
+			
+			if (args.length == 0)
+			{
+				System.out.println("Como usar:");
+				System.out.println("java -jar imdb.java URL_DO_FILME");
+				System.exit(-1);
+			}
+			
+			System.out.println(args[0]);
+			url = args[0];
 			
 			HtmlParser pick = new HtmlParser(url);
 			pick.parseURL();
