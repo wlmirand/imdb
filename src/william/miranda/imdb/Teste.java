@@ -2,7 +2,6 @@ package william.miranda.imdb;
 
 import java.io.IOException;
 
-import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 
 public class Teste
