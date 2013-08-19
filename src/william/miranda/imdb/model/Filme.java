@@ -12,6 +12,9 @@ public class Filme
 	private List<String> atores;
 	private float rating;
 	private List<Review> reviews;
+	private String storyline;
+	private List<String> genres;
+	private List<String> plotKeywords;
 	
 	@Override
 	public String toString()
@@ -19,12 +22,15 @@ public class Filme
 		StringBuilder sb = new StringBuilder();
 		sb.append(ano).append(" - ").append(titulo).append('\n');
 		sb.append("Rating: ").append(rating).append('\n');
+		sb.append("Generos: ").append(genres).append('\n');
+		sb.append("Palavras-chave: ").append(plotKeywords).append('\n');
 		sb.append("Sinopse: ").append(sinopse).append('\n');
 		sb.append("Diretores: ").append(diretores).append('\n');
 		sb.append("Criadores: ").append(criadores).append('\n');
 		sb.append("Atores: ").append(atores).append('\n');
+		sb.append("Storyline: ").append(storyline).append('\n');
 		sb.append("---------------------------------------------------------------\n");
-		sb.append("Reviews: ").append("\n").append(reviews).append('\n');
+		//sb.append("Reviews: ").append("\n").append(reviews).append('\n');
 		
 		return sb.toString();
 	}
@@ -82,5 +88,29 @@ public class Filme
 	
 	public void addReviews(List<Review> reviews) {
 		this.reviews.addAll(reviews);
+	}
+
+	public String getStoryline() {
+		return storyline;
+	}
+
+	public void setStoryline(String storyline) {
+		this.storyline = storyline;
+	}
+
+	public List<String> getGenres() {
+		return genres;
+	}
+
+	public void setGenres(List<String> genres) {
+		this.genres = genres;
+	}
+
+	public List<String> getPlotKeywords() {
+		return plotKeywords;
+	}
+
+	public void setPlotKeywords(List<String> plotKeywords) {
+		this.plotKeywords = plotKeywords;
 	}
 }

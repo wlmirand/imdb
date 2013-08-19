@@ -43,6 +43,9 @@ public class HtmlParser
 		f.setCriadores(getCriadores());
 		f.setAtores(getAtores());
 		f.setRating(getRating());
+		f.setStoryline(getStoryline());
+		f.setGenres(getGenres());
+		f.setPlotKeywords(getPlotKeywords());
 	}
 	
 	public void parseReviews() throws IOException
@@ -148,12 +151,60 @@ public class HtmlParser
 		return Float.parseFloat(elements.get(0).ownText());
 	}
 	
+	private String getStoryline()
+	{
+		Elements elements = doc.getElementsByTag("h2");
+		String tmp = null;
+		
+		for (Element e : elements)
+		{
+			if ("Storyline".equals(e.ownText()))//se achou a storyline nas tags h2
+			{
+				tmp = walkNode(e, 1).child(0).ownText();
+			}
+		}
+		
+		return tmp;
+	}
+	
+	private List<String> getGenres()
+	{
+		Elements elements = doc.getElementsByAttributeValue("itemprop", "genre");
+		List<String> tmp = new ArrayList<>();
+		
+		for (Element e : elements)
+		{
+			if ("span".equals(e.tagName()))//todos os generos sao da tag SPAN e itemprop="genre"
+			{
+				tmp.add(e.ownText());
+			}
+		}
+		
+		return tmp;
+	}
+	
+	private List<String> getPlotKeywords()
+	{
+		Elements elements = doc.getElementsByAttributeValue("itemprop", "keywords");
+		List<String> tmp = new ArrayList<>();
+		
+		for (Element e : elements)
+		{
+			if ("span".equals(e.tagName()))//todos os generos sao da tag SPAN e itemprop="keywords"
+			{
+				tmp.add(e.ownText());
+			}
+		}
+		
+		return tmp;
+	}
+	
 	//parsing da pagina de reviews
 	private List<Review> getReviews()
 	{
 		List<Review> res = new ArrayList<>();
 		
-		/* Todos os titulos dos revview estão dentro de <h2> e, esta tag nao eh mais utilizada, entao usaremos
+		/* Todos os titulos dos revview estï¿½o dentro de <h2> e, esta tag nao eh mais utilizada, entao usaremos
 		 * os <h2> como base para encontrar as informacoes dos reviews */
 		Elements elements = docReview.getElementsByTag("h2");
 		
