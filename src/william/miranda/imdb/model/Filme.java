@@ -30,7 +30,7 @@ public class Filme
 		sb.append("Atores: ").append(atores).append('\n');
 		sb.append("Storyline: ").append(storyline).append('\n');
 		sb.append("---------------------------------------------------------------\n");
-		//sb.append("Reviews: ").append("\n").append(reviews).append('\n');
+		sb.append("Reviews: ").append("\n").append(reviews).append('\n');
 		
 		return sb.toString();
 	}
