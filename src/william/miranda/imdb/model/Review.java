@@ -21,7 +21,7 @@ public class Review
 		
 		if (data != null)
 		{
-			sb.append("Data: ").append(data.get(Calendar.DAY_OF_MONTH)).append("/").append(data.get(Calendar.MONTH)+1).append("/").append(data.get(Calendar.YEAR)).append('\n');
+			sb.append("Data: ").append(printData()).append('\n');
 		}
 		
 		sb.append("Conteudo: ").append(conteudo).append('\n');
@@ -121,5 +121,10 @@ public class Review
 		}
 		
 		this.data = new GregorianCalendar(ano, mes, dia);
+	}
+	
+	public String printData()
+	{
+		return data.get(Calendar.DAY_OF_MONTH) + "/" + (data.get(Calendar.MONTH)+1) + "/" + data.get(Calendar.YEAR);
 	}
 }

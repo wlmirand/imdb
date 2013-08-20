@@ -33,7 +33,9 @@ public class Teste
 			
 			//neste ponto temos um objeto do tipo Filme preenchido
 			Filme f = pick.getFilme();
+			
 			System.out.println(f);
+			//f.toXML();
 		}
 		catch (IOException e)
 		{

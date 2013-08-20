@@ -2,6 +2,12 @@ package william.miranda.imdb.model;
 
 import java.util.List;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
+import org.jsoup.parser.Parser;
+
 public class Filme
 {
 	private String titulo;
@@ -33,6 +39,73 @@ public class Filme
 		sb.append("Reviews: ").append("\n").append(reviews).append('\n');
 		
 		return sb.toString();
+	}
+	
+	//constroi um XML que representa o filme
+	public void toXML()
+	{
+		String start = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+		Document doc = Jsoup.parse(start, "", Parser.xmlParser());
+		
+		//extrai a tag raiz
+		Element filme = doc.appendElement("filme");
+		
+		//adiciona os campos basicos
+		filme.appendElement("ano").appendText(String.valueOf(this.getAno()));
+		filme.appendElement("titulo").appendText(this.getTitulo());
+		filme.appendElement("rating").appendText(String.valueOf(this.getRating()));
+		filme.appendElement("sinopse").appendText(this.getSinopse());
+		filme.appendElement("storyline").appendText(this.getStoryline());
+		
+		//adiciona o genero
+		Element generos = filme.appendElement("generos");
+		for (String s : this.getGenres())
+		{
+			generos.appendElement("genero").appendText(s);
+		}
+		
+		//adiciona as palavras chaves
+		Element keywords = filme.appendElement("keywords");
+		for (String s : this.getPlotKeywords())
+		{
+			keywords.appendElement("keyword").appendText(s);
+		}
+		
+		//adiciona os diretores
+		Element diretores = filme.appendElement("diretores");
+		for (String s : this.getDiretores())
+		{
+			diretores.appendElement("diretor").appendText(s);
+		}
+		
+		//adiciona os escritores (criadores)
+		Element escritores = filme.appendElement("escritores");
+		for (String s : this.getCriadores())
+		{
+			escritores.appendElement("escritor").appendText(s);
+		}
+		
+		//adiciona os atores
+		Element atores = filme.appendElement("atores");
+		for (String s : this.getAtores())
+		{
+			atores.appendElement("ator").appendText(s);
+		}
+		
+		//adiciona os reviews
+		Element reviews = filme.appendElement("reviews");
+		for (Review r : this.getReviews())
+		{
+			Element review = reviews.appendElement("review");
+			
+			review.appendElement("titulo").appendText(r.getTitulo());
+			review.appendElement("autor").appendText(r.getAutor());
+			review.appendElement("data").appendText(r.printData());
+			review.appendElement("conteudo").appendText(r.getConteudo());
+		}
+		
+		//a variavel doc possui o código do arquivo XML
+		//return doc;
 	}
 	
 	public String getTitulo() {
