@@ -6,7 +6,7 @@ import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.Utils;
 
-public class Teste
+public class Principal
 {
 	public static void main(String[] args)
 	{
