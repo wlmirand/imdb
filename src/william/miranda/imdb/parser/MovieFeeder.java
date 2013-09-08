@@ -29,7 +29,6 @@ import william.miranda.imdb.model.Filme;
  */
 public class MovieFeeder
 {
-	private String filename;
 	private Path filePath;
 	
 	/**
@@ -38,7 +37,6 @@ public class MovieFeeder
 	 */
 	public MovieFeeder(String filename)
 	{
-		this.filename = filename;
 		filePath = Paths.get(filename);
 		
 		filePath = filePath.toAbsolutePath();
@@ -46,7 +44,7 @@ public class MovieFeeder
 	
 	/**
 	 * Abre o arquivo e le as linhas
-	 * Ira retornar em cascata a URL que desejamos
+	 * Ira retornar em cascata a URL dos filmes que desejamos
 	 */
 	public List<String> readFile()
 	{
@@ -61,7 +59,6 @@ public class MovieFeeder
 		    	//para cada linha do arquivo, parseamos o nome e o ano
 		    	String filmeUrl = parseTituloAno(line);
 		        lista.add(filmeUrl);
-		        System.out.println(filmeUrl);
 		    }
 		}
 		catch (IOException x)

@@ -1,6 +1,10 @@
 package william.miranda.imdb;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsoup.nodes.Element;
 
 import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
@@ -11,8 +15,21 @@ public class Principal
 {
 	public static void main(String[] args)
 	{
+		//parseamos o arquivo do MovieLens e obtemos a URL de todos os filmes
 		MovieFeeder mf = new MovieFeeder("data/ml-100k/u.item");
-		mf.readFile();
+		List<String> urls = mf.readFile();
+		
+		//lista para armazenar os objetos do tipo Filme apos parsear cada URL
+		List<Filme> filmes = new ArrayList<>();
+		
+		for (String url : urls)
+		{
+			Filme f = startParser(url);
+			filmes.add(f);
+		}
+		
+		//Neste ponto, temos uma Lista de Filmes... entao geramos o XML
+		Filme.toXML(filmes);
 	}
 	
 	/**

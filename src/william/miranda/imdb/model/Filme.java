@@ -41,8 +41,26 @@ public class Filme
 		return sb.toString();
 	}
 	
+	//Dada uma lista de Filmes, retorna um xml contendo todos
+	public static void toXML(List<Filme> listaFilmes)
+	{
+		String start = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+		Document doc = Jsoup.parse(start, "", Parser.xmlParser());
+		
+		//extrai a tag raiz
+		Element filmes = doc.appendElement("filmes");
+		
+		//para cada Filme, adicionamos no XML
+		for (Filme f : listaFilmes)
+		{
+			filmes.append(f.toXML().toString());
+		}
+		
+		System.out.println(doc);
+	}
+	
 	//constroi um XML que representa o filme
-	public void toXML()
+	public Element toXML()
 	{
 		String start = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 		Document doc = Jsoup.parse(start, "", Parser.xmlParser());
@@ -104,8 +122,8 @@ public class Filme
 			review.appendElement("conteudo").appendText(r.getConteudo());
 		}
 		
-		//a variavel doc possui o código do arquivo XML
-		//return doc;
+		//a variavel doc possui o codigo do arquivo XML
+		return filme;
 	}
 	
 	public String getTitulo() {
