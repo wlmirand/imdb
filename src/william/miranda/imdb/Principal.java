@@ -1,10 +1,10 @@
 package william.miranda.imdb;
 
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.jsoup.nodes.Element;
 
 import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
@@ -13,23 +13,49 @@ import william.miranda.imdb.parser.Utils;
 
 public class Principal
 {
+	//lista para armazenar os objetos do tipo Filme apos parsear cada URL
+	private static List<Filme> filmes = new ArrayList<>();
+	
+	//lista que contem as URLs que foram obtidas para os filmes do arquivo
+	private static List<String> urls;
+	
+	private static Runnable r = new Runnable()
+	{
+		@Override
+		public void run()
+		{
+			//parseia o filme para cada URL lida do arquivo de entrada
+			for (String url : urls)
+			{
+				//try
+				{
+					System.out.println(url);
+					Filme f = startParser(url);
+					filmes.add(f);
+
+					//Thread.sleep(1000);
+				}
+				/*
+				catch (InterruptedException e)
+				{
+					e.printStackTrace();
+				}
+				*/
+				
+				//Neste ponto, temos uma Lista de Filmes... entao geramos o XML
+				Filme.toXML(filmes);
+			}
+		}
+	};
+	
 	public static void main(String[] args)
 	{
-		//parseamos o arquivo do MovieLens e obtemos a URL de todos os filmes
+		//parseamos o arquivo do MovieLens e obtemos as URLs de todos os filmes
 		MovieFeeder mf = new MovieFeeder("data/ml-100k/u.item");
-		List<String> urls = mf.readFile();
-		
-		//lista para armazenar os objetos do tipo Filme apos parsear cada URL
-		List<Filme> filmes = new ArrayList<>();
-		
-		for (String url : urls)
-		{
-			Filme f = startParser(url);
-			filmes.add(f);
-		}
-		
-		//Neste ponto, temos uma Lista de Filmes... entao geramos o XML
-		Filme.toXML(filmes);
+		mf.readFile();
+
+		//roda a thread para parsear os filmes, com intervalo, de modo que nao exceda o limite de requisicoes
+		//new Thread(r).start();
 	}
 	
 	/**

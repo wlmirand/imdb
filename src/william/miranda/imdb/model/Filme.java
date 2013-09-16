@@ -1,5 +1,7 @@
 package william.miranda.imdb.model;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.jsoup.Jsoup;
@@ -7,6 +9,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.parser.Parser;
+
+import william.miranda.imdb.parser.Utils;
 
 public class Filme
 {
@@ -21,6 +25,7 @@ public class Filme
 	private String storyline;
 	private List<String> genres;
 	private List<String> plotKeywords;
+	private String imdbUrl;
 	
 	@Override
 	public String toString()
@@ -41,7 +46,7 @@ public class Filme
 		return sb.toString();
 	}
 	
-	//Dada uma lista de Filmes, retorna um xml contendo todos
+	//Dada uma lista de Filmes, grava um arquivo contendo os XMLs gerados
 	public static void toXML(List<Filme> listaFilmes)
 	{
 		String start = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
@@ -56,7 +61,9 @@ public class Filme
 			filmes.append(f.toXML().toString());
 		}
 		
-		System.out.println(doc);
+		
+		Path path = Paths.get("resultado.xml");
+		Utils.saveToFile(path, doc.toString());
 	}
 	
 	//constroi um XML que representa o filme
@@ -203,5 +210,13 @@ public class Filme
 
 	public void setPlotKeywords(List<String> plotKeywords) {
 		this.plotKeywords = plotKeywords;
+	}
+	
+	public String getImdbUrl() {
+		return imdbUrl;
+	}
+
+	public void setImdbUrl(String imdbUrl) {
+		this.imdbUrl = imdbUrl;
 	}
 }

@@ -22,14 +22,46 @@ import william.miranda.imdb.model.Filme;
 
 /**
  * Esta Classe Parseia os arquivos do MovieLens para obter a URL dos filmes a serem passados
- * para o parser. Para obter a URL, este parser precisa do ano e do título do filme.
- * O retorno é uma Lista contendo todas as URLs.
+ * para o parser. Para obter a URL, este parser precisa do ano e do tï¿½tulo do filme.
+ * O retorno ï¿½ uma Lista contendo todas as URLs.
  * @author William
  *
  */
 public class MovieFeeder
 {
 	private Path filePath;
+	
+	private List<Filme> listaFilmes = new ArrayList<>();
+	
+	private Runnable r = new Runnable()
+	{
+		@Override
+		public void run()
+		{
+			List<String> res = new ArrayList<>();
+			
+			for (Filme f : listaFilmes)
+			{
+				try
+				{
+					String s = getImdbUrl(f);
+					res.add(s);
+					
+					System.out.println(s);
+					
+					Thread.sleep(1000);
+				}
+				catch (InterruptedException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				Path path = Paths.get("urls.txt");
+				Utils.saveToFile(path, res);
+			}
+		}
+	};
 	
 	/**
 	 * Construtor que prepara o Path do arquivo a ser lido 
@@ -38,7 +70,6 @@ public class MovieFeeder
 	public MovieFeeder(String filename)
 	{
 		filePath = Paths.get(filename);
-		
 		filePath = filePath.toAbsolutePath();
 	}
 	
@@ -46,39 +77,44 @@ public class MovieFeeder
 	 * Abre o arquivo e le as linhas
 	 * Ira retornar em cascata a URL dos filmes que desejamos
 	 */
-	public List<String> readFile()
+	public void readFile()
 	{
 		Charset charset = Charset.forName("ISO-8859-1");
-		List<String> lista = new ArrayList<>();
 		
 		try (BufferedReader reader = Files.newBufferedReader(filePath, charset))
 		{
 		    String line = null;
 		    while ((line = reader.readLine()) != null)
 		    {
-		    	//para cada linha do arquivo, parseamos o nome e o ano
-		    	String filmeUrl = parseTituloAno(line);
-		        lista.add(filmeUrl);
+		    	//para cada linha do arquivo, parseamos o nome e o ano e gravamos no objeto
+		    	Filme filme = parseTituloAno(line);
+		    	
+		    	//adicionamos o objeto em uma lista
+		    	listaFilmes.add(filme);
 		    }
+		    
+		    /* neste ponto listaFilmes contem todos os filmes do arquivo de texto
+		     * basta agora parsear as buscas de modo a obter as URLs */
+		    new Thread(r).start();
 		}
 		catch (IOException x)
 		{
 		    System.err.format("IOException: %s%n", x);
 		}
-		
-		return lista;
 	}
 	
 	/**
 	 * Obtemos o titulo e o ano do filme
 	 */
-	private String parseTituloAno(String linha)
+	private Filme parseTituloAno(String linha)
 	{
 		//separamos os campos delimitados por "|" (pipe)
 		String[] campos = linha.split("\\|");
-		
+
 		//pegamos o titulo e ano, que eh o campo que interessa
-		String titulo = campos[1];
+		String titulo = campos[1].trim();
+		
+		System.out.println(titulo);
 		
 		//precisamos verificar se o titulo que pegamos eh do formato: "Titulo (Ano)", como por Ex: "The Green Mile (1999)"
 		boolean match = Pattern.matches("[\\S|\\s]+ \\(\\d{4}\\)", titulo);
@@ -99,7 +135,7 @@ public class MovieFeeder
 			f.setAno(ano);
 			f.setTitulo(titulo);
 			
-			return getImdbUrl(f);
+			return f;
 		}
 		
 		return null;//se chegou aqui, retorna null
@@ -108,7 +144,8 @@ public class MovieFeeder
 	/**
 	 * Passamos o objeto contendo Titulo e Ano e precisamos gerar uma URL da forma
 	 * String url = "http://www.imdb.com/find?q=Sunchaser,%20The&year=1996";
-	 * Entao analisamos o HTML que esta URL nos retorna
+	 * Entao, fazemos um GET e analisamos o html que Ã© retornado
+	 * para entao procurar a URL correspondente ao filme que desejamos
 	 */
 	private String getImdbUrl(Filme filme)
 	{	
@@ -134,49 +171,51 @@ public class MovieFeeder
 		try
 		{
 			//faz o parsing do html e pega o primeiro filme que a busca retorna
-			Document doc = Jsoup.connect(url).userAgent("Mozilla").get();
-			Elements elements = doc.getElementsByClass("result_text");
+			Document doc = Jsoup.connect(url).userAgent("Mozilla").timeout(2000).get();
+			Elements elements = doc.getElementsByTag("h3");
 			
-			//se nao achou o filme, modifica a url de busca
-			if (elements.isEmpty())
+			
+			/* quando chegou uma pagina com os resultados da busca
+			 * procuramos primeiro a secao dos Filmes (e nao atores, categorias, etc...) */
+			
+			Element element = null;
+			
+			for (Element e : elements)
 			{
-				try
+				if ("Titles".equals(e.text()))
 				{
-					filme.setTitulo(URLDecoder.decode(filme.getTitulo(), "UTF-8"));
-					filme.setTitulo(filme.getTitulo().substring(0, filme.getTitulo().indexOf('(')).trim());
-								
-					filme.setTitulo(URLEncoder.encode(filme.getTitulo(), "UTF-8"));
-					
-					url = "http://www.imdb.com/find?";
-					url += "q=" + filme.getTitulo();
-					
-					doc = Jsoup.connect(url).userAgent("Mozilla").get();
-					elements = doc.getElementsByClass("result_text");
-				}
-				catch (UnsupportedEncodingException e1)
-				{
-					e1.printStackTrace();
+					//achamos a tag que queriamos (a do Titulo)
+					element = e.nextElementSibling();
 				}
 			}
 			
-			Element element = elements.get(0);	
+			if (element != null)//se achou
+			{
+				//pegamos a parte que interessa
+				element = element.getElementsByClass("result_text").get(0);
+				
+				//pegamos a url do IMDB
+				element = element.getElementsByTag("a").get(0);
+				
+				//obtemos a url
+				String id = element.attr("href");
+				String[] path = id.split("/");
+				
+				//retorna o id desejado
+				return "http://www.imdb.com/title/" + path[2];
+			}
 			
-			element = element.getElementsByTag("a").get(0);
-			
-			//obtemos a url
-			String id = element.attr("href");
-			String[] path = id.split("/");
-			
-			//retorna o id desejado
-			return "http://www.imdb.com/title/" + path[2];
 		}
 		catch (IOException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		catch (NullPointerException e)
+		{
+			e.printStackTrace();
+		}
 		
 		return null;
-		
 	}
 }
