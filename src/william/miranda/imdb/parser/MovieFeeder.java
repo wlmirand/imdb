@@ -22,8 +22,8 @@ import william.miranda.imdb.model.Filme;
 
 /**
  * Esta Classe Parseia os arquivos do MovieLens para obter a URL dos filmes a serem passados
- * para o parser. Para obter a URL, este parser precisa do ano e do tï¿½tulo do filme.
- * O retorno ï¿½ uma Lista contendo todas as URLs.
+ * para o parser. Para obter a URL, este parser precisa do ano e do titulo do filme.
+ * O retorno é uma Lista contendo todas as URLs.
  * @author William
  *
  */
@@ -111,7 +111,10 @@ public class MovieFeeder
 		//separamos os campos delimitados por "|" (pipe)
 		String[] campos = linha.split("\\|");
 
-		//pegamos o titulo e ano, que eh o campo que interessa
+		//pegamos o id do movie lens
+		String id = campos[0].trim();
+		
+		//pegamos o titulo e ano (estao no mesmo campo)
 		String titulo = campos[1].trim();
 		
 		System.out.println(titulo);
@@ -132,6 +135,7 @@ public class MovieFeeder
 			
 			//preenche o objeto
 			Filme f = new Filme();
+			f.setId(Integer.valueOf(id));
 			f.setAno(ano);
 			f.setTitulo(titulo);
 			

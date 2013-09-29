@@ -26,6 +26,7 @@ public class Filme
 	private List<String> genres;
 	private List<String> plotKeywords;
 	private String imdbUrl;
+	private int id;
 	
 	@Override
 	public String toString()
@@ -218,5 +219,13 @@ public class Filme
 
 	public void setImdbUrl(String imdbUrl) {
 		this.imdbUrl = imdbUrl;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }
