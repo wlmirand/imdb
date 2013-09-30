@@ -85,7 +85,7 @@ public class Principal
 			
 			HtmlParser pick = new HtmlParser(url);
 			pick.parseURL();
-			//pick.parseReviews();
+			pick.parseReviews();
 			
 			//neste ponto temos um objeto do tipo Filme preenchido
 			Filme f = pick.getFilme();

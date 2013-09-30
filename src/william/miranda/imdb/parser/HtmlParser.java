@@ -51,8 +51,7 @@ public class HtmlParser
 		}
 		catch (Exception e)
 		{
-			//parseURL();
-			e.printStackTrace();
+			parseURL();
 			return;
 		}
 	}
@@ -115,14 +114,17 @@ public class HtmlParser
 	
 	private List<String> getDiretores()
 	{
-		Element pai = doc.getElementsByAttributeValue("itemprop", "director").get(0);
-		Elements lista = pai.getElementsByAttributeValue("itemprop", "name");
-		
 		List<String> res = new ArrayList<>();
 		
-		for (Element e : lista)
+		if (!doc.getElementsByAttributeValue("itemprop", "director").isEmpty())
 		{
-			res.add(e.ownText());
+			Element pai = doc.getElementsByAttributeValue("itemprop", "director").get(0);
+			Elements lista = pai.getElementsByAttributeValue("itemprop", "name");
+			
+			for (Element e : lista)
+			{
+				res.add(e.ownText());
+			}
 		}
 		
 		return res;
@@ -130,14 +132,17 @@ public class HtmlParser
 	
 	private List<String> getCriadores()
 	{
-		Element pai = doc.getElementsByAttributeValue("itemprop", "creator").get(0);
-		Elements lista = pai.getElementsByAttributeValue("itemprop", "name");
-		
 		List<String> res = new ArrayList<>();
 		
-		for (Element e : lista)
+		if (!doc.getElementsByAttributeValue("itemprop", "creator").isEmpty())
 		{
-			res.add(e.ownText());
+			Element pai = doc.getElementsByAttributeValue("itemprop", "creator").get(0);
+			Elements lista = pai.getElementsByAttributeValue("itemprop", "name");
+			
+			for (Element e : lista)
+			{
+				res.add(e.ownText());
+			}
 		}
 		
 		return res;
