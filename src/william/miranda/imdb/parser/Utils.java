@@ -8,6 +8,7 @@ import java.nio.file.LinkOption;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Utils
@@ -34,7 +35,7 @@ public class Utils
 				Files.createFile(path);
 			}
 			
-			BufferedWriter br = Files.newBufferedWriter(path, Charset.forName("UTF-8"), new OpenOption[] {StandardOpenOption.WRITE});
+			BufferedWriter br = Files.newBufferedWriter(path, getCharset(), new OpenOption[] {StandardOpenOption.WRITE});
 			br.write(conteudo);
 			br.write("\n");
 			br.flush();
@@ -57,14 +58,14 @@ public class Utils
 				Files.createFile(path);
 			}
 			
-			BufferedWriter br = Files.newBufferedWriter(path, Charset.forName("UTF-8"), new OpenOption[] {StandardOpenOption.WRITE});
+			BufferedWriter br = Files.newBufferedWriter(path, getCharset(), new OpenOption[] {StandardOpenOption.WRITE});
 			
 			for (String linha : conteudo)
 			{
 				if (linha != null)
 				{
 					br.write(linha);
-					br.write("\n");
+					br.write("\r\n");
 				}
 			}
 
@@ -76,5 +77,27 @@ public class Utils
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public static List<String> readFromFile(Path path)
+	{
+		List<String> lines = new ArrayList<>();
+		
+		try
+		{
+			lines = Files.readAllLines(path, getCharset());
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return lines;
+	}
+	
+	public static Charset getCharset()
+	{
+		return Charset.forName("ISO-8859-1");
 	}
 }

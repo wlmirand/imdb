@@ -77,6 +77,8 @@ public class Filme
 		Element filme = doc.appendElement("filme");
 		
 		//adiciona os campos basicos
+		filme.appendElement("id").appendText(String.valueOf(this.getId()));
+		filme.appendElement("imdbUrl").appendText(String.valueOf(this.getImdbUrl()));
 		filme.appendElement("ano").appendText(String.valueOf(this.getAno()));
 		filme.appendElement("titulo").appendText(this.getTitulo());
 		filme.appendElement("rating").appendText(String.valueOf(this.getRating()));

@@ -34,18 +34,26 @@ public class HtmlParser
 	
 	public void parseURL() throws IOException
 	{
-		doc = Jsoup.connect(url.toString()).get();
-		
-		f.setTitulo(getTitulo());
-		f.setAno(getAno());
-		f.setSinopse(getSinopse());
-		f.setDiretores(getDiretores());
-		f.setCriadores(getCriadores());
-		f.setAtores(getAtores());
-		f.setRating(getRating());
-		f.setStoryline(getStoryline());
-		f.setGenres(getGenres());
-		f.setPlotKeywords(getPlotKeywords());
+		try
+		{
+			doc = Jsoup.connect(url.toString()).get();
+			
+			f.setTitulo(getTitulo());
+			f.setAno(getAno());
+			f.setSinopse(getSinopse());
+			f.setDiretores(getDiretores());
+			f.setCriadores(getCriadores());
+			f.setAtores(getAtores());
+			f.setRating(getRating());
+			f.setStoryline(getStoryline());
+			f.setGenres(getGenres());
+			f.setPlotKeywords(getPlotKeywords());
+		}
+		catch (Exception e)
+		{
+			parseURL();
+			return;
+		}
 	}
 	
 	public void parseReviews() throws IOException

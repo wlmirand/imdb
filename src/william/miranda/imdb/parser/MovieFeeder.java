@@ -3,7 +3,7 @@ package william.miranda.imdb.parser;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
+import java.net.SocketTimeoutException;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
@@ -45,11 +46,12 @@ public class MovieFeeder
 				try
 				{
 					String s = getImdbUrl(f);
-					res.add(s);
+					res.add(f.getId() + " | " + s);
 					
 					System.out.println(s);
+					System.out.println("--------");
 					
-					Thread.sleep(1000);
+					Thread.sleep(2100);
 				}
 				catch (InterruptedException e)
 				{
@@ -79,7 +81,7 @@ public class MovieFeeder
 	 */
 	public void readFile()
 	{
-		Charset charset = Charset.forName("ISO-8859-1");
+		Charset charset = Utils.getCharset();
 		
 		try (BufferedReader reader = Files.newBufferedReader(filePath, charset))
 		{
@@ -117,21 +119,20 @@ public class MovieFeeder
 		//pegamos o titulo e ano (estao no mesmo campo)
 		String titulo = campos[1].trim();
 		
-		System.out.println(titulo);
+		/* Nosso titulo eh da forma <TITULO> <ANO> <LIXO>
+		 * entao procuramos o a posicao onde comeca o ano */
+		Pattern pattern = Pattern.compile("\\(\\d{4}\\)");
+		Matcher matcher = pattern.matcher(titulo);
 		
-		//precisamos verificar se o titulo que pegamos eh do formato: "Titulo (Ano)", como por Ex: "The Green Mile (1999)"
-		boolean match = Pattern.matches("[\\S|\\s]+ \\(\\d{4}\\)", titulo);
-		
-		//se segue o padrao, parseia o ano
-		if (match)
+		if(matcher.find())
 		{
-			String tmpAno = titulo.substring(titulo.length()-5);
-			tmpAno = tmpAno.replace(')', ' ').trim();
+			int divisor = matcher.start();//this will give you index
+
+			String tmpAno = titulo.substring(divisor+1, divisor+5);
 			int ano = Integer.parseInt(tmpAno);
-			
+
 			/* obtemos somente o titulo (sem o ano) e organizamos de forma a passar para a API */
-			//remove o ano
-			titulo = titulo.substring(0, titulo.length()-6).trim();
+			titulo = titulo.substring(0, divisor).trim();
 			
 			//preenche o objeto
 			Filme f = new Filme();
@@ -155,7 +156,7 @@ public class MovieFeeder
 	{	
 		try
 		{
-			filme.setTitulo(URLEncoder.encode(filme.getTitulo(), "UTF-8"));
+			filme.setTitulo(URLEncoder.encode(filme.getTitulo(), Utils.getCharset().displayName()));
 		}
 		catch (UnsupportedEncodingException e)
 		{
@@ -163,10 +164,10 @@ public class MovieFeeder
 			e.printStackTrace();
 		}//converte o titulo (URL Encode)
 		
-		StringBuilder sb = new StringBuilder("http://www.imdb.com/find?");
+		StringBuilder sb = new StringBuilder("http://www.imdb.com/find?&s=tt&ttype=ft&ref_=fn_ft&");
 		sb.append("q=").append(filme.getTitulo());
 		sb.append("&year=").append(filme.getAno());
-		
+		System.out.println(sb.toString());
 		return parseXML(sb.toString(), filme);
 	}
 	
@@ -193,22 +194,46 @@ public class MovieFeeder
 				}
 			}
 			
-			if (element != null)//se achou
+			if (element != null)//se achou, procuramos um titulo que de "match" no ano
 			{
-				//pegamos a parte que interessa
-				element = element.getElementsByClass("result_text").get(0);
+				//pegamos os result tests de todos os filmes q a busca retornou
+				Elements resultTexts = element.getElementsByClass("result_text");
 				
-				//pegamos a url do IMDB
-				element = element.getElementsByTag("a").get(0);
-				
-				//obtemos a url
-				String id = element.attr("href");
-				String[] path = id.split("/");
-				
-				//retorna o id desejado
-				return "http://www.imdb.com/title/" + path[2];
+				//para cada resultado, analisamos o Ano para ver se bate
+				for (int i=0 ; i<resultTexts.size() ; i++)
+				{
+					Element resultText = resultTexts.get(i);
+					String tituloAno = resultText.text();
+					
+					/* Nosso titulo eh da forma <TITULO> <ANO>
+					 * entao procuramos o a posicao onde comeca o ano */
+					Pattern pattern = Pattern.compile("\\(\\d{4}\\)");
+					Matcher matcher = pattern.matcher(tituloAno);
+					
+					if (matcher.find())
+					{
+						int divisor = matcher.start();
+						
+						int ano = Integer.valueOf(tituloAno.substring(divisor+1, divisor+5).trim());
+						
+						if (ano == filme.getAno())
+						{
+							//obtemos a url
+							String id = resultText.getElementsByTag("a").get(0).attr("href");
+							String[] path = id.split("/");
+							
+							//retorna o id desejado
+							return "http://www.imdb.com/title/" + path[2];
+						}
+					}
+				}
 			}
 			
+		}
+		catch (SocketTimeoutException e)
+		{
+			//se deu timeout, tenta de novo
+			return parseXML(url, filme);
 		}
 		catch (IOException e)
 		{

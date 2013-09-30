@@ -24,23 +24,31 @@ public class Principal
 		@Override
 		public void run()
 		{
-			//parseia o filme para cada URL lida do arquivo de entrada
-			for (String url : urls)
+			/* parseia o filme para cada URL lida do arquivo de entrada
+			 * cada linha eh da forma <ID> | <URL> */
+			for (String linha : urls)
 			{
-				//try
+				try
 				{
-					System.out.println(url);
+					System.out.println(linha);
+					
+					String[] tmp = linha.split("\\|");
+					
+					int id = Integer.valueOf(tmp[0].trim());
+					String url = tmp[1].trim();
+								
 					Filme f = startParser(url);
+					f.setImdbUrl(url);
+					f.setId(id);
+					
 					filmes.add(f);
-
-					//Thread.sleep(1000);
+					
+					Thread.sleep(2000);
 				}
-				/*
 				catch (InterruptedException e)
 				{
 					e.printStackTrace();
 				}
-				*/
 				
 				//Neste ponto, temos uma Lista de Filmes... entao geramos o XML
 				Filme.toXML(filmes);
@@ -51,11 +59,12 @@ public class Principal
 	public static void main(String[] args)
 	{
 		//parseamos o arquivo do MovieLens e obtemos as URLs de todos os filmes
-		MovieFeeder mf = new MovieFeeder("data/ml-100k/u.item");
-		mf.readFile();
+		parseMovieLens();
 
-		//roda a thread para parsear os filmes, com intervalo, de modo que nao exceda o limite de requisicoes
-		//new Thread(r).start();
+		/* roda a thread para parsear as URLs contendo os dados dos filmes
+		 * , com intervalo, de modo que nao exceda o limite de requisicoes
+		 */
+		//parseImdb();
 	}
 	
 	/**
@@ -92,4 +101,16 @@ public class Principal
 		return null;
 	}
 	
+	private static void parseMovieLens()
+	{
+		MovieFeeder mf = new MovieFeeder("data/ml-100k/u.item");
+		mf.readFile();
+	}
+	
+	public static void parseImdb()
+	{
+		Path path = Paths.get("urls.txt");
+		urls = Utils.readFromFile(path);
+		new Thread(r).start();
+	}
 }
