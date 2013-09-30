@@ -60,7 +60,7 @@ public class HtmlParser
 	{
 		int reviewPorPagina = 10;
 		
-		docReview = Jsoup.connect(urlReview.toString()).userAgent("Mozilla").get();	
+		carregaPaginaReview();
 		
 		//obtem o numero de reviews do filme
 		Element tmp = docReview.getElementsByAttributeValueMatching("href", "reviews-index?").get(0).parent();
@@ -81,7 +81,7 @@ public class HtmlParser
 		for (int pagina=1 ; pagina<numPaginas ; pagina++)
 		{
 			URL urlTmp = new URL(urlReview.toString() + ";start=" + pagina*reviewPorPagina);
-			docReview = Jsoup.connect(urlTmp.toString()).userAgent("Mozilla").get();
+			carregaPaginaReview();
 			f.addReviews(getReviews());
 		}
 		
@@ -287,5 +287,18 @@ public class HtmlParser
 	public Filme getFilme()
 	{
 		return this.f;
+	}
+	
+	public void carregaPaginaReview()
+	{
+		try
+		{
+			docReview = Jsoup.connect(urlReview.toString()).userAgent("Mozilla").get();
+		}
+		catch (Exception e)
+		{
+			carregaPaginaReview();
+			return;
+		}
 	}
 }

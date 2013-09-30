@@ -59,12 +59,12 @@ public class Principal
 	public static void main(String[] args)
 	{
 		//parseamos o arquivo do MovieLens e obtemos as URLs de todos os filmes
-		parseMovieLens();
+		//parseMovieLens();
 
 		/* roda a thread para parsear as URLs contendo os dados dos filmes
 		 * , com intervalo, de modo que nao exceda o limite de requisicoes
 		 */
-		//parseImdb();
+		parseImdb();
 	}
 	
 	/**
