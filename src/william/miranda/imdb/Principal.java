@@ -49,10 +49,10 @@ public class Principal
 				{
 					e.printStackTrace();
 				}
-				
-				//Neste ponto, temos uma Lista de Filmes... entao geramos o XML
-				Filme.toXML(filmes);
 			}
+			
+			//Neste ponto, temos uma Lista de Filmes... entao geramos o XML
+			Filme.toXML(filmes);
 		}
 	};
 	
@@ -85,7 +85,7 @@ public class Principal
 			
 			HtmlParser pick = new HtmlParser(url);
 			pick.parseURL();
-			pick.parseReviews();
+			//pick.parseReviews();
 			
 			//neste ponto temos um objeto do tipo Filme preenchido
 			Filme f = pick.getFilme();

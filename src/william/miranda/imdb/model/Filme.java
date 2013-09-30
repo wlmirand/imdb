@@ -50,7 +50,7 @@ public class Filme
 	//Dada uma lista de Filmes, grava um arquivo contendo os XMLs gerados
 	public static void toXML(List<Filme> listaFilmes)
 	{
-		String start = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+		String start = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>";
 		Document doc = Jsoup.parse(start, "", Parser.xmlParser());
 		
 		//extrai a tag raiz
@@ -70,7 +70,7 @@ public class Filme
 	//constroi um XML que representa o filme
 	public Element toXML()
 	{
-		String start = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+		String start = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>";
 		Document doc = Jsoup.parse(start, "", Parser.xmlParser());
 		
 		//extrai a tag raiz

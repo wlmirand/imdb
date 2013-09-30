@@ -51,7 +51,8 @@ public class HtmlParser
 		}
 		catch (Exception e)
 		{
-			parseURL();
+			//parseURL();
+			e.printStackTrace();
 			return;
 		}
 	}
@@ -105,6 +106,10 @@ public class HtmlParser
 	private String getSinopse()
 	{
 		Elements elements = doc.getElementsByAttributeValueContaining("itemprop", "description");
+		
+		if (elements.isEmpty())
+			return null;
+		
 		return elements.get(0).ownText();
 	}
 	
@@ -140,14 +145,17 @@ public class HtmlParser
 	
 	private List<String> getAtores()
 	{
-		Element pai = doc.getElementsByAttributeValue("itemprop", "actors").get(0);
-		Elements lista = pai.getElementsByAttributeValue("itemprop", "name");
-		
 		List<String> res = new ArrayList<>();
 		
-		for (Element e : lista)
+		if (!doc.getElementsByAttributeValue("itemprop", "actors").isEmpty())
 		{
-			res.add(e.ownText());
+			Element pai = doc.getElementsByAttributeValue("itemprop", "actors").get(0);
+			Elements lista = pai.getElementsByAttributeValue("itemprop", "name");
+			
+			for (Element e : lista)
+			{
+				res.add(e.ownText());
+			}
 		}
 		
 		return res;
