@@ -170,10 +170,10 @@ public class HtmlParser
 	{
 		Elements elements = doc.getElementsByAttributeValueContaining("itemprop", "ratingValue");
 		
-		//if (!elements.isEmpty())
+		if (!elements.isEmpty())
 			return Float.parseFloat(elements.get(0).ownText());
-		//else
-		//	return -1;
+		else
+			return -1;
 	}
 	
 	private String getStoryline()
