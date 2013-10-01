@@ -36,12 +36,16 @@ public class Principal
 					
 					int id = Integer.valueOf(tmp[0].trim());
 					String url = tmp[1].trim();
-								
-					Filme f = startParser(url);
-					f.setImdbUrl(url);
-					f.setId(id);
 					
-					filmes.add(f);
+					Filme f = startParser(url);
+					
+					if (f != null)
+					{
+						f.setImdbUrl(url);
+						f.setId(id);
+						
+						Utils.salvarFilme(f);
+					}
 					
 					Thread.sleep(2000);
 				}
@@ -52,7 +56,7 @@ public class Principal
 			}
 			
 			//Neste ponto, temos uma Lista de Filmes... entao geramos o XML
-			Filme.toXML(filmes);
+			//Filme.toXML(filmes);
 		}
 	};
 	
@@ -80,17 +84,19 @@ public class Principal
 			//url = "http://www.imdb.com/title/tt0082398";//For Your Eyes Only
 			//url = "http://www.imdb.com/title/tt1038988";//Rec
 			//url = "http://www.imdb.com/title/tt0162930";//Die Hard Dracula
-			
-			url = Utils.preparaURL(url);
-			
-			HtmlParser pick = new HtmlParser(url);
-			pick.parseURL();
-			pick.parseReviews();
-			
-			//neste ponto temos um objeto do tipo Filme preenchido
-			Filme f = pick.getFilme();
-			
-			return f;
+			if (!"null".equals(url))
+			{
+				url = Utils.preparaURL(url);
+				
+				HtmlParser pick = new HtmlParser(url);
+				pick.parseURL();
+				pick.parseReviews();
+				
+				//neste ponto temos um objeto do tipo Filme preenchido
+				Filme f = pick.getFilme();
+				
+				return f;
+			}
 		}
 		catch (IOException e)
 		{

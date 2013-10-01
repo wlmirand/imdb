@@ -32,6 +32,7 @@ public class Filme
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
+		sb.append("ID: ").append(id).append(" - ").append(imdbUrl).append('\n');
 		sb.append(ano).append(" - ").append(titulo).append('\n');
 		sb.append("Rating: ").append(rating).append('\n');
 		sb.append("Generos: ").append(genres).append('\n');
@@ -42,7 +43,7 @@ public class Filme
 		sb.append("Atores: ").append(atores).append('\n');
 		sb.append("Storyline: ").append(storyline).append('\n');
 		sb.append("---------------------------------------------------------------\n");
-		sb.append("Reviews: ").append("\n").append(reviews).append('\n');
+		//sb.append("Reviews: ").append("\n").append(reviews).append('\n');
 		
 		return sb.toString();
 	}
@@ -122,6 +123,7 @@ public class Filme
 		
 		//adiciona os reviews
 		Element reviews = filme.appendElement("reviews");
+		
 		for (Review r : this.getReviews())
 		{
 			Element review = reviews.appendElement("review");

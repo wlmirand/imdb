@@ -7,9 +7,14 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.lang3.StringEscapeUtils;
+
+import william.miranda.imdb.model.Filme;
 
 public class Utils
 {
@@ -36,7 +41,8 @@ public class Utils
 			}
 			
 			BufferedWriter br = Files.newBufferedWriter(path, getCharset(), new OpenOption[] {StandardOpenOption.WRITE});
-			br.write(conteudo);
+			
+			br.write(StringEscapeUtils.unescapeXml(conteudo));
 			br.write("\n");
 			br.flush();
 			br.close();
@@ -98,6 +104,15 @@ public class Utils
 	
 	public static Charset getCharset()
 	{
-		return Charset.forName("ISO-8859-1");
+		//return Charset.forName("ISO-8859-1");
+		return Charset.forName("UTF-8");
+	}
+	
+	public static void salvarFilme(Filme f)
+	{
+		Path path = Paths.get("out/" + f.getId() + ".xml");
+		
+		System.out.println(f);	
+		Utils.saveToFile(path, f.toXML().toString());
 	}
 }

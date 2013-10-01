@@ -107,7 +107,7 @@ public class HtmlParser
 		Elements elements = doc.getElementsByAttributeValueContaining("itemprop", "description");
 		
 		if (elements.isEmpty())
-			return null;
+			return "";
 		
 		return elements.get(0).ownText();
 	}
@@ -169,7 +169,11 @@ public class HtmlParser
 	private float getRating()
 	{
 		Elements elements = doc.getElementsByAttributeValueContaining("itemprop", "ratingValue");
-		return Float.parseFloat(elements.get(0).ownText());
+		
+		//if (!elements.isEmpty())
+			return Float.parseFloat(elements.get(0).ownText());
+		//else
+		//	return -1;
 	}
 	
 	private String getStoryline()
