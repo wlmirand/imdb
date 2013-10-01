@@ -1,5 +1,6 @@
 package william.miranda.imdb.parser;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -114,5 +115,61 @@ public class Utils
 		
 		System.out.println(f);	
 		Utils.saveToFile(path, f.toXML().toString());
+	}
+	
+	public static List<Integer> getIDs()
+	{
+		//abre o arquivo de URLs, para obter os codigos
+		Path pathUrls = Paths.get("urls.txt");
+		List<String> urls = Utils.readFromFile(pathUrls);
+		
+		List<Integer> ids = new ArrayList<>();
+		
+		for (String linha : urls)
+		{
+			String[] tmp = linha.split("\\|");
+				
+			int id = Integer.valueOf(tmp[0].trim());
+			ids.add(id);
+		}
+		
+		return ids;
+	}
+	
+	public static void generateFinalXML() throws IOException
+	{
+		List<Integer> ids = getIDs();
+		Path res = Paths.get("resultado.xml");
+		
+		String start = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>";
+		
+		/*
+		BufferedWriter writer = Files.newBufferedWriter(res, Utils.getCharset(), StandardOpenOption.CREATE);
+		writer.write(start + "\n");
+		writer.write("<filmes>\n");
+		*/
+		
+		for (int id : ids)
+		{
+			Path p = Paths.get("out/" + id + ".xml");
+
+			//se o filme foi parseado, adiciona
+			if (Files.exists(p, LinkOption.NOFOLLOW_LINKS))
+			{
+				BufferedReader reader = Files.newBufferedReader(p, Utils.getCharset());
+				String line = null;
+
+				BufferedWriter writer = Files.newBufferedWriter(res, Utils.getCharset(), StandardOpenOption.APPEND);
+				
+				while ((line = reader.readLine()) != null)
+				{
+					writer.write(line + "\n");
+				}
+				
+				writer.close();
+			}
+		}
+		
+		//writer.write("</filmes>\n");
 	}
 }

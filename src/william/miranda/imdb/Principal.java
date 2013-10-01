@@ -68,7 +68,9 @@ public class Principal
 		/* roda a thread para parsear as URLs contendo os dados dos filmes
 		 * , com intervalo, de modo que nao exceda o limite de requisicoes
 		 */
-		parseImdb();
+		//parseImdb();
+		
+		makeResultFile();
 	}
 	
 	/**
@@ -118,5 +120,15 @@ public class Principal
 		Path path = Paths.get("urls.txt");
 		urls = Utils.readFromFile(path);
 		new Thread(r).start();
+	}
+	
+	public static void makeResultFile()
+	{
+		try {
+			Utils.generateFinalXML();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
