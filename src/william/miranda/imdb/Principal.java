@@ -10,6 +10,7 @@ import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.MovieFeeder;
 import william.miranda.imdb.parser.Utils;
+import william.miranda.lucene.LuceneDatabase;
 
 public class Principal
 {
@@ -70,7 +71,11 @@ public class Principal
 		 */
 		//parseImdb();
 		
-		makeResultFile();
+		//pega todos os arquivos pequenos e gera o XML grande
+		//makeResultFile();
+		
+		//chama a parte do Lucene
+		lucene();
 	}
 	
 	/**
@@ -128,6 +133,19 @@ public class Principal
 			Utils.generateFinalXML();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void lucene()
+	{
+		try
+		{
+			LuceneDatabase luceneDB = new LuceneDatabase();
+			System.out.println("Lucene!");
+		}
+		catch (IOException e)
+		{
 			e.printStackTrace();
 		}
 	}
