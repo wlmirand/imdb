@@ -103,6 +103,31 @@ public class Utils
 		return lines;
 	}
 	
+	public static StringBuilder readStringFromFile(Path path)
+	{
+		try
+		{
+			BufferedReader reader = Files.newBufferedReader(path, Utils.getCharset());
+			String s = reader.readLine();
+			StringBuilder sb = new StringBuilder();
+			
+			while (s != null)
+			{
+				sb.append(s).append("\r\n");
+				s = reader.readLine();
+			}
+			
+			return sb;
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
 	public static Charset getCharset()
 	{
 		//return Charset.forName("ISO-8859-1");

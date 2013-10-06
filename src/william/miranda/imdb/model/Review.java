@@ -63,7 +63,7 @@ public class Review
 	
 	public void setData(String d)
 	{
-		String[] tmp = d.split(" ");
+		String[] tmp = d.split("/");
 		
 		int mes = 0;
 		int dia = Integer.parseInt(tmp[0]);

@@ -11,6 +11,8 @@ import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.MovieFeeder;
 import william.miranda.imdb.parser.Utils;
 import william.miranda.lucene.LuceneDatabase;
+import william.miranda.xml.XMLParser;
+
 
 public class Principal
 {
@@ -141,8 +143,19 @@ public class Principal
 	{
 		try
 		{
+			//obtemos a lista de todos os filmes
+			Path p = Paths.get("out/");
+			List<Filme> listaFilmes = XMLParser.parseAllXML(p);
+			
+			//iniciamos a engine do Lucene
 			LuceneDatabase luceneDB = new LuceneDatabase();
-			System.out.println("Lucene!");
+			
+			//adicionamos os filmes na engine
+			for (Filme f : listaFilmes)
+			{
+				luceneDB.addDoc(f);
+			}
+			
 		}
 		catch (IOException e)
 		{

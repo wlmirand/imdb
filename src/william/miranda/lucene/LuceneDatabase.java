@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
+import org.apache.lucene.document.FloatField;
 import org.apache.lucene.document.IntField;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.index.IndexWriter;
@@ -35,9 +36,14 @@ public class LuceneDatabase
 	{
 		Document doc = new Document();
 		doc.add(new StringField("titulo", f.getTitulo(), Field.Store.YES));
+		doc.add(new StringField("imdbUrl", f.getImdbUrl(), Field.Store.YES));
+		doc.add(new StringField("sinopse", f.getSinopse(), Field.Store.YES));
+		doc.add(new StringField("storyline", f.getStoryline(), Field.Store.YES));
 		doc.add(new IntField("ano", f.getAno(), Field.Store.YES));
+		doc.add(new IntField("id", f.getId(), Field.Store.YES));
+		doc.add(new FloatField("rating", f.getRating(), Field.Store.YES));
 		writer.addDocument(doc);
 		
-		//org.apache.lucene.document.
+		//org.apache.lucene.document.Fl
 	}
 }
