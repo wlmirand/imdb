@@ -1,0 +1,77 @@
+<filme>
+ <id>
+  1568
+ </id>
+ <imdburl>
+  http://www.imdb.com/title/tt0105737
+ </imdburl>
+ <ano>
+  1992
+ </ano>
+ <titulo>
+  Vermont Is for Lovers
+ </titulo>
+ <rating>
+  7.4
+ </rating>
+ <sinopse>
+ </sinopse>
+ <storyline>
+ </storyline>
+ <generos>
+  <genero>
+   Comedy
+  </genero>
+ </generos>
+ <keywords>
+  <keyword>
+   state name in title
+  </keyword>
+  <keyword>
+   wedding
+  </keyword>
+  <keyword>
+   claim in title
+  </keyword>
+  <keyword>
+   independent film
+  </keyword>
+ </keywords>
+ <diretores>
+  <diretor>
+   John O'Brien
+  </diretor>
+ </diretores>
+ <escritores>
+  <escritor>
+   John O'Brien
+  </escritor>
+ </escritores>
+ <atores>
+  <ator>
+   George Thrush
+  </ator>
+  <ator>
+   Marya Cohn
+  </ator>
+  <ator>
+   Ann O'Brien
+  </ator>
+ </atores>
+ <reviews>
+  <review>
+   <titulo>
+    Most enjoyable
+   </titulo>
+   <autor>
+    M & J
+   </autor>
+   <data>
+    18/8/2000
+   </data>
+   <conteudo>
+    Not much happens in this apparently largely unscripted movie: George and Marya, two New Yorkers, go to her aunt's home in Vermont to get married. On the day before the ceremony George drives around the community talking to the locals (all played by themselves) about marriage, architecture, history and farming. However, this is all very entertaining and some of the locals are very funny. The animals are good, too: a beagle turns in an outstanding performance.
+   </conteudo>
+  </review>
+ </reviews>
+</filme>

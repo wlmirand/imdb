@@ -46,4 +46,9 @@ public class LuceneDatabase
 		
 		//org.apache.lucene.document.Fl
 	}
+	
+	public Directory getIndex()
+	{
+		return this.index;
+	}
 }

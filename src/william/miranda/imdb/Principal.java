@@ -156,6 +156,7 @@ public class Principal
 				luceneDB.addDoc(f);
 			}
 			
+			
 		}
 		catch (IOException e)
 		{

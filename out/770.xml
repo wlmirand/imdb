@@ -1,0 +1,777 @@
+<filme>
+ <id>
+  770
+ </id>
+ <imdburl>
+  http://www.imdb.com/title/tt0112857
+ </imdburl>
+ <ano>
+  1995
+ </ano>
+ <titulo>
+  O Diabo Veste Azul
+ </titulo>
+ <rating>
+  6.5
+ </rating>
+ <sinopse>
+  An Afro-American man is hired to find a woman and gets mixed up in a murderous political scandal.
+ </sinopse>
+ <storyline>
+  It is 1948 in LA and Ezikeal "Easy" Rawlins, an African-American World War II veteran, is looking for work. At his friend's bar, he is introduced to a white man, DeWitt Albright, who is looking for someone to help him find a missing white woman assumed to be hiding somewhere in LA's Black community. This woman, Daphane Monet, happens to be the fianc&eacute;e of a wealthy "blue blood," Todd Carter, who is currently the favorite in the city's mayoralty race. Daphane Monet is known to frequent the Black jazz clubs in LA. Easy, innocently, accepts Albright's offer; however, he quickly finds himself amidst murder, crooked cops, ruthless politicians, and brutalizing hoodlums. This is a Chandler-esque "who-done-it" with an African-American theme.
+ </storyline>
+ <generos>
+  <genero>
+   Crime
+  </genero>
+  <genero>
+   Drama
+  </genero>
+  <genero>
+   Mystery
+  </genero>
+ </generos>
+ <keywords>
+  <keyword>
+   african american
+  </keyword>
+  <keyword>
+   murder
+  </keyword>
+  <keyword>
+   jazz club
+  </keyword>
+  <keyword>
+   suspense
+  </keyword>
+  <keyword>
+   shot in the chest
+  </keyword>
+ </keywords>
+ <diretores>
+  <diretor>
+   Carl Franklin
+  </diretor>
+ </diretores>
+ <escritores>
+  <escritor>
+   Walter Mosley
+  </escritor>
+  <escritor>
+   Carl Franklin
+  </escritor>
+ </escritores>
+ <atores>
+  <ator>
+   Denzel Washington
+  </ator>
+  <ator>
+   Tom Sizemore
+  </ator>
+  <ator>
+   Jennifer Beals
+  </ator>
+ </atores>
+ <reviews>
+  <review>
+   <titulo>
+    Good lesser known thriller
+   </titulo>
+   <autor>
+    Maziun
+   </autor>
+   <data>
+    11/8/2013
+   </data>
+   <conteudo>
+    It was a nice experience to watch a movie set in Harlem . This is one of the few serious movies set in the black community . Usually when a movie is set in black community it's either a comedy or drama . This one is an interesting thriller . Kinda a neo-noir movie (although it doesn't exactly fits into that description  for example Easy isn't a detective ). I like the mood of Harlem here . I like the fact that main hero isn't 100% good guy. I like the mystery  the twists are really surprising and it's hard to figure out who is bad and who is good. The only problem I had was with the unexplained past of Easy and Mouse . It seems important for the story , yet never really much screen time is given for that subject . In the end I've got only muddled idea what happened in the past. Thankfully , it doesn't destroy the movie . There is some strong acting here . Denzel Washington ("Glory" ) is as charismatic as always in the leading role of Easy. I was positively surprised by Jennifer Beals ("Flashdance") as Daphne Monet . I didn't expected such mature role from here. She shows true talent here and proves she is more than a pretty face. My favorite is Don Cheadle ("Hotel Ruanda") as Mouse  typical "shoot first , then ask questions" kind of guy . He brings a lot of fun into movie. It's a well made movie with mystery , jokes and drama in it . I give it 7/10.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    devils in dresses, oh my...
+   </titulo>
+   <autor>
+    Threeline filmreviews
+   </autor>
+   <data>
+    3/11/2012
+   </data>
+   <conteudo>
+    Old timers say that casting is 97% of a motion picture. That's on display here - for good and bad. When the "Chimatown" moment occurs and the audience doesn't care is that the audience's fault... or the producers? devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and purple. kind of makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Devil in a Blue Dress (1995)
+   </titulo>
+   <autor>
+    Martin Teller
+   </autor>
+   <data>
+    3/1/2012
+   </data>
+   <conteudo>
+    Generally satisfying neo-noir with some intriguing racial implications (although they're not really explored with much depth). I don't know if it's possible for Washington to give a bad performance, if nothing else he can coast on pure charisma. The rest of the cast is not especially noteworthy, with the exception of Don Cheadle, who makes a lasting impression with very little screen time. The script falls a little bit short, something like Chandler in its construction but lacking in compelling dialogue. However, it keeps you watching, interested in how Washington is going to solve the case while trying to protect himself from attacks on all sides (including an eccentric and/or mentally challenged neighbor insistent on uprooting trees). Technically and production-wise the film is quite strong, evoking the feel of a classic noir (including an Elmer Bernstein score, who also composed for greats like SWEET SMELL OF SUCCESS and SUDDEN FEAR) while maintaining a modern sensibility. It didn't blow me away, but it's a solid movie, and I wouldn't mind checking Mosley's "Easy Rawlins" novels.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    A murder mystery in the style of the old Film Noir
+   </titulo>
+   <autor>
+    david-sarkies
+   </autor>
+   <data>
+    25/12/2011
+   </data>
+   <conteudo>
+    From the shorts to this movie I thought that it was about a Negro in the Southern United States who had been framed for the murder of a white girl and had to prove his innocence against a huge amount of discrimination. This movie is nothing of the sort. Rather it is set in Los Angeles in 1948. America faces a boom time economy, the war is over and the good times are everywhere. It is still a decade before the civil rights movement begins so Negroes are still treated as second class citizens. Everybody has a job and everybody is happy, all except a Negro named Ezekial (Denzel Washington). He is single and a World War II veteran. He moved to Los Angeles from Texas and has bought himself a house in the expanding suburbs in what will probably become South Central Los Angeles in the 1990's. He worked overtime and because of that was fired and now he is looking for a job. A friend who owns a bar hooks him up with somebody who wants a young lady found. This lady was the girlfriend of a rich Los Angeles businessman who is running for mayor and he wants her. What this movie turns out to be is a detective story. It seems to be a revisitation of the old 1940's and 1950's detective films such as the Big Sleep and The Maltese Falcon. The major difference is that this is not as dark as these other movies. Devil in a Blue Dress does portray a rather darker side to this era though. The 50's is generally considered to be a time when everything was good and politicians could be trusted. Movies such as this and L.A. Confidential appear and undermine the glamour of this era. In this movie we see corrupt politicians, racist cops, infidelity, child molestation. and severe segregation. There are a number of small themes in this movie, though the major one seems to be the removal of the fa&ccedil;ade that the 50's erected around itself. Ezekial was the subject of racist rebuke when the police try to pin the murder of a white man on him, and there is the issue of him being sacked for working overtime while a white man who does that is rewarded. Devil in a Blue Dress takes the 50's and destroys its credibility. It shows a suburb that one day will become a crime ridden slum. It can't be helped seeing South Central Los Angeles in this suburban paradise in the 50's. Such things are portrayed in other movies to, such as Back to the Future where the dream suburb becomes a haven of crime in the future. This is a movie that does not create the fa&ccedil;ade of a great America that has reached the pinnacle of civilisation. Rather it creates an America that is showing signs of decay even in its finest hour.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Origin story to nowhere
+   </titulo>
+   <autor>
+    Jonny 99
+   </autor>
+   <data>
+    27/10/2011
+   </data>
+   <conteudo>
+    The most interesting element of the film is what happened subsequent to its release  nothing. All the elements of a good origin story for a movie franchise or a television adaptation (like "MASH") are there: a compelling main character ("Easy Rawlings") a setup for further adventures and the books of Walter Mosley for plot ideas. Also race, which is an essential element to the story of 1948 Los Angeles, continues to be a compelling social topic. Certainly some inherent challenges may have dogged efforts to bring the stories to the big or small screen. Period dramas, particularly those that necessitate car chases through long gone parts of Los Angeles, are expensive and difficult to stage and film. Also, the deus ex machina character of "Mouse" played by Don Cheadle presents some serious moral problems with his twitchiest of hair triggers. Also some of the attempts of dark humor focused mainly around Mouse in a serious noir are jarring and out of context with such dark material. As a standalone film, "Devil in a Blue Dress"-presumably not originally based on the Mitch Ryder song-garners a lot of unproven claims of being underrated from internet and mainstream commentators. Certainly, the movie entertains as Rawlings unravels a mystery involving murder, politics and Jennifer Beals in an early role against a backdrop of racial inequity in America's golden west. However, all of these elements are employed to far more compelling effect in a movie two years later called "L.A. Confidential." In short, fans of noir or Washington / Cheadle should find this as required reading while others should just go with "L.A. Confidential".
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Way over the top....and LOVED IT....
+   </titulo>
+   <autor>
+    michael germaine
+   </autor>
+   <data>
+    18/3/2011
+   </data>
+   <conteudo>
+    "FRANK IS MY BROTHER" Talk about subplots of subplots...you really have to pay attention to follow the story. Great cast and great characters..The film has a great look and a very fast pace. I'm surprised it didn't do well at the box office but neither did The Black Dalia or Mulholland Falls. Gotta love Mouse....he just rolled in and then just rolled out...he had some perfect timing It just wouldn't have been right if Luke(the crazy gardener) didn't check in near the end. Great sound track. It was rare a black man could win in the late 40's. Where there is politics, there is money and murder. Still true today. I'm glad Easy(Denzel) decided to become a private eye. How could he go back to a 9 to 5?
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Murder, Corruption & Crossing The Line
+   </titulo>
+   <autor>
+    seymourblack-1
+   </autor>
+   <data>
+    12/2/2011
+   </data>
+   <conteudo>
+    An ordinary guy in a fix tries to get out of it, but in so doing, actually gets himself in deeper trouble. This type of plot may be very familiar but it's also utterly irresistible. What makes it so compelling is that it's the type of predicament that most people can immediately relate to and as a consequence soon find themselves empathising with the hapless protagonist. In "Devil In A Blue Dress" the audience's inclination to respond in this way is made even stronger by the use of a narration which also helps to drive the story forward. In 1948 L.A. World War 11 veteran, ex-factory worker and homeowner Ezekiel "Easy" Rawlins (Denzel Washington) finds himself unemployed and in urgent need of funds to keep his mortgage payments up to date. Easy's efforts to find a job have, so far, drawn a blank and the longer his predicament continues, the more desperate his need for work becomes. Knowing of his plight, one of his friends introduces him to DeWitt Albright (Tom Sizemore) who claims that he's a man who "does favours for friends". Albright offers Easy $100 to find a mysterious woman called Daphne Monet (Jennifer Beals) who was the fianc&eacute;e of a mayoral candidate who'd withdrawn from the race when she'd disappeared. Easy is instinctively suspicious of Albright but can't afford to turn down the money on offer. He takes the job and soon finds that his misgivings were well founded as his investigations lead to him being suspected of two murders, being beaten by the police and also threatened by Albright's henchmen as well as Monet's half brother. It later emerges that Daphne's association with her gangster half brother and her mixed racial heritage had derailed both her relationship with her fianc&eacute; and also his political ambitions. His opponent's candidature would also be brought to an abrupt end, however, if his own personal depravity and its connection with the two murders were to be exposed. Through his efforts to complete his investigations, Easy gets well rewarded financially but also gets involved in some more life threatening violence. "Devil In A Blue Dress" is a Raymond Chandler influenced thriller with a typically complicated plot about blackmail, murder, immorality and corruption which also features numerous moments of unexpected humour. Its recreation of the period in which the action is set looks really authentic and the choice of colours used reinforces this impression. The atmosphere of the time is also enhanced powerfully by the superb soundtrack. "Devil In A Blue Dress" depicts a time in which racial segregation was a part of everyday life and the dangers of crossing the lines were very real. DeWitt Albright was a white man who avoided crossing the line by hiring Easy to undertake an investigation which needed to be carried out predominantly in the black community. Daphne Monet's romance was blighted by racism and Easy's discomfort in situations where he had to cross the line was also very clear. This movie features a fascinating bunch of characters and the choice of Denzel Washington for the lead role is perfect as he personifies so well the down to earth nature of a decent man who has to deal with difficult circumstances. The entire cast give very creditable performances but Don Cheadle's portrayal of Easy's gun happy psycho friend from Huston is a real standout.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Solid neo noir, worth watching for Denzel
+   </titulo>
+   <autor>
+    tieman64
+   </autor>
+   <data>
+    27/1/2011
+   </data>
+   <conteudo>
+    "You step out of your door in the morning and you're already in trouble. The only question is: are you on top of that trouble or not?" - Easy Rawlins "Devil In A Blue Dress" wants to be the African American "Chinatown", and director Carl Franklin comes close. All the noir ingredients are here - a gumshoe with a cool name (Easy Rawlins, played by Denzel Washington), moody cinematography, an LA location, a missing woman, femme fatales, a last act revelation, the genre's usual assortment of crooks, conflicts, seedy joints and crooked cops etc  but Franklin isn't strong enough a stylist to make his noir landscape come alive, isn't skilled enough a director to maintain the tension and isn't deep enough an artist to handle anything more than themes of racism and prejudice, though his film does address the white-centric view of 1940s LA which most noirs erroneously put forth. 7.9/10  This film would play better with stronger dialogue. As it is, it has no contemporary relevance or connection and exists only to satisfy a certain "noir nostalgia". Still, like De Niro's "True Confessions", this is a worthy second tier neo-noir. Makes a good companion piece to "Mulholland Falls", "Hollywoodland", "LA Confidential" and "Lonelyhearts", four other "not quiet successful" modern neo noirs set in the 1940s. Worth one viewing.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Out of focus noir ..........
+   </titulo>
+   <autor>
+    merklekranz
+   </autor>
+   <data>
+    20/12/2009
+   </data>
+   <conteudo>
+    The acting is good, especially by Don Cheadle and Tom Sizemore. Denzel Washington and Jennifer Beals characters seem pale by comparison. The voice overs confirm that the story is way more complex than necessary, and eventually the script backs itself into a corner. The 1940s atmosphere is wonderful, but that cannot overcome the weakness of the confusing plot. The film lacks warmth, with no really likable characters, including Denzel Washington. In the end his character seems more like an antihero. My conclusion is that "Devil in a Blue Dress", while atmospheric, misses the mark as entertainment because of all the confusion, and too many annoying plot holes. - MERK
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Flavorless Neo Noir.
+   </titulo>
+   <autor>
+    Robert J. Maxwell (rmax304823@yahoo.com)
+   </autor>
+   <data>
+    29/7/2009
+   </data>
+   <conteudo>
+    The acting is up to professional standards. Denzel Washington is in the lead as a jobless ex-GI in 1947 Los Angeles who is hired by a stranger to find a white girl named Daphne. He does a good job, as usual, without being in the least extravagant. The supporting players are all equally good, with Don Cheadle in the flashiest role as a friendly killer. Jennifer Beals as the mysterious and missing devil in the blue dress is competent and attractive. You have never seen such huge, glistening black eyes. Why hasn't she gotten better parts? Location shooting is done carefully too. Lots of nice shots of seedier locations as well as a couple of the kind of faux country estates we saw so often on "Columbo." Washington, of course, is African-American, and Beals is passable as a Creole from Louisiana. Relationships between the police and the black community are sketched out in what's probably realistic detail. The heavy handedness of the cops should come as no surprise to anyone who's seen "L.A. Confidential," although it may shock some who grew up on "Dragnet." The racial divide isn't imposed willy nilly on the script, either. This is an unashamed noir. There's no attempt to make racism the central issue. It may be difficult for some of us to accept the notion that a politician's marriage to a woman who is partly of black parentage would stultify his career but it was true enough. Still, the movie fails to engage. The narrative is murky, the action turgid, and there is a narration by Washington that serves as a familiar crutch for a weak story. It does nothing more than fill us in on the details of Washington's peregrinations, without adding anything more. It's Raymond Chandler without the fustian poetry or the scintillating cynicism. Washington's voice over never tells us that some babe had "hair the color of gold in old paintings." It only tells us things like, "I figured I'd better get out of there." I didn't really care much about anyone but Washington's out-of-work nice guy. I wanted him to make enough money to pay off his mortgage. That was about it. Well -- of course I didn't want to see Jennifer Beals tortured with that red hot poker either, although I wouldn't have minded if her captors had torn her clothes a little. Or, I guess the script could even have let her take a long, languorous bath. Chandler and Hammett never had especially gripping characters either but Chandler carried us along with his blunt, boozy charm, and Hammett bootlegged in a philosophy of life. Speaking of "carried," Washington has a line he speaks to Beals. "Change out of that house coat. Come on, I'll carry you home." Washington doesn't mean he's going to sweep her up in his arms and schlep her across town. He means he's going to escort her home in his vehicle. This is an old-fashioned, mostly Southern usage. It dates back to before the Civil War, as in "Carry Me Back to Old Virginny." I didn't mean to carry on so, but that sentence was one of the few things in the movie that roused my attention.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Good lesser known thriller
+   </titulo>
+   <autor>
+    Maziun
+   </autor>
+   <data>
+    11/8/2013
+   </data>
+   <conteudo>
+    It was a nice experience to watch a movie set in Harlem . This is one of the few serious movies set in the black community . Usually when a movie is set in black community it's either a comedy or drama . This one is an interesting thriller . Kinda a neo-noir movie (although it doesn't exactly fits into that description  for example Easy isn't a detective ). I like the mood of Harlem here . I like the fact that main hero isn't 100% good guy. I like the mystery  the twists are really surprising and it's hard to figure out who is bad and who is good. The only problem I had was with the unexplained past of Easy and Mouse . It seems important for the story , yet never really much screen time is given for that subject . In the end I've got only muddled idea what happened in the past. Thankfully , it doesn't destroy the movie . There is some strong acting here . Denzel Washington ("Glory" ) is as charismatic as always in the leading role of Easy. I was positively surprised by Jennifer Beals ("Flashdance") as Daphne Monet . I didn't expected such mature role from here. She shows true talent here and proves she is more than a pretty face. My favorite is Don Cheadle ("Hotel Ruanda") as Mouse  typical "shoot first , then ask questions" kind of guy . He brings a lot of fun into movie. It's a well made movie with mystery , jokes and drama in it . I give it 7/10.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    devils in dresses, oh my...
+   </titulo>
+   <autor>
+    Threeline filmreviews
+   </autor>
+   <data>
+    3/11/2012
+   </data>
+   <conteudo>
+    Old timers say that casting is 97% of a motion picture. That's on display here - for good and bad. When the "Chimatown" moment occurs and the audience doesn't care is that the audience's fault... or the producers? devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and purple. kind of makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Devil in a Blue Dress (1995)
+   </titulo>
+   <autor>
+    Martin Teller
+   </autor>
+   <data>
+    3/1/2012
+   </data>
+   <conteudo>
+    Generally satisfying neo-noir with some intriguing racial implications (although they're not really explored with much depth). I don't know if it's possible for Washington to give a bad performance, if nothing else he can coast on pure charisma. The rest of the cast is not especially noteworthy, with the exception of Don Cheadle, who makes a lasting impression with very little screen time. The script falls a little bit short, something like Chandler in its construction but lacking in compelling dialogue. However, it keeps you watching, interested in how Washington is going to solve the case while trying to protect himself from attacks on all sides (including an eccentric and/or mentally challenged neighbor insistent on uprooting trees). Technically and production-wise the film is quite strong, evoking the feel of a classic noir (including an Elmer Bernstein score, who also composed for greats like SWEET SMELL OF SUCCESS and SUDDEN FEAR) while maintaining a modern sensibility. It didn't blow me away, but it's a solid movie, and I wouldn't mind checking Mosley's "Easy Rawlins" novels.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    A murder mystery in the style of the old Film Noir
+   </titulo>
+   <autor>
+    david-sarkies
+   </autor>
+   <data>
+    25/12/2011
+   </data>
+   <conteudo>
+    From the shorts to this movie I thought that it was about a Negro in the Southern United States who had been framed for the murder of a white girl and had to prove his innocence against a huge amount of discrimination. This movie is nothing of the sort. Rather it is set in Los Angeles in 1948. America faces a boom time economy, the war is over and the good times are everywhere. It is still a decade before the civil rights movement begins so Negroes are still treated as second class citizens. Everybody has a job and everybody is happy, all except a Negro named Ezekial (Denzel Washington). He is single and a World War II veteran. He moved to Los Angeles from Texas and has bought himself a house in the expanding suburbs in what will probably become South Central Los Angeles in the 1990's. He worked overtime and because of that was fired and now he is looking for a job. A friend who owns a bar hooks him up with somebody who wants a young lady found. This lady was the girlfriend of a rich Los Angeles businessman who is running for mayor and he wants her. What this movie turns out to be is a detective story. It seems to be a revisitation of the old 1940's and 1950's detective films such as the Big Sleep and The Maltese Falcon. The major difference is that this is not as dark as these other movies. Devil in a Blue Dress does portray a rather darker side to this era though. The 50's is generally considered to be a time when everything was good and politicians could be trusted. Movies such as this and L.A. Confidential appear and undermine the glamour of this era. In this movie we see corrupt politicians, racist cops, infidelity, child molestation. and severe segregation. There are a number of small themes in this movie, though the major one seems to be the removal of the fa&ccedil;ade that the 50's erected around itself. Ezekial was the subject of racist rebuke when the police try to pin the murder of a white man on him, and there is the issue of him being sacked for working overtime while a white man who does that is rewarded. Devil in a Blue Dress takes the 50's and destroys its credibility. It shows a suburb that one day will become a crime ridden slum. It can't be helped seeing South Central Los Angeles in this suburban paradise in the 50's. Such things are portrayed in other movies to, such as Back to the Future where the dream suburb becomes a haven of crime in the future. This is a movie that does not create the fa&ccedil;ade of a great America that has reached the pinnacle of civilisation. Rather it creates an America that is showing signs of decay even in its finest hour.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Origin story to nowhere
+   </titulo>
+   <autor>
+    Jonny 99
+   </autor>
+   <data>
+    27/10/2011
+   </data>
+   <conteudo>
+    The most interesting element of the film is what happened subsequent to its release  nothing. All the elements of a good origin story for a movie franchise or a television adaptation (like "MASH") are there: a compelling main character ("Easy Rawlings") a setup for further adventures and the books of Walter Mosley for plot ideas. Also race, which is an essential element to the story of 1948 Los Angeles, continues to be a compelling social topic. Certainly some inherent challenges may have dogged efforts to bring the stories to the big or small screen. Period dramas, particularly those that necessitate car chases through long gone parts of Los Angeles, are expensive and difficult to stage and film. Also, the deus ex machina character of "Mouse" played by Don Cheadle presents some serious moral problems with his twitchiest of hair triggers. Also some of the attempts of dark humor focused mainly around Mouse in a serious noir are jarring and out of context with such dark material. As a standalone film, "Devil in a Blue Dress"-presumably not originally based on the Mitch Ryder song-garners a lot of unproven claims of being underrated from internet and mainstream commentators. Certainly, the movie entertains as Rawlings unravels a mystery involving murder, politics and Jennifer Beals in an early role against a backdrop of racial inequity in America's golden west. However, all of these elements are employed to far more compelling effect in a movie two years later called "L.A. Confidential." In short, fans of noir or Washington / Cheadle should find this as required reading while others should just go with "L.A. Confidential".
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Way over the top....and LOVED IT....
+   </titulo>
+   <autor>
+    michael germaine
+   </autor>
+   <data>
+    18/3/2011
+   </data>
+   <conteudo>
+    "FRANK IS MY BROTHER" Talk about subplots of subplots...you really have to pay attention to follow the story. Great cast and great characters..The film has a great look and a very fast pace. I'm surprised it didn't do well at the box office but neither did The Black Dalia or Mulholland Falls. Gotta love Mouse....he just rolled in and then just rolled out...he had some perfect timing It just wouldn't have been right if Luke(the crazy gardener) didn't check in near the end. Great sound track. It was rare a black man could win in the late 40's. Where there is politics, there is money and murder. Still true today. I'm glad Easy(Denzel) decided to become a private eye. How could he go back to a 9 to 5?
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Murder, Corruption & Crossing The Line
+   </titulo>
+   <autor>
+    seymourblack-1
+   </autor>
+   <data>
+    12/2/2011
+   </data>
+   <conteudo>
+    An ordinary guy in a fix tries to get out of it, but in so doing, actually gets himself in deeper trouble. This type of plot may be very familiar but it's also utterly irresistible. What makes it so compelling is that it's the type of predicament that most people can immediately relate to and as a consequence soon find themselves empathising with the hapless protagonist. In "Devil In A Blue Dress" the audience's inclination to respond in this way is made even stronger by the use of a narration which also helps to drive the story forward. In 1948 L.A. World War 11 veteran, ex-factory worker and homeowner Ezekiel "Easy" Rawlins (Denzel Washington) finds himself unemployed and in urgent need of funds to keep his mortgage payments up to date. Easy's efforts to find a job have, so far, drawn a blank and the longer his predicament continues, the more desperate his need for work becomes. Knowing of his plight, one of his friends introduces him to DeWitt Albright (Tom Sizemore) who claims that he's a man who "does favours for friends". Albright offers Easy $100 to find a mysterious woman called Daphne Monet (Jennifer Beals) who was the fianc&eacute;e of a mayoral candidate who'd withdrawn from the race when she'd disappeared. Easy is instinctively suspicious of Albright but can't afford to turn down the money on offer. He takes the job and soon finds that his misgivings were well founded as his investigations lead to him being suspected of two murders, being beaten by the police and also threatened by Albright's henchmen as well as Monet's half brother. It later emerges that Daphne's association with her gangster half brother and her mixed racial heritage had derailed both her relationship with her fianc&eacute; and also his political ambitions. His opponent's candidature would also be brought to an abrupt end, however, if his own personal depravity and its connection with the two murders were to be exposed. Through his efforts to complete his investigations, Easy gets well rewarded financially but also gets involved in some more life threatening violence. "Devil In A Blue Dress" is a Raymond Chandler influenced thriller with a typically complicated plot about blackmail, murder, immorality and corruption which also features numerous moments of unexpected humour. Its recreation of the period in which the action is set looks really authentic and the choice of colours used reinforces this impression. The atmosphere of the time is also enhanced powerfully by the superb soundtrack. "Devil In A Blue Dress" depicts a time in which racial segregation was a part of everyday life and the dangers of crossing the lines were very real. DeWitt Albright was a white man who avoided crossing the line by hiring Easy to undertake an investigation which needed to be carried out predominantly in the black community. Daphne Monet's romance was blighted by racism and Easy's discomfort in situations where he had to cross the line was also very clear. This movie features a fascinating bunch of characters and the choice of Denzel Washington for the lead role is perfect as he personifies so well the down to earth nature of a decent man who has to deal with difficult circumstances. The entire cast give very creditable performances but Don Cheadle's portrayal of Easy's gun happy psycho friend from Huston is a real standout.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Solid neo noir, worth watching for Denzel
+   </titulo>
+   <autor>
+    tieman64
+   </autor>
+   <data>
+    27/1/2011
+   </data>
+   <conteudo>
+    "You step out of your door in the morning and you're already in trouble. The only question is: are you on top of that trouble or not?" - Easy Rawlins "Devil In A Blue Dress" wants to be the African American "Chinatown", and director Carl Franklin comes close. All the noir ingredients are here - a gumshoe with a cool name (Easy Rawlins, played by Denzel Washington), moody cinematography, an LA location, a missing woman, femme fatales, a last act revelation, the genre's usual assortment of crooks, conflicts, seedy joints and crooked cops etc  but Franklin isn't strong enough a stylist to make his noir landscape come alive, isn't skilled enough a director to maintain the tension and isn't deep enough an artist to handle anything more than themes of racism and prejudice, though his film does address the white-centric view of 1940s LA which most noirs erroneously put forth. 7.9/10  This film would play better with stronger dialogue. As it is, it has no contemporary relevance or connection and exists only to satisfy a certain "noir nostalgia". Still, like De Niro's "True Confessions", this is a worthy second tier neo-noir. Makes a good companion piece to "Mulholland Falls", "Hollywoodland", "LA Confidential" and "Lonelyhearts", four other "not quiet successful" modern neo noirs set in the 1940s. Worth one viewing.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Out of focus noir ..........
+   </titulo>
+   <autor>
+    merklekranz
+   </autor>
+   <data>
+    20/12/2009
+   </data>
+   <conteudo>
+    The acting is good, especially by Don Cheadle and Tom Sizemore. Denzel Washington and Jennifer Beals characters seem pale by comparison. The voice overs confirm that the story is way more complex than necessary, and eventually the script backs itself into a corner. The 1940s atmosphere is wonderful, but that cannot overcome the weakness of the confusing plot. The film lacks warmth, with no really likable characters, including Denzel Washington. In the end his character seems more like an antihero. My conclusion is that "Devil in a Blue Dress", while atmospheric, misses the mark as entertainment because of all the confusion, and too many annoying plot holes. - MERK
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Flavorless Neo Noir.
+   </titulo>
+   <autor>
+    Robert J. Maxwell (rmax304823@yahoo.com)
+   </autor>
+   <data>
+    29/7/2009
+   </data>
+   <conteudo>
+    The acting is up to professional standards. Denzel Washington is in the lead as a jobless ex-GI in 1947 Los Angeles who is hired by a stranger to find a white girl named Daphne. He does a good job, as usual, without being in the least extravagant. The supporting players are all equally good, with Don Cheadle in the flashiest role as a friendly killer. Jennifer Beals as the mysterious and missing devil in the blue dress is competent and attractive. You have never seen such huge, glistening black eyes. Why hasn't she gotten better parts? Location shooting is done carefully too. Lots of nice shots of seedier locations as well as a couple of the kind of faux country estates we saw so often on "Columbo." Washington, of course, is African-American, and Beals is passable as a Creole from Louisiana. Relationships between the police and the black community are sketched out in what's probably realistic detail. The heavy handedness of the cops should come as no surprise to anyone who's seen "L.A. Confidential," although it may shock some who grew up on "Dragnet." The racial divide isn't imposed willy nilly on the script, either. This is an unashamed noir. There's no attempt to make racism the central issue. It may be difficult for some of us to accept the notion that a politician's marriage to a woman who is partly of black parentage would stultify his career but it was true enough. Still, the movie fails to engage. The narrative is murky, the action turgid, and there is a narration by Washington that serves as a familiar crutch for a weak story. It does nothing more than fill us in on the details of Washington's peregrinations, without adding anything more. It's Raymond Chandler without the fustian poetry or the scintillating cynicism. Washington's voice over never tells us that some babe had "hair the color of gold in old paintings." It only tells us things like, "I figured I'd better get out of there." I didn't really care much about anyone but Washington's out-of-work nice guy. I wanted him to make enough money to pay off his mortgage. That was about it. Well -- of course I didn't want to see Jennifer Beals tortured with that red hot poker either, although I wouldn't have minded if her captors had torn her clothes a little. Or, I guess the script could even have let her take a long, languorous bath. Chandler and Hammett never had especially gripping characters either but Chandler carried us along with his blunt, boozy charm, and Hammett bootlegged in a philosophy of life. Speaking of "carried," Washington has a line he speaks to Beals. "Change out of that house coat. Come on, I'll carry you home." Washington doesn't mean he's going to sweep her up in his arms and schlep her across town. He means he's going to escort her home in his vehicle. This is an old-fashioned, mostly Southern usage. It dates back to before the Civil War, as in "Carry Me Back to Old Virginny." I didn't mean to carry on so, but that sentence was one of the few things in the movie that roused my attention.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Good lesser known thriller
+   </titulo>
+   <autor>
+    Maziun
+   </autor>
+   <data>
+    11/8/2013
+   </data>
+   <conteudo>
+    It was a nice experience to watch a movie set in Harlem . This is one of the few serious movies set in the black community . Usually when a movie is set in black community it's either a comedy or drama . This one is an interesting thriller . Kinda a neo-noir movie (although it doesn't exactly fits into that description  for example Easy isn't a detective ). I like the mood of Harlem here . I like the fact that main hero isn't 100% good guy. I like the mystery  the twists are really surprising and it's hard to figure out who is bad and who is good. The only problem I had was with the unexplained past of Easy and Mouse . It seems important for the story , yet never really much screen time is given for that subject . In the end I've got only muddled idea what happened in the past. Thankfully , it doesn't destroy the movie . There is some strong acting here . Denzel Washington ("Glory" ) is as charismatic as always in the leading role of Easy. I was positively surprised by Jennifer Beals ("Flashdance") as Daphne Monet . I didn't expected such mature role from here. She shows true talent here and proves she is more than a pretty face. My favorite is Don Cheadle ("Hotel Ruanda") as Mouse  typical "shoot first , then ask questions" kind of guy . He brings a lot of fun into movie. It's a well made movie with mystery , jokes and drama in it . I give it 7/10.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    devils in dresses, oh my...
+   </titulo>
+   <autor>
+    Threeline filmreviews
+   </autor>
+   <data>
+    3/11/2012
+   </data>
+   <conteudo>
+    Old timers say that casting is 97% of a motion picture. That's on display here - for good and bad. When the "Chimatown" moment occurs and the audience doesn't care is that the audience's fault... or the producers? devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and purple. kind of makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Devil in a Blue Dress (1995)
+   </titulo>
+   <autor>
+    Martin Teller
+   </autor>
+   <data>
+    3/1/2012
+   </data>
+   <conteudo>
+    Generally satisfying neo-noir with some intriguing racial implications (although they're not really explored with much depth). I don't know if it's possible for Washington to give a bad performance, if nothing else he can coast on pure charisma. The rest of the cast is not especially noteworthy, with the exception of Don Cheadle, who makes a lasting impression with very little screen time. The script falls a little bit short, something like Chandler in its construction but lacking in compelling dialogue. However, it keeps you watching, interested in how Washington is going to solve the case while trying to protect himself from attacks on all sides (including an eccentric and/or mentally challenged neighbor insistent on uprooting trees). Technically and production-wise the film is quite strong, evoking the feel of a classic noir (including an Elmer Bernstein score, who also composed for greats like SWEET SMELL OF SUCCESS and SUDDEN FEAR) while maintaining a modern sensibility. It didn't blow me away, but it's a solid movie, and I wouldn't mind checking Mosley's "Easy Rawlins" novels.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    A murder mystery in the style of the old Film Noir
+   </titulo>
+   <autor>
+    david-sarkies
+   </autor>
+   <data>
+    25/12/2011
+   </data>
+   <conteudo>
+    From the shorts to this movie I thought that it was about a Negro in the Southern United States who had been framed for the murder of a white girl and had to prove his innocence against a huge amount of discrimination. This movie is nothing of the sort. Rather it is set in Los Angeles in 1948. America faces a boom time economy, the war is over and the good times are everywhere. It is still a decade before the civil rights movement begins so Negroes are still treated as second class citizens. Everybody has a job and everybody is happy, all except a Negro named Ezekial (Denzel Washington). He is single and a World War II veteran. He moved to Los Angeles from Texas and has bought himself a house in the expanding suburbs in what will probably become South Central Los Angeles in the 1990's. He worked overtime and because of that was fired and now he is looking for a job. A friend who owns a bar hooks him up with somebody who wants a young lady found. This lady was the girlfriend of a rich Los Angeles businessman who is running for mayor and he wants her. What this movie turns out to be is a detective story. It seems to be a revisitation of the old 1940's and 1950's detective films such as the Big Sleep and The Maltese Falcon. The major difference is that this is not as dark as these other movies. Devil in a Blue Dress does portray a rather darker side to this era though. The 50's is generally considered to be a time when everything was good and politicians could be trusted. Movies such as this and L.A. Confidential appear and undermine the glamour of this era. In this movie we see corrupt politicians, racist cops, infidelity, child molestation. and severe segregation. There are a number of small themes in this movie, though the major one seems to be the removal of the fa&ccedil;ade that the 50's erected around itself. Ezekial was the subject of racist rebuke when the police try to pin the murder of a white man on him, and there is the issue of him being sacked for working overtime while a white man who does that is rewarded. Devil in a Blue Dress takes the 50's and destroys its credibility. It shows a suburb that one day will become a crime ridden slum. It can't be helped seeing South Central Los Angeles in this suburban paradise in the 50's. Such things are portrayed in other movies to, such as Back to the Future where the dream suburb becomes a haven of crime in the future. This is a movie that does not create the fa&ccedil;ade of a great America that has reached the pinnacle of civilisation. Rather it creates an America that is showing signs of decay even in its finest hour.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Origin story to nowhere
+   </titulo>
+   <autor>
+    Jonny 99
+   </autor>
+   <data>
+    27/10/2011
+   </data>
+   <conteudo>
+    The most interesting element of the film is what happened subsequent to its release  nothing. All the elements of a good origin story for a movie franchise or a television adaptation (like "MASH") are there: a compelling main character ("Easy Rawlings") a setup for further adventures and the books of Walter Mosley for plot ideas. Also race, which is an essential element to the story of 1948 Los Angeles, continues to be a compelling social topic. Certainly some inherent challenges may have dogged efforts to bring the stories to the big or small screen. Period dramas, particularly those that necessitate car chases through long gone parts of Los Angeles, are expensive and difficult to stage and film. Also, the deus ex machina character of "Mouse" played by Don Cheadle presents some serious moral problems with his twitchiest of hair triggers. Also some of the attempts of dark humor focused mainly around Mouse in a serious noir are jarring and out of context with such dark material. As a standalone film, "Devil in a Blue Dress"-presumably not originally based on the Mitch Ryder song-garners a lot of unproven claims of being underrated from internet and mainstream commentators. Certainly, the movie entertains as Rawlings unravels a mystery involving murder, politics and Jennifer Beals in an early role against a backdrop of racial inequity in America's golden west. However, all of these elements are employed to far more compelling effect in a movie two years later called "L.A. Confidential." In short, fans of noir or Washington / Cheadle should find this as required reading while others should just go with "L.A. Confidential".
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Way over the top....and LOVED IT....
+   </titulo>
+   <autor>
+    michael germaine
+   </autor>
+   <data>
+    18/3/2011
+   </data>
+   <conteudo>
+    "FRANK IS MY BROTHER" Talk about subplots of subplots...you really have to pay attention to follow the story. Great cast and great characters..The film has a great look and a very fast pace. I'm surprised it didn't do well at the box office but neither did The Black Dalia or Mulholland Falls. Gotta love Mouse....he just rolled in and then just rolled out...he had some perfect timing It just wouldn't have been right if Luke(the crazy gardener) didn't check in near the end. Great sound track. It was rare a black man could win in the late 40's. Where there is politics, there is money and murder. Still true today. I'm glad Easy(Denzel) decided to become a private eye. How could he go back to a 9 to 5?
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Murder, Corruption & Crossing The Line
+   </titulo>
+   <autor>
+    seymourblack-1
+   </autor>
+   <data>
+    12/2/2011
+   </data>
+   <conteudo>
+    An ordinary guy in a fix tries to get out of it, but in so doing, actually gets himself in deeper trouble. This type of plot may be very familiar but it's also utterly irresistible. What makes it so compelling is that it's the type of predicament that most people can immediately relate to and as a consequence soon find themselves empathising with the hapless protagonist. In "Devil In A Blue Dress" the audience's inclination to respond in this way is made even stronger by the use of a narration which also helps to drive the story forward. In 1948 L.A. World War 11 veteran, ex-factory worker and homeowner Ezekiel "Easy" Rawlins (Denzel Washington) finds himself unemployed and in urgent need of funds to keep his mortgage payments up to date. Easy's efforts to find a job have, so far, drawn a blank and the longer his predicament continues, the more desperate his need for work becomes. Knowing of his plight, one of his friends introduces him to DeWitt Albright (Tom Sizemore) who claims that he's a man who "does favours for friends". Albright offers Easy $100 to find a mysterious woman called Daphne Monet (Jennifer Beals) who was the fianc&eacute;e of a mayoral candidate who'd withdrawn from the race when she'd disappeared. Easy is instinctively suspicious of Albright but can't afford to turn down the money on offer. He takes the job and soon finds that his misgivings were well founded as his investigations lead to him being suspected of two murders, being beaten by the police and also threatened by Albright's henchmen as well as Monet's half brother. It later emerges that Daphne's association with her gangster half brother and her mixed racial heritage had derailed both her relationship with her fianc&eacute; and also his political ambitions. His opponent's candidature would also be brought to an abrupt end, however, if his own personal depravity and its connection with the two murders were to be exposed. Through his efforts to complete his investigations, Easy gets well rewarded financially but also gets involved in some more life threatening violence. "Devil In A Blue Dress" is a Raymond Chandler influenced thriller with a typically complicated plot about blackmail, murder, immorality and corruption which also features numerous moments of unexpected humour. Its recreation of the period in which the action is set looks really authentic and the choice of colours used reinforces this impression. The atmosphere of the time is also enhanced powerfully by the superb soundtrack. "Devil In A Blue Dress" depicts a time in which racial segregation was a part of everyday life and the dangers of crossing the lines were very real. DeWitt Albright was a white man who avoided crossing the line by hiring Easy to undertake an investigation which needed to be carried out predominantly in the black community. Daphne Monet's romance was blighted by racism and Easy's discomfort in situations where he had to cross the line was also very clear. This movie features a fascinating bunch of characters and the choice of Denzel Washington for the lead role is perfect as he personifies so well the down to earth nature of a decent man who has to deal with difficult circumstances. The entire cast give very creditable performances but Don Cheadle's portrayal of Easy's gun happy psycho friend from Huston is a real standout.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Solid neo noir, worth watching for Denzel
+   </titulo>
+   <autor>
+    tieman64
+   </autor>
+   <data>
+    27/1/2011
+   </data>
+   <conteudo>
+    "You step out of your door in the morning and you're already in trouble. The only question is: are you on top of that trouble or not?" - Easy Rawlins "Devil In A Blue Dress" wants to be the African American "Chinatown", and director Carl Franklin comes close. All the noir ingredients are here - a gumshoe with a cool name (Easy Rawlins, played by Denzel Washington), moody cinematography, an LA location, a missing woman, femme fatales, a last act revelation, the genre's usual assortment of crooks, conflicts, seedy joints and crooked cops etc  but Franklin isn't strong enough a stylist to make his noir landscape come alive, isn't skilled enough a director to maintain the tension and isn't deep enough an artist to handle anything more than themes of racism and prejudice, though his film does address the white-centric view of 1940s LA which most noirs erroneously put forth. 7.9/10  This film would play better with stronger dialogue. As it is, it has no contemporary relevance or connection and exists only to satisfy a certain "noir nostalgia". Still, like De Niro's "True Confessions", this is a worthy second tier neo-noir. Makes a good companion piece to "Mulholland Falls", "Hollywoodland", "LA Confidential" and "Lonelyhearts", four other "not quiet successful" modern neo noirs set in the 1940s. Worth one viewing.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Out of focus noir ..........
+   </titulo>
+   <autor>
+    merklekranz
+   </autor>
+   <data>
+    20/12/2009
+   </data>
+   <conteudo>
+    The acting is good, especially by Don Cheadle and Tom Sizemore. Denzel Washington and Jennifer Beals characters seem pale by comparison. The voice overs confirm that the story is way more complex than necessary, and eventually the script backs itself into a corner. The 1940s atmosphere is wonderful, but that cannot overcome the weakness of the confusing plot. The film lacks warmth, with no really likable characters, including Denzel Washington. In the end his character seems more like an antihero. My conclusion is that "Devil in a Blue Dress", while atmospheric, misses the mark as entertainment because of all the confusion, and too many annoying plot holes. - MERK
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Flavorless Neo Noir.
+   </titulo>
+   <autor>
+    Robert J. Maxwell (rmax304823@yahoo.com)
+   </autor>
+   <data>
+    29/7/2009
+   </data>
+   <conteudo>
+    The acting is up to professional standards. Denzel Washington is in the lead as a jobless ex-GI in 1947 Los Angeles who is hired by a stranger to find a white girl named Daphne. He does a good job, as usual, without being in the least extravagant. The supporting players are all equally good, with Don Cheadle in the flashiest role as a friendly killer. Jennifer Beals as the mysterious and missing devil in the blue dress is competent and attractive. You have never seen such huge, glistening black eyes. Why hasn't she gotten better parts? Location shooting is done carefully too. Lots of nice shots of seedier locations as well as a couple of the kind of faux country estates we saw so often on "Columbo." Washington, of course, is African-American, and Beals is passable as a Creole from Louisiana. Relationships between the police and the black community are sketched out in what's probably realistic detail. The heavy handedness of the cops should come as no surprise to anyone who's seen "L.A. Confidential," although it may shock some who grew up on "Dragnet." The racial divide isn't imposed willy nilly on the script, either. This is an unashamed noir. There's no attempt to make racism the central issue. It may be difficult for some of us to accept the notion that a politician's marriage to a woman who is partly of black parentage would stultify his career but it was true enough. Still, the movie fails to engage. The narrative is murky, the action turgid, and there is a narration by Washington that serves as a familiar crutch for a weak story. It does nothing more than fill us in on the details of Washington's peregrinations, without adding anything more. It's Raymond Chandler without the fustian poetry or the scintillating cynicism. Washington's voice over never tells us that some babe had "hair the color of gold in old paintings." It only tells us things like, "I figured I'd better get out of there." I didn't really care much about anyone but Washington's out-of-work nice guy. I wanted him to make enough money to pay off his mortgage. That was about it. Well -- of course I didn't want to see Jennifer Beals tortured with that red hot poker either, although I wouldn't have minded if her captors had torn her clothes a little. Or, I guess the script could even have let her take a long, languorous bath. Chandler and Hammett never had especially gripping characters either but Chandler carried us along with his blunt, boozy charm, and Hammett bootlegged in a philosophy of life. Speaking of "carried," Washington has a line he speaks to Beals. "Change out of that house coat. Come on, I'll carry you home." Washington doesn't mean he's going to sweep her up in his arms and schlep her across town. He means he's going to escort her home in his vehicle. This is an old-fashioned, mostly Southern usage. It dates back to before the Civil War, as in "Carry Me Back to Old Virginny." I didn't mean to carry on so, but that sentence was one of the few things in the movie that roused my attention.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Good lesser known thriller
+   </titulo>
+   <autor>
+    Maziun
+   </autor>
+   <data>
+    11/8/2013
+   </data>
+   <conteudo>
+    It was a nice experience to watch a movie set in Harlem . This is one of the few serious movies set in the black community . Usually when a movie is set in black community it's either a comedy or drama . This one is an interesting thriller . Kinda a neo-noir movie (although it doesn't exactly fits into that description  for example Easy isn't a detective ). I like the mood of Harlem here . I like the fact that main hero isn't 100% good guy. I like the mystery  the twists are really surprising and it's hard to figure out who is bad and who is good. The only problem I had was with the unexplained past of Easy and Mouse . It seems important for the story , yet never really much screen time is given for that subject . In the end I've got only muddled idea what happened in the past. Thankfully , it doesn't destroy the movie . There is some strong acting here . Denzel Washington ("Glory" ) is as charismatic as always in the leading role of Easy. I was positively surprised by Jennifer Beals ("Flashdance") as Daphne Monet . I didn't expected such mature role from here. She shows true talent here and proves she is more than a pretty face. My favorite is Don Cheadle ("Hotel Ruanda") as Mouse  typical "shoot first , then ask questions" kind of guy . He brings a lot of fun into movie. It's a well made movie with mystery , jokes and drama in it . I give it 7/10.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    devils in dresses, oh my...
+   </titulo>
+   <autor>
+    Threeline filmreviews
+   </autor>
+   <data>
+    3/11/2012
+   </data>
+   <conteudo>
+    Old timers say that casting is 97% of a motion picture. That's on display here - for good and bad. When the "Chimatown" moment occurs and the audience doesn't care is that the audience's fault... or the producers? devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and purple. kind of makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Devil in a Blue Dress (1995)
+   </titulo>
+   <autor>
+    Martin Teller
+   </autor>
+   <data>
+    3/1/2012
+   </data>
+   <conteudo>
+    Generally satisfying neo-noir with some intriguing racial implications (although they're not really explored with much depth). I don't know if it's possible for Washington to give a bad performance, if nothing else he can coast on pure charisma. The rest of the cast is not especially noteworthy, with the exception of Don Cheadle, who makes a lasting impression with very little screen time. The script falls a little bit short, something like Chandler in its construction but lacking in compelling dialogue. However, it keeps you watching, interested in how Washington is going to solve the case while trying to protect himself from attacks on all sides (including an eccentric and/or mentally challenged neighbor insistent on uprooting trees). Technically and production-wise the film is quite strong, evoking the feel of a classic noir (including an Elmer Bernstein score, who also composed for greats like SWEET SMELL OF SUCCESS and SUDDEN FEAR) while maintaining a modern sensibility. It didn't blow me away, but it's a solid movie, and I wouldn't mind checking Mosley's "Easy Rawlins" novels.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    A murder mystery in the style of the old Film Noir
+   </titulo>
+   <autor>
+    david-sarkies
+   </autor>
+   <data>
+    25/12/2011
+   </data>
+   <conteudo>
+    From the shorts to this movie I thought that it was about a Negro in the Southern United States who had been framed for the murder of a white girl and had to prove his innocence against a huge amount of discrimination. This movie is nothing of the sort. Rather it is set in Los Angeles in 1948. America faces a boom time economy, the war is over and the good times are everywhere. It is still a decade before the civil rights movement begins so Negroes are still treated as second class citizens. Everybody has a job and everybody is happy, all except a Negro named Ezekial (Denzel Washington). He is single and a World War II veteran. He moved to Los Angeles from Texas and has bought himself a house in the expanding suburbs in what will probably become South Central Los Angeles in the 1990's. He worked overtime and because of that was fired and now he is looking for a job. A friend who owns a bar hooks him up with somebody who wants a young lady found. This lady was the girlfriend of a rich Los Angeles businessman who is running for mayor and he wants her. What this movie turns out to be is a detective story. It seems to be a revisitation of the old 1940's and 1950's detective films such as the Big Sleep and The Maltese Falcon. The major difference is that this is not as dark as these other movies. Devil in a Blue Dress does portray a rather darker side to this era though. The 50's is generally considered to be a time when everything was good and politicians could be trusted. Movies such as this and L.A. Confidential appear and undermine the glamour of this era. In this movie we see corrupt politicians, racist cops, infidelity, child molestation. and severe segregation. There are a number of small themes in this movie, though the major one seems to be the removal of the fa&ccedil;ade that the 50's erected around itself. Ezekial was the subject of racist rebuke when the police try to pin the murder of a white man on him, and there is the issue of him being sacked for working overtime while a white man who does that is rewarded. Devil in a Blue Dress takes the 50's and destroys its credibility. It shows a suburb that one day will become a crime ridden slum. It can't be helped seeing South Central Los Angeles in this suburban paradise in the 50's. Such things are portrayed in other movies to, such as Back to the Future where the dream suburb becomes a haven of crime in the future. This is a movie that does not create the fa&ccedil;ade of a great America that has reached the pinnacle of civilisation. Rather it creates an America that is showing signs of decay even in its finest hour.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Origin story to nowhere
+   </titulo>
+   <autor>
+    Jonny 99
+   </autor>
+   <data>
+    27/10/2011
+   </data>
+   <conteudo>
+    The most interesting element of the film is what happened subsequent to its release  nothing. All the elements of a good origin story for a movie franchise or a television adaptation (like "MASH") are there: a compelling main character ("Easy Rawlings") a setup for further adventures and the books of Walter Mosley for plot ideas. Also race, which is an essential element to the story of 1948 Los Angeles, continues to be a compelling social topic. Certainly some inherent challenges may have dogged efforts to bring the stories to the big or small screen. Period dramas, particularly those that necessitate car chases through long gone parts of Los Angeles, are expensive and difficult to stage and film. Also, the deus ex machina character of "Mouse" played by Don Cheadle presents some serious moral problems with his twitchiest of hair triggers. Also some of the attempts of dark humor focused mainly around Mouse in a serious noir are jarring and out of context with such dark material. As a standalone film, "Devil in a Blue Dress"-presumably not originally based on the Mitch Ryder song-garners a lot of unproven claims of being underrated from internet and mainstream commentators. Certainly, the movie entertains as Rawlings unravels a mystery involving murder, politics and Jennifer Beals in an early role against a backdrop of racial inequity in America's golden west. However, all of these elements are employed to far more compelling effect in a movie two years later called "L.A. Confidential." In short, fans of noir or Washington / Cheadle should find this as required reading while others should just go with "L.A. Confidential".
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Way over the top....and LOVED IT....
+   </titulo>
+   <autor>
+    michael germaine
+   </autor>
+   <data>
+    18/3/2011
+   </data>
+   <conteudo>
+    "FRANK IS MY BROTHER" Talk about subplots of subplots...you really have to pay attention to follow the story. Great cast and great characters..The film has a great look and a very fast pace. I'm surprised it didn't do well at the box office but neither did The Black Dalia or Mulholland Falls. Gotta love Mouse....he just rolled in and then just rolled out...he had some perfect timing It just wouldn't have been right if Luke(the crazy gardener) didn't check in near the end. Great sound track. It was rare a black man could win in the late 40's. Where there is politics, there is money and murder. Still true today. I'm glad Easy(Denzel) decided to become a private eye. How could he go back to a 9 to 5?
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Murder, Corruption & Crossing The Line
+   </titulo>
+   <autor>
+    seymourblack-1
+   </autor>
+   <data>
+    12/2/2011
+   </data>
+   <conteudo>
+    An ordinary guy in a fix tries to get out of it, but in so doing, actually gets himself in deeper trouble. This type of plot may be very familiar but it's also utterly irresistible. What makes it so compelling is that it's the type of predicament that most people can immediately relate to and as a consequence soon find themselves empathising with the hapless protagonist. In "Devil In A Blue Dress" the audience's inclination to respond in this way is made even stronger by the use of a narration which also helps to drive the story forward. In 1948 L.A. World War 11 veteran, ex-factory worker and homeowner Ezekiel "Easy" Rawlins (Denzel Washington) finds himself unemployed and in urgent need of funds to keep his mortgage payments up to date. Easy's efforts to find a job have, so far, drawn a blank and the longer his predicament continues, the more desperate his need for work becomes. Knowing of his plight, one of his friends introduces him to DeWitt Albright (Tom Sizemore) who claims that he's a man who "does favours for friends". Albright offers Easy $100 to find a mysterious woman called Daphne Monet (Jennifer Beals) who was the fianc&eacute;e of a mayoral candidate who'd withdrawn from the race when she'd disappeared. Easy is instinctively suspicious of Albright but can't afford to turn down the money on offer. He takes the job and soon finds that his misgivings were well founded as his investigations lead to him being suspected of two murders, being beaten by the police and also threatened by Albright's henchmen as well as Monet's half brother. It later emerges that Daphne's association with her gangster half brother and her mixed racial heritage had derailed both her relationship with her fianc&eacute; and also his political ambitions. His opponent's candidature would also be brought to an abrupt end, however, if his own personal depravity and its connection with the two murders were to be exposed. Through his efforts to complete his investigations, Easy gets well rewarded financially but also gets involved in some more life threatening violence. "Devil In A Blue Dress" is a Raymond Chandler influenced thriller with a typically complicated plot about blackmail, murder, immorality and corruption which also features numerous moments of unexpected humour. Its recreation of the period in which the action is set looks really authentic and the choice of colours used reinforces this impression. The atmosphere of the time is also enhanced powerfully by the superb soundtrack. "Devil In A Blue Dress" depicts a time in which racial segregation was a part of everyday life and the dangers of crossing the lines were very real. DeWitt Albright was a white man who avoided crossing the line by hiring Easy to undertake an investigation which needed to be carried out predominantly in the black community. Daphne Monet's romance was blighted by racism and Easy's discomfort in situations where he had to cross the line was also very clear. This movie features a fascinating bunch of characters and the choice of Denzel Washington for the lead role is perfect as he personifies so well the down to earth nature of a decent man who has to deal with difficult circumstances. The entire cast give very creditable performances but Don Cheadle's portrayal of Easy's gun happy psycho friend from Huston is a real standout.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Solid neo noir, worth watching for Denzel
+   </titulo>
+   <autor>
+    tieman64
+   </autor>
+   <data>
+    27/1/2011
+   </data>
+   <conteudo>
+    "You step out of your door in the morning and you're already in trouble. The only question is: are you on top of that trouble or not?" - Easy Rawlins "Devil In A Blue Dress" wants to be the African American "Chinatown", and director Carl Franklin comes close. All the noir ingredients are here - a gumshoe with a cool name (Easy Rawlins, played by Denzel Washington), moody cinematography, an LA location, a missing woman, femme fatales, a last act revelation, the genre's usual assortment of crooks, conflicts, seedy joints and crooked cops etc  but Franklin isn't strong enough a stylist to make his noir landscape come alive, isn't skilled enough a director to maintain the tension and isn't deep enough an artist to handle anything more than themes of racism and prejudice, though his film does address the white-centric view of 1940s LA which most noirs erroneously put forth. 7.9/10  This film would play better with stronger dialogue. As it is, it has no contemporary relevance or connection and exists only to satisfy a certain "noir nostalgia". Still, like De Niro's "True Confessions", this is a worthy second tier neo-noir. Makes a good companion piece to "Mulholland Falls", "Hollywoodland", "LA Confidential" and "Lonelyhearts", four other "not quiet successful" modern neo noirs set in the 1940s. Worth one viewing.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Out of focus noir ..........
+   </titulo>
+   <autor>
+    merklekranz
+   </autor>
+   <data>
+    20/12/2009
+   </data>
+   <conteudo>
+    The acting is good, especially by Don Cheadle and Tom Sizemore. Denzel Washington and Jennifer Beals characters seem pale by comparison. The voice overs confirm that the story is way more complex than necessary, and eventually the script backs itself into a corner. The 1940s atmosphere is wonderful, but that cannot overcome the weakness of the confusing plot. The film lacks warmth, with no really likable characters, including Denzel Washington. In the end his character seems more like an antihero. My conclusion is that "Devil in a Blue Dress", while atmospheric, misses the mark as entertainment because of all the confusion, and too many annoying plot holes. - MERK
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Flavorless Neo Noir.
+   </titulo>
+   <autor>
+    Robert J. Maxwell (rmax304823@yahoo.com)
+   </autor>
+   <data>
+    29/7/2009
+   </data>
+   <conteudo>
+    The acting is up to professional standards. Denzel Washington is in the lead as a jobless ex-GI in 1947 Los Angeles who is hired by a stranger to find a white girl named Daphne. He does a good job, as usual, without being in the least extravagant. The supporting players are all equally good, with Don Cheadle in the flashiest role as a friendly killer. Jennifer Beals as the mysterious and missing devil in the blue dress is competent and attractive. You have never seen such huge, glistening black eyes. Why hasn't she gotten better parts? Location shooting is done carefully too. Lots of nice shots of seedier locations as well as a couple of the kind of faux country estates we saw so often on "Columbo." Washington, of course, is African-American, and Beals is passable as a Creole from Louisiana. Relationships between the police and the black community are sketched out in what's probably realistic detail. The heavy handedness of the cops should come as no surprise to anyone who's seen "L.A. Confidential," although it may shock some who grew up on "Dragnet." The racial divide isn't imposed willy nilly on the script, either. This is an unashamed noir. There's no attempt to make racism the central issue. It may be difficult for some of us to accept the notion that a politician's marriage to a woman who is partly of black parentage would stultify his career but it was true enough. Still, the movie fails to engage. The narrative is murky, the action turgid, and there is a narration by Washington that serves as a familiar crutch for a weak story. It does nothing more than fill us in on the details of Washington's peregrinations, without adding anything more. It's Raymond Chandler without the fustian poetry or the scintillating cynicism. Washington's voice over never tells us that some babe had "hair the color of gold in old paintings." It only tells us things like, "I figured I'd better get out of there." I didn't really care much about anyone but Washington's out-of-work nice guy. I wanted him to make enough money to pay off his mortgage. That was about it. Well -- of course I didn't want to see Jennifer Beals tortured with that red hot poker either, although I wouldn't have minded if her captors had torn her clothes a little. Or, I guess the script could even have let her take a long, languorous bath. Chandler and Hammett never had especially gripping characters either but Chandler carried us along with his blunt, boozy charm, and Hammett bootlegged in a philosophy of life. Speaking of "carried," Washington has a line he speaks to Beals. "Change out of that house coat. Come on, I'll carry you home." Washington doesn't mean he's going to sweep her up in his arms and schlep her across town. He means he's going to escort her home in his vehicle. This is an old-fashioned, mostly Southern usage. It dates back to before the Civil War, as in "Carry Me Back to Old Virginny." I didn't mean to carry on so, but that sentence was one of the few things in the movie that roused my attention.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Good lesser known thriller
+   </titulo>
+   <autor>
+    Maziun
+   </autor>
+   <data>
+    11/8/2013
+   </data>
+   <conteudo>
+    It was a nice experience to watch a movie set in Harlem . This is one of the few serious movies set in the black community . Usually when a movie is set in black community it's either a comedy or drama . This one is an interesting thriller . Kinda a neo-noir movie (although it doesn't exactly fits into that description  for example Easy isn't a detective ). I like the mood of Harlem here . I like the fact that main hero isn't 100% good guy. I like the mystery  the twists are really surprising and it's hard to figure out who is bad and who is good. The only problem I had was with the unexplained past of Easy and Mouse . It seems important for the story , yet never really much screen time is given for that subject . In the end I've got only muddled idea what happened in the past. Thankfully , it doesn't destroy the movie . There is some strong acting here . Denzel Washington ("Glory" ) is as charismatic as always in the leading role of Easy. I was positively surprised by Jennifer Beals ("Flashdance") as Daphne Monet . I didn't expected such mature role from here. She shows true talent here and proves she is more than a pretty face. My favorite is Don Cheadle ("Hotel Ruanda") as Mouse  typical "shoot first , then ask questions" kind of guy . He brings a lot of fun into movie. It's a well made movie with mystery , jokes and drama in it . I give it 7/10.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    devils in dresses, oh my...
+   </titulo>
+   <autor>
+    Threeline filmreviews
+   </autor>
+   <data>
+    3/11/2012
+   </data>
+   <conteudo>
+    Old timers say that casting is 97% of a motion picture. That's on display here - for good and bad. When the "Chimatown" moment occurs and the audience doesn't care is that the audience's fault... or the producers? devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and purple. kind of makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton. devil in a blue dress. blue dress in a devil. Satan in a red dress and Lucifer in yellow. purple, orange, green and pink. kinda makes on want to blink. central avenue. avenue central. don Beadle. densely washing ton.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Devil in a Blue Dress (1995)
+   </titulo>
+   <autor>
+    Martin Teller
+   </autor>
+   <data>
+    3/1/2012
+   </data>
+   <conteudo>
+    Generally satisfying neo-noir with some intriguing racial implications (although they're not really explored with much depth). I don't know if it's possible for Washington to give a bad performance, if nothing else he can coast on pure charisma. The rest of the cast is not especially noteworthy, with the exception of Don Cheadle, who makes a lasting impression with very little screen time. The script falls a little bit short, something like Chandler in its construction but lacking in compelling dialogue. However, it keeps you watching, interested in how Washington is going to solve the case while trying to protect himself from attacks on all sides (including an eccentric and/or mentally challenged neighbor insistent on uprooting trees). Technically and production-wise the film is quite strong, evoking the feel of a classic noir (including an Elmer Bernstein score, who also composed for greats like SWEET SMELL OF SUCCESS and SUDDEN FEAR) while maintaining a modern sensibility. It didn't blow me away, but it's a solid movie, and I wouldn't mind checking Mosley's "Easy Rawlins" novels.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    A murder mystery in the style of the old Film Noir
+   </titulo>
+   <autor>
+    david-sarkies
+   </autor>
+   <data>
+    25/12/2011
+   </data>
+   <conteudo>
+    From the shorts to this movie I thought that it was about a Negro in the Southern United States who had been framed for the murder of a white girl and had to prove his innocence against a huge amount of discrimination. This movie is nothing of the sort. Rather it is set in Los Angeles in 1948. America faces a boom time economy, the war is over and the good times are everywhere. It is still a decade before the civil rights movement begins so Negroes are still treated as second class citizens. Everybody has a job and everybody is happy, all except a Negro named Ezekial (Denzel Washington). He is single and a World War II veteran. He moved to Los Angeles from Texas and has bought himself a house in the expanding suburbs in what will probably become South Central Los Angeles in the 1990's. He worked overtime and because of that was fired and now he is looking for a job. A friend who owns a bar hooks him up with somebody who wants a young lady found. This lady was the girlfriend of a rich Los Angeles businessman who is running for mayor and he wants her. What this movie turns out to be is a detective story. It seems to be a revisitation of the old 1940's and 1950's detective films such as the Big Sleep and The Maltese Falcon. The major difference is that this is not as dark as these other movies. Devil in a Blue Dress does portray a rather darker side to this era though. The 50's is generally considered to be a time when everything was good and politicians could be trusted. Movies such as this and L.A. Confidential appear and undermine the glamour of this era. In this movie we see corrupt politicians, racist cops, infidelity, child molestation. and severe segregation. There are a number of small themes in this movie, though the major one seems to be the removal of the fa&ccedil;ade that the 50's erected around itself. Ezekial was the subject of racist rebuke when the police try to pin the murder of a white man on him, and there is the issue of him being sacked for working overtime while a white man who does that is rewarded. Devil in a Blue Dress takes the 50's and destroys its credibility. It shows a suburb that one day will become a crime ridden slum. It can't be helped seeing South Central Los Angeles in this suburban paradise in the 50's. Such things are portrayed in other movies to, such as Back to the Future where the dream suburb becomes a haven of crime in the future. This is a movie that does not create the fa&ccedil;ade of a great America that has reached the pinnacle of civilisation. Rather it creates an America that is showing signs of decay even in its finest hour.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Origin story to nowhere
+   </titulo>
+   <autor>
+    Jonny 99
+   </autor>
+   <data>
+    27/10/2011
+   </data>
+   <conteudo>
+    The most interesting element of the film is what happened subsequent to its release  nothing. All the elements of a good origin story for a movie franchise or a television adaptation (like "MASH") are there: a compelling main character ("Easy Rawlings") a setup for further adventures and the books of Walter Mosley for plot ideas. Also race, which is an essential element to the story of 1948 Los Angeles, continues to be a compelling social topic. Certainly some inherent challenges may have dogged efforts to bring the stories to the big or small screen. Period dramas, particularly those that necessitate car chases through long gone parts of Los Angeles, are expensive and difficult to stage and film. Also, the deus ex machina character of "Mouse" played by Don Cheadle presents some serious moral problems with his twitchiest of hair triggers. Also some of the attempts of dark humor focused mainly around Mouse in a serious noir are jarring and out of context with such dark material. As a standalone film, "Devil in a Blue Dress"-presumably not originally based on the Mitch Ryder song-garners a lot of unproven claims of being underrated from internet and mainstream commentators. Certainly, the movie entertains as Rawlings unravels a mystery involving murder, politics and Jennifer Beals in an early role against a backdrop of racial inequity in America's golden west. However, all of these elements are employed to far more compelling effect in a movie two years later called "L.A. Confidential." In short, fans of noir or Washington / Cheadle should find this as required reading while others should just go with "L.A. Confidential".
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Way over the top....and LOVED IT....
+   </titulo>
+   <autor>
+    michael germaine
+   </autor>
+   <data>
+    18/3/2011
+   </data>
+   <conteudo>
+    "FRANK IS MY BROTHER" Talk about subplots of subplots...you really have to pay attention to follow the story. Great cast and great characters..The film has a great look and a very fast pace. I'm surprised it didn't do well at the box office but neither did The Black Dalia or Mulholland Falls. Gotta love Mouse....he just rolled in and then just rolled out...he had some perfect timing It just wouldn't have been right if Luke(the crazy gardener) didn't check in near the end. Great sound track. It was rare a black man could win in the late 40's. Where there is politics, there is money and murder. Still true today. I'm glad Easy(Denzel) decided to become a private eye. How could he go back to a 9 to 5?
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Murder, Corruption & Crossing The Line
+   </titulo>
+   <autor>
+    seymourblack-1
+   </autor>
+   <data>
+    12/2/2011
+   </data>
+   <conteudo>
+    An ordinary guy in a fix tries to get out of it, but in so doing, actually gets himself in deeper trouble. This type of plot may be very familiar but it's also utterly irresistible. What makes it so compelling is that it's the type of predicament that most people can immediately relate to and as a consequence soon find themselves empathising with the hapless protagonist. In "Devil In A Blue Dress" the audience's inclination to respond in this way is made even stronger by the use of a narration which also helps to drive the story forward. In 1948 L.A. World War 11 veteran, ex-factory worker and homeowner Ezekiel "Easy" Rawlins (Denzel Washington) finds himself unemployed and in urgent need of funds to keep his mortgage payments up to date. Easy's efforts to find a job have, so far, drawn a blank and the longer his predicament continues, the more desperate his need for work becomes. Knowing of his plight, one of his friends introduces him to DeWitt Albright (Tom Sizemore) who claims that he's a man who "does favours for friends". Albright offers Easy $100 to find a mysterious woman called Daphne Monet (Jennifer Beals) who was the fianc&eacute;e of a mayoral candidate who'd withdrawn from the race when she'd disappeared. Easy is instinctively suspicious of Albright but can't afford to turn down the money on offer. He takes the job and soon finds that his misgivings were well founded as his investigations lead to him being suspected of two murders, being beaten by the police and also threatened by Albright's henchmen as well as Monet's half brother. It later emerges that Daphne's association with her gangster half brother and her mixed racial heritage had derailed both her relationship with her fianc&eacute; and also his political ambitions. His opponent's candidature would also be brought to an abrupt end, however, if his own personal depravity and its connection with the two murders were to be exposed. Through his efforts to complete his investigations, Easy gets well rewarded financially but also gets involved in some more life threatening violence. "Devil In A Blue Dress" is a Raymond Chandler influenced thriller with a typically complicated plot about blackmail, murder, immorality and corruption which also features numerous moments of unexpected humour. Its recreation of the period in which the action is set looks really authentic and the choice of colours used reinforces this impression. The atmosphere of the time is also enhanced powerfully by the superb soundtrack. "Devil In A Blue Dress" depicts a time in which racial segregation was a part of everyday life and the dangers of crossing the lines were very real. DeWitt Albright was a white man who avoided crossing the line by hiring Easy to undertake an investigation which needed to be carried out predominantly in the black community. Daphne Monet's romance was blighted by racism and Easy's discomfort in situations where he had to cross the line was also very clear. This movie features a fascinating bunch of characters and the choice of Denzel Washington for the lead role is perfect as he personifies so well the down to earth nature of a decent man who has to deal with difficult circumstances. The entire cast give very creditable performances but Don Cheadle's portrayal of Easy's gun happy psycho friend from Huston is a real standout.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Solid neo noir, worth watching for Denzel
+   </titulo>
+   <autor>
+    tieman64
+   </autor>
+   <data>
+    27/1/2011
+   </data>
+   <conteudo>
+    "You step out of your door in the morning and you're already in trouble. The only question is: are you on top of that trouble or not?" - Easy Rawlins "Devil In A Blue Dress" wants to be the African American "Chinatown", and director Carl Franklin comes close. All the noir ingredients are here - a gumshoe with a cool name (Easy Rawlins, played by Denzel Washington), moody cinematography, an LA location, a missing woman, femme fatales, a last act revelation, the genre's usual assortment of crooks, conflicts, seedy joints and crooked cops etc  but Franklin isn't strong enough a stylist to make his noir landscape come alive, isn't skilled enough a director to maintain the tension and isn't deep enough an artist to handle anything more than themes of racism and prejudice, though his film does address the white-centric view of 1940s LA which most noirs erroneously put forth. 7.9/10  This film would play better with stronger dialogue. As it is, it has no contemporary relevance or connection and exists only to satisfy a certain "noir nostalgia". Still, like De Niro's "True Confessions", this is a worthy second tier neo-noir. Makes a good companion piece to "Mulholland Falls", "Hollywoodland", "LA Confidential" and "Lonelyhearts", four other "not quiet successful" modern neo noirs set in the 1940s. Worth one viewing.
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Out of focus noir ..........
+   </titulo>
+   <autor>
+    merklekranz
+   </autor>
+   <data>
+    20/12/2009
+   </data>
+   <conteudo>
+    The acting is good, especially by Don Cheadle and Tom Sizemore. Denzel Washington and Jennifer Beals characters seem pale by comparison. The voice overs confirm that the story is way more complex than necessary, and eventually the script backs itself into a corner. The 1940s atmosphere is wonderful, but that cannot overcome the weakness of the confusing plot. The film lacks warmth, with no really likable characters, including Denzel Washington. In the end his character seems more like an antihero. My conclusion is that "Devil in a Blue Dress", while atmospheric, misses the mark as entertainment because of all the confusion, and too many annoying plot holes. - MERK
+   </conteudo>
+  </review>
+  <review>
+   <titulo>
+    Flavorless Neo Noir.
+   </titulo>
+   <autor>
+    Robert J. Maxwell (rmax304823@yahoo.com)
+   </autor>
+   <data>
+    29/7/2009
+   </data>
+   <conteudo>
+    The acting is up to professional standards. Denzel Washington is in the lead as a jobless ex-GI in 1947 Los Angeles who is hired by a stranger to find a white girl named Daphne. He does a good job, as usual, without being in the least extravagant. The supporting players are all equally good, with Don Cheadle in the flashiest role as a friendly killer. Jennifer Beals as the mysterious and missing devil in the blue dress is competent and attractive. You have never seen such huge, glistening black eyes. Why hasn't she gotten better parts? Location shooting is done carefully too. Lots of nice shots of seedier locations as well as a couple of the kind of faux country estates we saw so often on "Columbo." Washington, of course, is African-American, and Beals is passable as a Creole from Louisiana. Relationships between the police and the black community are sketched out in what's probably realistic detail. The heavy handedness of the cops should come as no surprise to anyone who's seen "L.A. Confidential," although it may shock some who grew up on "Dragnet." The racial divide isn't imposed willy nilly on the script, either. This is an unashamed noir. There's no attempt to make racism the central issue. It may be difficult for some of us to accept the notion that a politician's marriage to a woman who is partly of black parentage would stultify his career but it was true enough. Still, the movie fails to engage. The narrative is murky, the action turgid, and there is a narration by Washington that serves as a familiar crutch for a weak story. It does nothing more than fill us in on the details of Washington's peregrinations, without adding anything more. It's Raymond Chandler without the fustian poetry or the scintillating cynicism. Washington's voice over never tells us that some babe had "hair the color of gold in old paintings." It only tells us things like, "I figured I'd better get out of there." I didn't really care much about anyone but Washington's out-of-work nice guy. I wanted him to make enough money to pay off his mortgage. That was about it. Well -- of course I didn't want to see Jennifer Beals tortured with that red hot poker either, although I wouldn't have minded if her captors had torn her clothes a little. Or, I guess the script could even have let her take a long, languorous bath. Chandler and Hammett never had especially gripping characters either but Chandler carried us along with his blunt, boozy charm, and Hammett bootlegged in a philosophy of life. Speaking of "carried," Washington has a line he speaks to Beals. "Change out of that house coat. Come on, I'll carry you home." Washington doesn't mean he's going to sweep her up in his arms and schlep her across town. He means he's going to escort her home in his vehicle. This is an old-fashioned, mostly Southern usage. It dates back to before the Civil War, as in "Carry Me Back to Old Virginny." I didn't mean to carry on so, but that sentence was one of the few things in the movie that roused my attention.
+   </conteudo>
+  </review>
+ </reviews>
+</filme>
