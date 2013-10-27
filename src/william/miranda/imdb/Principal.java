@@ -6,6 +6,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.lucene.queryparser.classic.ParseException;
+
 import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.MovieFeeder;
@@ -156,9 +158,14 @@ public class Principal
 				luceneDB.addDoc(f);
 			}
 			
+			luceneDB.query("Toy");
 			
 		}
 		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		catch (ParseException e)
 		{
 			e.printStackTrace();
 		}

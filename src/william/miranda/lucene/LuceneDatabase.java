@@ -8,8 +8,15 @@ import org.apache.lucene.document.Field;
 import org.apache.lucene.document.FloatField;
 import org.apache.lucene.document.IntField;
 import org.apache.lucene.document.StringField;
+import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.TopScoreDocCollector;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.Version;
@@ -43,10 +50,31 @@ public class LuceneDatabase
 		doc.add(new IntField("id", f.getId(), Field.Store.YES));
 		doc.add(new FloatField("rating", f.getRating(), Field.Store.YES));
 		writer.addDocument(doc);
-		
+		writer.commit();
 		//org.apache.lucene.document.Fl
 	}
 	
+	public void query(String queryStr) throws ParseException, IOException
+	{
+		QueryParser queryParser = new QueryParser(Version.LUCENE_45, "titulo", analyzer);
+		Query query = queryParser.parse(queryStr);
+		
+		int hitsPerPage = 10;
+		IndexReader reader = IndexReader.open(index);
+		IndexSearcher searcher = new IndexSearcher(reader);
+		TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage, true);
+		searcher.search(query, collector);
+		ScoreDoc[] hits = collector.topDocs().scoreDocs;
+		
+		System.out.println("Found " + hits.length + " hits.");
+		for(int i=0;i<hits.length;++i) {
+		    int docId = hits[i].doc;
+		    Document d = searcher.doc(docId);
+		    System.out.println((i + 1) + ". " + d.get("titulo") + "\t" + d.get("sinopse"));
+		}
+	}
+	
+	/* gets */
 	public Directory getIndex()
 	{
 		return this.index;
