@@ -13,7 +13,6 @@ import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.MovieFeeder;
 import william.miranda.imdb.parser.Utils;
 import william.miranda.lucene.LuceneDatabase;
-import william.miranda.xml.XMLParser;
 
 
 public class Principal
@@ -143,20 +142,26 @@ public class Principal
 	
 	public static void lucene()
 	{
+		//iniciamos a engine do Lucene
+		Path localXml = Paths.get("out/");
+		Path localIndex = Paths.get("index/");
+		
+		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex);
+		
 		try
 		{
-			//iniciamos a engine do Lucene
-			Path localXml = Paths.get("out/");
-			Path localIndex = Paths.get("index/");
-			
-			LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex);
-			
+			/* O indice eh fixo, entao ele precisa ser rodado apenas uma vez */
 			//luceneDB.createIndex();
-			luceneDB.searchIndex("mushrooms");
+			
+			luceneDB.searchIndex("Action");
 		}
 		catch (IOException | ParseException e)
 		{
 			e.printStackTrace();
 		}
+		
+		//criamos o objeto que ira fazer a busca nos indices
+		//Filme f = XMLParser.parseXML(Paths.get("out/1.xml"));
+		//LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB);
 	}
 }
