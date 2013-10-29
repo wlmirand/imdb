@@ -1,13 +1,18 @@
 package william.miranda.lucene;
 
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.FloatField;
-import org.apache.lucene.document.IntField;
-import org.apache.lucene.document.StringField;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
@@ -15,68 +20,77 @@ import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
-import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.TopScoreDocCollector;
+import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.RAMDirectory;
+import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
-
-import william.miranda.imdb.model.Filme;
 
 public class LuceneDatabase
 {
-	//variaveis internas
-	private StandardAnalyzer analyzer;
-	private Directory index;
-	private IndexWriterConfig config;
-	private IndexWriter writer;
+	//constantes
+	public static final String FIELD_PATH = "path";
+	public static final String FIELD_CONTENTS = "contents";
+	public static final Version versao = Version.LUCENE_45;
 	
-	public LuceneDatabase() throws IOException
+	//variaveis da classe
+	private Path xmlDir;
+	private Path indexDir;	
+	
+	/* Construtor
+	 * in: diretorio de entrada dos arquivos xml
+	 * out: diretorio de saida para os indices
+	 */
+	public LuceneDatabase(Path xmlDir, Path indexDir)
 	{
-		analyzer = new StandardAnalyzer(Version.LUCENE_45);
-		index = new RAMDirectory();
-		config = new IndexWriterConfig(Version.LUCENE_45, analyzer);
-		writer = new IndexWriter(index, config);
+		this.xmlDir = xmlDir;
+		this.indexDir = indexDir;
 	}
 	
-	public void addDoc(Filme f) throws IOException
+	public void createIndex() throws IOException
 	{
-		Document doc = new Document();
-		doc.add(new StringField("titulo", f.getTitulo(), Field.Store.YES));
-		doc.add(new StringField("imdbUrl", f.getImdbUrl(), Field.Store.YES));
-		doc.add(new StringField("sinopse", f.getSinopse(), Field.Store.YES));
-		doc.add(new StringField("storyline", f.getStoryline(), Field.Store.YES));
-		doc.add(new IntField("ano", f.getAno(), Field.Store.YES));
-		doc.add(new IntField("id", f.getId(), Field.Store.YES));
-		doc.add(new FloatField("rating", f.getRating(), Field.Store.YES));
-		writer.addDocument(doc);
-		writer.commit();
-		//org.apache.lucene.document.Fl
-	}
-	
-	public void query(String queryStr) throws ParseException, IOException
-	{
-		QueryParser queryParser = new QueryParser(Version.LUCENE_45, "titulo", analyzer);
-		Query query = queryParser.parse(queryStr);
+		Analyzer analyzer = new StandardAnalyzer(versao);
+
+		//Directory directory = new SimpleFSDirectory(indexDir.toFile());
+		Directory directory = FSDirectory.open(indexDir.toFile());
+		final IndexWriter indexWriter = new IndexWriter(directory, new IndexWriterConfig(versao, analyzer));
 		
-		int hitsPerPage = 10;
-		IndexReader reader = IndexReader.open(index);
-		IndexSearcher searcher = new IndexSearcher(reader);
-		TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage, true);
-		searcher.search(query, collector);
-		ScoreDoc[] hits = collector.topDocs().scoreDocs;
+		indexWriter.deleteAll();
 		
-		System.out.println("Found " + hits.length + " hits.");
-		for(int i=0;i<hits.length;++i) {
-		    int docId = hits[i].doc;
-		    Document d = searcher.doc(docId);
-		    System.out.println((i + 1) + ". " + d.get("titulo") + "\t" + d.get("sinopse"));
-		}
+		Files.walkFileTree(xmlDir, new SimpleFileVisitor<Path>()
+				{
+					@Override
+					public FileVisitResult visitFile(final Path file, final BasicFileAttributes attrs) throws IOException
+					{
+						Document doc = new Document();
+						
+						String path = file.toAbsolutePath().toString();
+						doc.add(new Field(FIELD_PATH, path, Field.Store.YES, Field.Index.NO));
+						
+						Reader reader = new FileReader(file.toFile());
+						doc.add(new Field(FIELD_CONTENTS, reader));
+
+						indexWriter.addDocument(doc);
+						
+						return FileVisitResult.CONTINUE;
+					}
+				});
+		
+		indexWriter.close();
 	}
 	
-	/* gets */
-	public Directory getIndex()
+	public void searchIndex(String searchString) throws IOException, ParseException
 	{
-		return this.index;
+		System.out.println("Searching for '" + searchString + "'");
+		Directory directory = FSDirectory.open(indexDir.toFile());
+		IndexReader indexReader = IndexReader.open(directory);
+		IndexSearcher indexSearcher = new IndexSearcher(indexReader);
+
+		Analyzer analyzer = new StandardAnalyzer(versao);
+		QueryParser queryParser = new QueryParser(versao, FIELD_CONTENTS, analyzer);
+		Query query = queryParser.parse(searchString);
+		TopDocs hits = indexSearcher.search(query, 100);
+		System.out.println("Number of hits: " + hits.totalHits);
+
 	}
+
 }

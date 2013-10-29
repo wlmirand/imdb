@@ -145,27 +145,16 @@ public class Principal
 	{
 		try
 		{
-			//obtemos a lista de todos os filmes
-			Path p = Paths.get("out/");
-			List<Filme> listaFilmes = XMLParser.parseAllXML(p);
-			
 			//iniciamos a engine do Lucene
-			LuceneDatabase luceneDB = new LuceneDatabase();
+			Path localXml = Paths.get("out/");
+			Path localIndex = Paths.get("index/");
 			
-			//adicionamos os filmes na engine
-			for (Filme f : listaFilmes)
-			{
-				luceneDB.addDoc(f);
-			}
+			LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex);
 			
-			luceneDB.query("Toy");
-			
+			//luceneDB.createIndex();
+			luceneDB.searchIndex("mushrooms");
 		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		catch (ParseException e)
+		catch (IOException | ParseException e)
 		{
 			e.printStackTrace();
 		}
