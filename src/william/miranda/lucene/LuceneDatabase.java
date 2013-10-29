@@ -113,8 +113,10 @@ public class LuceneDatabase
 		Query query = queryParser.parse(searchString);
 		TopDocs hits = indexSearcher.search(query, 100);
 		
+		
 		System.out.println("Number of hits: " + hits.totalHits);
 		
+		//para cada registro encontrado, obtem o documento e os seus campos
 		for (ScoreDoc sd : hits.scoreDocs)
 		{
 			Document doc = indexSearcher.doc(sd.doc);
