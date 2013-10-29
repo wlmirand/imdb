@@ -4,15 +4,17 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-
-import org.apache.lucene.queryparser.classic.ParseException;
 
 import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.MovieFeeder;
 import william.miranda.imdb.parser.Utils;
 import william.miranda.lucene.LuceneDatabase;
+import william.miranda.lucene.LuceneResult;
+import william.miranda.lucene.LuceneSearch;
+import william.miranda.xml.XMLParser;
 
 
 public class Principal
@@ -148,17 +150,13 @@ public class Principal
 		
 		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex, false);
 		
-		try
-		{
-			luceneDB.searchIndex("Action");
-		}
-		catch (IOException | ParseException e)
-		{
-			e.printStackTrace();
-		}
-		
 		//criamos o objeto que ira fazer a busca nos indices
-		//Filme f = XMLParser.parseXML(Paths.get("out/1.xml"));
-		//LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB);
+		Filme f = XMLParser.parseXML(Paths.get("out/1.xml"));
+		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB);
+		
+		for (LuceneResult r : luceneSearch.getListaSimilaridadeAtores())
+		{
+			System.out.println(r);
+		}
 	}
 }

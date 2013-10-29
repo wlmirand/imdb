@@ -9,6 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -18,11 +20,11 @@ import org.apache.lucene.document.StringField;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.Sort;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
@@ -117,29 +119,40 @@ public class LuceneDatabase
 		indexWriter.close();
 	}
 	
-	public void searchIndex(String searchString) throws IOException, ParseException
+	public List<LuceneResult> searchIndex(String searchString)
 	{
-		System.out.println("Searching for '" + searchString + "'");
-		Directory directory = FSDirectory.open(indexDir.toFile());
-		IndexReader indexReader = IndexReader.open(directory);
-		IndexSearcher indexSearcher = new IndexSearcher(indexReader);
-
-		Analyzer analyzer = new StandardAnalyzer(versao);
-		QueryParser queryParser = new QueryParser(versao, FIELD_CONTENTS, analyzer);
-		Query query = queryParser.parse(searchString);
-		TopDocs hits = indexSearcher.search(query, 100);
+		//cria o objeto que vamos retornar
+		List<LuceneResult> res = new ArrayList<>();
 		
-		
-		System.out.println("Number of hits: " + hits.totalHits);
-		
-		//para cada registro encontrado, obtem o documento e os seus campos
-		for (ScoreDoc sd : hits.scoreDocs)
+		try
 		{
-			Document doc = indexSearcher.doc(sd.doc);
-			System.out.println(doc.get(FIELD_ID) + " - " + doc.get(FIELD_TITULO));	
+			Directory directory = FSDirectory.open(indexDir.toFile());
+			IndexReader indexReader = IndexReader.open(directory);
+			IndexSearcher indexSearcher = new IndexSearcher(indexReader);
+	
+			Analyzer analyzer = new StandardAnalyzer(versao);
+			QueryParser queryParser = new QueryParser(versao, FIELD_CONTENTS, analyzer);
+			Query query = queryParser.parse(searchString);
+			TopDocs hits = indexSearcher.search(query, 150);
 			
-			//geramos alguma coisa para retornar na busca
+			//para cada registro encontrado, obtem o documento e os seus campos
+			for (ScoreDoc sd : hits.scoreDocs)
+			{
+				Document doc = indexSearcher.doc(sd.doc);
+				
+				int id = Integer.valueOf(doc.get(FIELD_ID));
+				String titulo = doc.get(FIELD_TITULO);
+				
+				//geramos alguma coisa para retornar na busca
+				res.add(new LuceneResult(id, titulo, sd.score));
+			}
 		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return res;
 	}
 
 }
