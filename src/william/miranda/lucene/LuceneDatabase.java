@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -62,6 +63,18 @@ public class LuceneDatabase
 		this.indexDir = indexDir;
 		
 		//cria o indice somente se for necessario
+		if (!Files.exists(indexDir, LinkOption.NOFOLLOW_LINKS))
+		{
+			try
+			{
+				Files.createDirectory(indexDir);
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		
 		File file = indexDir.toFile();
 		
 		if(file.isDirectory() && file.list().length == 0 || forcarRecriarIndex)
