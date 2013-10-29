@@ -65,7 +65,6 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-4);
-		
 		listaSimilaridadeCriadores = luceneDB.searchIndex(query);
 	}
 	
@@ -79,7 +78,6 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-4);
-		
 		listaSimilaridadeDiretores = luceneDB.searchIndex(query);
 	}
 	
@@ -93,7 +91,6 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-4);
-		
 		listaSimilaridadeKeywords = luceneDB.searchIndex(query);
 	}
 
