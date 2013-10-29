@@ -151,10 +151,11 @@ public class Principal
 		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex, false);
 		
 		//criamos o objeto que ira fazer a busca nos indices
-		Filme f = XMLParser.parseXML(Paths.get("out/1.xml"));
+		Filme f = XMLParser.parseXML(Paths.get("out/346.xml"));
 		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB);
 		
-		System.out.println("aaaaa");
+		System.out.println("Filmes Similares à: " + f.getTitulo());
+		System.out.println("-----------------------------");
 		
 		for (LuceneResult r : luceneSearch.getListaSimilaridadeGeneros())
 		{
