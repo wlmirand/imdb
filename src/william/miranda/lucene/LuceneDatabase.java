@@ -1,5 +1,6 @@
 package william.miranda.lucene;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -53,10 +54,25 @@ public class LuceneDatabase
 	 * in: diretorio de entrada dos arquivos xml
 	 * out: diretorio de saida para os indices
 	 */
-	public LuceneDatabase(Path xmlDir, Path indexDir)
+	public LuceneDatabase(Path xmlDir, Path indexDir, boolean forcarRecriarIndex)
 	{
 		this.xmlDir = xmlDir;
 		this.indexDir = indexDir;
+		
+		//cria o indice somente se for necessario
+		File file = indexDir.toFile();
+		
+		if(file.isDirectory() && file.list().length == 0 || forcarRecriarIndex)
+		{
+			try
+			{
+				createIndex();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public void createIndex() throws IOException
@@ -120,7 +136,9 @@ public class LuceneDatabase
 		for (ScoreDoc sd : hits.scoreDocs)
 		{
 			Document doc = indexSearcher.doc(sd.doc);
-			System.out.println(doc.get(FIELD_ID) + " - " + doc.get(FIELD_TITULO));			
+			System.out.println(doc.get(FIELD_ID) + " - " + doc.get(FIELD_TITULO));	
+			
+			//geramos alguma coisa para retornar na busca
 		}
 	}
 

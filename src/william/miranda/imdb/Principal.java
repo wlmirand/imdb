@@ -146,13 +146,10 @@ public class Principal
 		Path localXml = Paths.get("out/");
 		Path localIndex = Paths.get("index/");
 		
-		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex);
+		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex, false);
 		
 		try
 		{
-			/* O indice eh fixo, entao ele precisa ser rodado apenas uma vez */
-			//luceneDB.createIndex();
-			
 			luceneDB.searchIndex("Action");
 		}
 		catch (IOException | ParseException e)
