@@ -62,7 +62,8 @@ public class LuceneDatabase
 		this.xmlDir = xmlDir;
 		this.indexDir = indexDir;
 		
-		//cria o indice somente se for necessario
+		/* cria o indice somente se for necessario */
+		//cria o diretorio
 		if (!Files.exists(indexDir, LinkOption.NOFOLLOW_LINKS))
 		{
 			try
@@ -75,6 +76,7 @@ public class LuceneDatabase
 			}
 		}
 		
+		//cria o indice
 		File file = indexDir.toFile();
 		
 		if(file.isDirectory() && file.list().length == 0 || forcarRecriarIndex)
