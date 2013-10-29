@@ -14,6 +14,7 @@ public class LuceneSearch
 	private List<LuceneResult> listaSimilaridadeAtores = new ArrayList<>();
 	private List<LuceneResult> listaSimilaridadeCriadores = new ArrayList<>();
 	private List<LuceneResult> listaSimilaridadeDiretores = new ArrayList<>();
+	private List<LuceneResult> listaSimilaridadeKeywords = new ArrayList<>();
 	
 	public LuceneSearch(Filme filmeInicial, LuceneDatabase luceneDB)
 	{
@@ -25,6 +26,7 @@ public class LuceneSearch
 		getAtoresSimilares();
 		getCriadoresSimilares();
 		getDiretoresSimilares();
+		getKeywordsSimilares();
 	}
 	
 	private void getGenerosSimilares()
@@ -50,7 +52,6 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-4);
-		
 		listaSimilaridadeAtores = luceneDB.searchIndex(query);
 	}
 	
@@ -81,6 +82,20 @@ public class LuceneSearch
 		
 		listaSimilaridadeDiretores = luceneDB.searchIndex(query);
 	}
+	
+	private void getKeywordsSimilares()
+	{
+		String query = "";
+		
+		for (String s : filmeInicial.getPlotKeywords())
+		{
+			query += s + " OR ";
+		}
+		
+		query = query.substring(0, query.length()-4);
+		
+		listaSimilaridadeKeywords = luceneDB.searchIndex(query);
+	}
 
 	public Filme getFilmeInicial() {
 		return filmeInicial;
@@ -100,5 +115,9 @@ public class LuceneSearch
 
 	public List<LuceneResult> getListaSimilaridadeDiretores() {
 		return listaSimilaridadeDiretores;
+	}
+	
+	public List<LuceneResult> getListaSimilaridadeKeywords() {
+		return listaSimilaridadeKeywords;
 	}
 }

@@ -154,7 +154,9 @@ public class Principal
 		Filme f = XMLParser.parseXML(Paths.get("out/1.xml"));
 		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB);
 		
-		for (LuceneResult r : luceneSearch.getListaSimilaridadeAtores())
+		System.out.println("aaaaa");
+		
+		for (LuceneResult r : luceneSearch.getListaSimilaridadeGeneros())
 		{
 			System.out.println(r);
 		}
