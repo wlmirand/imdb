@@ -66,6 +66,46 @@ public class UserParser
 		return res;
 	}
 	
+	//calcula a media do rating do Filme, removendo a tripla onde usuario = userID
+	public float mediaRatingFilme(int filmeId, int userId)
+	{
+		int nota = 0;
+		int num = 0;
+		
+		for (int i : userRatings.keySet())
+		{
+			//varre a lista de reviews para um userId
+			for (FilmeRating fr : userRatings.get(i))
+			{
+				//se encontrou o filme que procuramos E nao eh o usuario passado, adiciona seu rating no vetor
+				if (fr.getFilmeId() == filmeId && i != userId)
+				{
+					nota += fr.getRating();
+					num++;
+					break;
+				}
+			}
+		}
+		
+		//agora temos a soma de todos os ratings e o numero de reviews, basta fazer a divisao
+		return (float) nota / num;
+	}
+	
+	//obtemos uma tripla do arquivo
+	public FilmeRating getTripla(int userId, int filmeId)
+	{
+		System.out.println(userId + " - " + filmeId);
+		List<FilmeRating> tmp = userRatings.get(userId);
+		
+		for (FilmeRating fr : tmp)
+		{
+			if (fr.getFilmeId() == filmeId)
+				return fr;
+		}
+		
+		return null;
+	}
+	
 	public Map<Integer, List<FilmeRating>> getUserRatings()
 	{
 		return this.userRatings;

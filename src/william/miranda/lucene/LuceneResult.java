@@ -45,4 +45,17 @@ public class LuceneResult implements Comparable<LuceneResult>
 		else
 			return false;
 	}
+	
+	/* gets */
+	public int getId() {
+		return id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public float getSimilaridade() {
+		return similaridade;
+	}
 }
