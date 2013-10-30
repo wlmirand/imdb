@@ -23,8 +23,9 @@ import william.miranda.imdb.model.Filme;
 
 /**
  * Esta Classe Parseia os arquivos do MovieLens para obter a URL dos filmes a serem passados
- * para o parser. Para obter a URL, este parser precisa do ano e do titulo do filme.
- * O retorno é uma Lista contendo todas as URLs.
+ * para o parser. Para obter a URL, este parser precisa do ano e do titulo do filme para entao
+ * fazer a busca no imdb. Apos parsear a pagina de busca, obtemos a URL do filme desejado.
+ * O retorno ï¿½ uma Lista contendo todas as URLs.
  * @author William
  *
  */

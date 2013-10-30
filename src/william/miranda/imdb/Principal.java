@@ -4,12 +4,13 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.MovieFeeder;
+import william.miranda.imdb.parser.UserParser;
 import william.miranda.imdb.parser.Utils;
 import william.miranda.lucene.LuceneDatabase;
 import william.miranda.lucene.LuceneResult;
@@ -144,13 +145,17 @@ public class Principal
 	
 	public static void lucene()
 	{
-		//iniciamos a engine do Lucene
+		//faz o parsing dos ratings dos usuarios guardando no objeto UserParser
+		Path p = Paths.get("data/ml-100k/u.data");
+		Utils.userParser = new UserParser(p);
+		
+		//iniciamos a engine do Lucene com os diretorios de entrada e saida
 		Path localXml = Paths.get("out/");
 		Path localIndex = Paths.get("index/");
 		
 		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex, false);
 		
-		//criamos o objeto que ira fazer a busca nos indices
+		//criamos o objeto que ira fazer a busca nos indices e definimos um filme inicial
 		Filme f = XMLParser.parseXML(Paths.get("out/346.xml"));
 		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB);
 		
@@ -161,5 +166,14 @@ public class Principal
 		{
 			System.out.println(r);
 		}
+		
+		int count = 0;
+		
+		for (int i : Utils.userParser.getUserRatings().keySet())
+		{
+			count += Utils.userParser.getUserRatings().get(i).size();
+		}
+		
+		System.out.println(count);
 	}
 }
