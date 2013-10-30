@@ -94,7 +94,6 @@ public class UserParser
 	//obtemos uma tripla do arquivo
 	public FilmeRating getTripla(int userId, int filmeId)
 	{
-		System.out.println(userId + " - " + filmeId);
 		List<FilmeRating> tmp = userRatings.get(userId);
 		
 		for (FilmeRating fr : tmp)

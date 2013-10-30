@@ -53,8 +53,15 @@ public class LuceneSearch
 			query += s + " OR ";
 		}
 		
-		query = query.substring(0, query.length()-4);
-		listaSimilaridadeAtores = luceneDB.searchIndex(query, numResultados);
+		if (!"".equals(query))
+		{
+			query = query.substring(0, query.length()-4);
+			listaSimilaridadeAtores = luceneDB.searchIndex(query, numResultados);
+		}
+		else
+		{
+			listaSimilaridadeAtores = null;
+		}
 	}
 	
 	private void getCriadoresSimilares()
@@ -66,8 +73,15 @@ public class LuceneSearch
 			query += s + " OR ";
 		}
 		
-		query = query.substring(0, query.length()-4);
-		listaSimilaridadeCriadores = luceneDB.searchIndex(query, numResultados);
+		if (!"".equals(query))
+		{
+			query = query.substring(0, query.length()-4);
+			listaSimilaridadeCriadores = luceneDB.searchIndex(query, numResultados);
+		}
+		else
+		{
+			listaSimilaridadeCriadores = null;
+		}
 	}
 	
 	private void getDiretoresSimilares()
@@ -79,8 +93,15 @@ public class LuceneSearch
 			query += s + " OR ";
 		}
 		
-		query = query.substring(0, query.length()-4);
-		listaSimilaridadeDiretores = luceneDB.searchIndex(query, numResultados);
+		if (!"".equals(query))
+		{
+			query = query.substring(0, query.length()-4);
+			listaSimilaridadeDiretores = luceneDB.searchIndex(query, numResultados);
+		}
+		else
+		{
+			listaSimilaridadeDiretores = null;
+		}
 	}
 	
 	private void getKeywordsSimilares()
@@ -92,8 +113,15 @@ public class LuceneSearch
 			query += s + " OR ";
 		}
 		
-		query = query.substring(0, query.length()-4);
-		listaSimilaridadeKeywords = luceneDB.searchIndex(query, numResultados);
+		if (!"".equals(query))
+		{
+			query = query.substring(0, query.length()-4);
+			listaSimilaridadeKeywords = luceneDB.searchIndex(query, numResultados);
+		}
+		else
+		{
+			listaSimilaridadeKeywords = null;
+		}
 	}
 
 	public Filme getFilmeInicial() {

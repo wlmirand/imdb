@@ -28,6 +28,10 @@ public class XMLParser
 		Filme filme = new Filme();
 		
 		StringBuilder sb = Utils.readStringFromFile(path);
+		
+		if (sb == null)
+			return null;
+		
 		Document doc = Jsoup.parse(sb.toString(), "", Parser.xmlParser());
 		
 		//pega os campos do xml

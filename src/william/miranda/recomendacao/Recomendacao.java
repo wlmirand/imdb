@@ -56,8 +56,6 @@ public class Recomendacao
 				
 				//tendo a tripla original do arquivo, jogamos no algoritmo
 				PredizerNota(userId, filmeId, rating, numFilmesSimilares);
-				
-				return;
 			}
 		}
 	}
@@ -70,6 +68,9 @@ public class Recomendacao
 	{
 		//obtemos o XML do filme que foi passado
 		Filme f = XMLParser.parseXML(Paths.get("out/" + filmeId + ".xml"));
+		
+		if (f == null)
+			return;
 		
 		//calculamos as similaridades para o filme passado
 		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, numFilmesSimilares);
