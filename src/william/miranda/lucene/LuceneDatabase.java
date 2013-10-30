@@ -134,7 +134,7 @@ public class LuceneDatabase
 		indexWriter.close();
 	}
 	
-	public List<LuceneResult> searchIndex(String searchString)
+	public List<LuceneResult> searchIndex(String searchString, int numResultados)
 	{
 		//cria o objeto que vamos retornar
 		List<LuceneResult> res = new ArrayList<>();
@@ -148,7 +148,7 @@ public class LuceneDatabase
 			Analyzer analyzer = new StandardAnalyzer(versao);
 			QueryParser queryParser = new QueryParser(versao, FIELD_CONTENTS, analyzer);
 			Query query = queryParser.parse(searchString);
-			TopDocs hits = indexSearcher.search(query, 150);
+			TopDocs hits = indexSearcher.search(query, numResultados);
 			
 			//para cada registro encontrado, obtem o documento e os seus campos
 			for (ScoreDoc sd : hits.scoreDocs)

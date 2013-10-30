@@ -9,6 +9,7 @@ import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.model.FilmeRating;
 import william.miranda.imdb.parser.UserParser;
 import william.miranda.lucene.LuceneDatabase;
+import william.miranda.lucene.LuceneResult;
 import william.miranda.lucene.LuceneSearch;
 import william.miranda.xml.XMLParser;
 
@@ -38,7 +39,7 @@ public class Recomendacao
 	}
 	
 	//obtem as triplas do arquivo u.data
-	public void percorrerAvaliacoes()
+	public void percorrerAvaliacoes(int numFilmesSimilares)
 	{
 		//para cada user, pega a Lista de Reviews
 		for (int userId : mapRatings.keySet())
@@ -52,17 +53,25 @@ public class Recomendacao
 				int rating = fr.getRating();
 				
 				//tendo a tripla original do arquivo, jogamos no algoritmo
-				blah(filmeId);
+				blah(userId, filmeId, rating, numFilmesSimilares);
+				
+				return;
 			}
 		}
 	}
 	
-	public void blah(int filmeId)
+	public void blah(int userId, int filmeId, int rating, int numFilmesSimilares)
 	{
 		//obtemos o XML do filme que foi passado
 		Filme f = XMLParser.parseXML(Paths.get("out/" + filmeId + ".xml"));
 		
 		//calculamos as similaridades para o filme passado
-		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB);
+		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, numFilmesSimilares);
+		
+		//neste ponto temos as varias Listas de Similaridades dentro do objeto luceneSearch
+		for (LuceneResult r: luceneSearch.getListaSimilaridadeGeneros())
+		{
+			System.out.println(r);
+		}
 	}
 }

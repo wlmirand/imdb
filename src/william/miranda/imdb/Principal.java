@@ -5,16 +5,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.MovieFeeder;
-import william.miranda.imdb.parser.UserParser;
 import william.miranda.imdb.parser.Utils;
 import william.miranda.lucene.LuceneDatabase;
 import william.miranda.lucene.LuceneResult;
 import william.miranda.lucene.LuceneSearch;
+import william.miranda.recomendacao.Recomendacao;
 import william.miranda.xml.XMLParser;
 
 
@@ -80,8 +79,11 @@ public class Principal
 		//pega todos os arquivos pequenos e gera o XML grande
 		//makeResultFile();
 		
-		//chama a parte do Lucene
-		luceneTest();
+		//chama a parte do Lucene (para testes)
+		//luceneTest();
+		
+		//chama o algoritmo colaborativo para recomendacao
+		recomendacao();
 	}
 	
 	/**
@@ -153,7 +155,7 @@ public class Principal
 		
 		//criamos o objeto que ira fazer a busca nos indices e definimos um filme inicial
 		Filme f = XMLParser.parseXML(Paths.get("out/346.xml"));
-		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB);
+		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, 150);
 		
 		System.out.println("Filmes Similares à: " + f.getTitulo());
 		System.out.println("-----------------------------");
@@ -162,5 +164,11 @@ public class Principal
 		{
 			System.out.println(r);
 		}
+	}
+	
+	public static void recomendacao()
+	{
+		Recomendacao r = new Recomendacao();
+		r.percorrerAvaliacoes(5);
 	}
 }

@@ -9,6 +9,7 @@ public class LuceneSearch
 {
 	private Filme filmeInicial;
 	private LuceneDatabase luceneDB;
+	private int numResultados;
 	
 	private List<LuceneResult> listaSimilaridadeGeneros = new ArrayList<>();
 	private List<LuceneResult> listaSimilaridadeAtores = new ArrayList<>();
@@ -16,10 +17,11 @@ public class LuceneSearch
 	private List<LuceneResult> listaSimilaridadeDiretores = new ArrayList<>();
 	private List<LuceneResult> listaSimilaridadeKeywords = new ArrayList<>();
 	
-	public LuceneSearch(Filme filmeInicial, LuceneDatabase luceneDB)
+	public LuceneSearch(Filme filmeInicial, LuceneDatabase luceneDB, int numResultados)
 	{
 		this.filmeInicial = filmeInicial;
 		this.luceneDB = luceneDB;
+		this.numResultados = numResultados;
 		
 		//calcula as listas de similaridades
 		getGenerosSimilares();
@@ -39,7 +41,7 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-5);
-		listaSimilaridadeGeneros = luceneDB.searchIndex(query);
+		listaSimilaridadeGeneros = luceneDB.searchIndex(query, numResultados);
 	}
 	
 	private void getAtoresSimilares()
@@ -52,7 +54,7 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-4);
-		listaSimilaridadeAtores = luceneDB.searchIndex(query);
+		listaSimilaridadeAtores = luceneDB.searchIndex(query, numResultados);
 	}
 	
 	private void getCriadoresSimilares()
@@ -65,7 +67,7 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-4);
-		listaSimilaridadeCriadores = luceneDB.searchIndex(query);
+		listaSimilaridadeCriadores = luceneDB.searchIndex(query, numResultados);
 	}
 	
 	private void getDiretoresSimilares()
@@ -78,7 +80,7 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-4);
-		listaSimilaridadeDiretores = luceneDB.searchIndex(query);
+		listaSimilaridadeDiretores = luceneDB.searchIndex(query, numResultados);
 	}
 	
 	private void getKeywordsSimilares()
@@ -91,7 +93,7 @@ public class LuceneSearch
 		}
 		
 		query = query.substring(0, query.length()-4);
-		listaSimilaridadeKeywords = luceneDB.searchIndex(query);
+		listaSimilaridadeKeywords = luceneDB.searchIndex(query, numResultados);
 	}
 
 	public Filme getFilmeInicial() {
