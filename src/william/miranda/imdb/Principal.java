@@ -81,7 +81,7 @@ public class Principal
 		//makeResultFile();
 		
 		//chama a parte do Lucene
-		lucene();
+		luceneTest();
 	}
 	
 	/**
@@ -143,17 +143,13 @@ public class Principal
 		}
 	}
 	
-	public static void lucene()
+	public static void luceneTest()
 	{
-		//faz o parsing dos ratings dos usuarios guardando no objeto UserParser
-		Path p = Paths.get("data/ml-100k/u.data");
-		Utils.userParser = new UserParser(p);
-		
 		//iniciamos a engine do Lucene com os diretorios de entrada e saida
 		Path localXml = Paths.get("out/");
 		Path localIndex = Paths.get("index/");
 		
-		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex, false);
+		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex, false);//o construtor ja prepara os indices
 		
 		//criamos o objeto que ira fazer a busca nos indices e definimos um filme inicial
 		Filme f = XMLParser.parseXML(Paths.get("out/346.xml"));
@@ -166,14 +162,5 @@ public class Principal
 		{
 			System.out.println(r);
 		}
-		
-		int count = 0;
-		
-		for (int i : Utils.userParser.getUserRatings().keySet())
-		{
-			count += Utils.userParser.getUserRatings().get(i).size();
-		}
-		
-		System.out.println(count);
 	}
 }

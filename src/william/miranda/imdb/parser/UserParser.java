@@ -14,6 +14,10 @@ import william.miranda.imdb.model.FilmeRating;
  * O arquivo a ser parseado eh da forma:   (onde | representa o TAB).
  * user id | item id | rating | timestamp.
  * 
+ * Apos parsear, guardamos o resultado em uma estrutura do tipo Map,
+ * onde a chave eh o userId e o value eh List<FilmeRating>
+ * Esta implementação melhora a velocidade na busca, uma vez que as estruturas
+ * estão otimizadas.
  * @author william.miranda
  *
  */

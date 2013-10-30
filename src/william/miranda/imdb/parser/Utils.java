@@ -19,9 +19,6 @@ import william.miranda.imdb.model.Filme;
 
 public class Utils
 {
-	public static UserParser userParser;
-	
-	
 	public static String preparaURL(String url)
 	{
 		String tmp = url;
