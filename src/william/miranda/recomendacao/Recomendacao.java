@@ -58,7 +58,8 @@ public class Recomendacao
 				//tendo a tripla original do arquivo, jogamos no algoritmo
 				float notaPredita = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
 				
-				//System.out.println(userId + "\t"+ filmeId + "\t" + rating + "\t" + notaPredita);
+				if (notaPredita < 0)
+					System.out.println(userId + "\t"+ filmeId + "\t" + rating + "\t" + notaPredita);
 			}
 		}
 	}
@@ -72,19 +73,19 @@ public class Recomendacao
 		//obtemos o XML do filme que foi passado
 		Filme f = XMLParser.parseXML(Paths.get("out/" + filmeId + ".xml"));
 		
-		//caso nao tenha o XML do filme
+		//obtemos a média das notas do filmeId, desconsiderando a tripla atual (que foi passada como parametro)
+		float media_i = userParser.mediaRatingFilme(filmeId, userId);
+		
+		//caso nao tenha o XML do filme (pois nao ha como calcular os dados)
 		if (f == null)
-			return -1;
+			return media_i;
 		
 		//calculamos as similaridades para o filme passado
 		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, numFilmesSimilares);
 		List<LuceneResult> listaSimilares = luceneSearch.getMetadado(tipoSimilaridade);
 		
-		//obtemos a média das notas do filmeId, desconsiderando a tripla atual (que foi passada como parametro)
-		float media_i = userParser.mediaRatingFilme(filmeId, userId);
-		
 		//caso nao tenha como obter os filmes similares, retornaremos a media_i (nao ha o metadado no XML do filmeID)
-		if (listaSimilares == null)
+		if (listaSimilares == null || listaSimilares.size() == 0)
 			return media_i;
 		
 		/*  algoritmo  */
@@ -106,7 +107,7 @@ public class Recomendacao
 		
 		float nota_predita_u_i;
 		
-		if (soma != 0)//se deu tudo certo
+		if (sim_soma != 0)//se deu tudo certo
 			nota_predita_u_i = media_i + (soma/sim_soma);
 		else//se o usuario nao avaliou nenhum dos filmes similares
 			nota_predita_u_i = media_i;
