@@ -7,6 +7,8 @@ import william.miranda.imdb.model.Filme;
 
 public class LuceneSearch 
 {
+	public static enum TipoSimilaridade {GENEROS, ATORES, CRIADORES, DIRETORES, KEYWORDS};
+	
 	private Filme filmeInicial;
 	private LuceneDatabase luceneDB;
 	private int numResultados;
@@ -130,7 +132,38 @@ public class LuceneSearch
 			listaSimilaridadeKeywords = null;
 		}
 	}
-
+	
+	public List<LuceneResult> getMetadado(TipoSimilaridade tipo)
+	{
+		List<LuceneResult> tmp = null;
+		
+		switch (tipo)
+		{
+			case GENEROS:
+				tmp = getListaSimilaridadeGeneros();
+				break;
+				
+			case ATORES:
+				tmp = getListaSimilaridadeAtores();
+				break;
+				
+			case CRIADORES:
+				tmp = getListaSimilaridadeCriadores();
+				break;
+				
+			case DIRETORES:
+				tmp = getListaSimilaridadeDiretores();
+				break;
+				
+			case KEYWORDS:
+				tmp = getListaSimilaridadeKeywords();
+				break;
+		}
+		
+		return tmp;
+	}
+	
+	/* gets */
 	public Filme getFilmeInicial() {
 		return filmeInicial;
 	}

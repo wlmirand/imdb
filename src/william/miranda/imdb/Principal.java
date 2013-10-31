@@ -13,6 +13,7 @@ import william.miranda.imdb.parser.Utils;
 import william.miranda.lucene.LuceneDatabase;
 import william.miranda.lucene.LuceneResult;
 import william.miranda.lucene.LuceneSearch;
+import william.miranda.lucene.LuceneSearch.TipoSimilaridade;
 import william.miranda.recomendacao.Recomendacao;
 import william.miranda.xml.XMLParser;
 
@@ -169,6 +170,6 @@ public class Principal
 	public static void recomendacao()
 	{
 		Recomendacao r = new Recomendacao();
-		r.percorrerAvaliacoes(5);
+		r.percorrerAvaliacoes(5, TipoSimilaridade.GENEROS);
 	}
 }
