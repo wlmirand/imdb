@@ -32,6 +32,9 @@ public class UserParser
 	//guarda o conteudo ja parseado, mapeando os usuarios para uma lista dos reviws que este usuario fez
 	private Map<Integer, List<FilmeRating>> userRatings;
 	
+	//media global dos itens
+	private static float mediaGlobal;
+	
 	public UserParser(Path path)
 	{
 		this.path = path;
@@ -43,6 +46,10 @@ public class UserParser
 	private Map<Integer, List<FilmeRating>> parseRatings()
 	{
 		Map<Integer, List<FilmeRating>> res = new HashMap<>();
+		
+		//usados para a media global
+		long notas = 0;
+		long count = 0;
 		
 		//para cada linha faz o parse
 		for (String linha : ratings)
@@ -61,7 +68,13 @@ public class UserParser
 			
 			listaTmp.add(new FilmeRating(filmeId, rating));
 			res.put(userId, listaTmp);
+			
+			//soma todos os ratings para obter a media depois
+			notas += rating;
+			count++;
 		}
+		
+		mediaGlobal = (float) notas / count;
 		
 		return res;
 	}
@@ -87,6 +100,9 @@ public class UserParser
 			}
 		}
 		
+		if (num == 0)
+			return mediaGlobal;
+		
 		//agora temos a soma de todos os ratings e o numero de reviews, basta fazer a divisao
 		return (float) nota / num;
 	}
@@ -108,5 +124,9 @@ public class UserParser
 	public Map<Integer, List<FilmeRating>> getUserRatings()
 	{
 		return this.userRatings;
+	}
+	
+	public static float getMediaGlobal() {
+		return mediaGlobal;
 	}
 }

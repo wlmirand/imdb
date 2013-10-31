@@ -58,8 +58,7 @@ public class Recomendacao
 				//tendo a tripla original do arquivo, jogamos no algoritmo
 				float notaPredita = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
 				
-				if (notaPredita < 0)
-					System.out.println(userId + "\t"+ filmeId + "\t" + rating + "\t" + notaPredita);
+				System.out.println(userId + "\t"+ filmeId + "\t" + rating + "\t" + notaPredita);
 			}
 		}
 	}
@@ -100,7 +99,7 @@ public class Recomendacao
 			if (filmeRating == null)//se o usuario nao avaliou o filme "lr"
 				continue;
 			
-			float media_j = userParser.mediaRatingFilme(lr.getId(), userId);//calcula a media da nota do filme similar 
+			float media_j = userParser.mediaRatingFilme(lr.getId(), userId);//calcula a media da nota do filme similar
 			soma += lr.getSimilaridade() * (filmeRating.getRating() - media_j);
 			sim_soma += lr.getSimilaridade();
 		}
@@ -114,6 +113,9 @@ public class Recomendacao
 		
 		if (nota_predita_u_i > 5)//trunca as notas para o teto (5.0)
 			nota_predita_u_i = 5.0f;
+		
+		if (nota_predita_u_i < 0)//trunca as notas para o piso (0.0)
+			nota_predita_u_i = 0.0f;
 		
 		return nota_predita_u_i;
 	}
