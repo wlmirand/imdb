@@ -58,7 +58,7 @@ public class Recomendacao
 				//tendo a tripla original do arquivo, jogamos no algoritmo
 				float notaPredita = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
 				
-				System.out.println(userId + "\t"+ filmeId + "\t" + rating + "\t" + notaPredita);
+				//System.out.println(userId + "\t"+ filmeId + "\t" + rating + "\t" + notaPredita);
 			}
 		}
 	}
@@ -72,6 +72,7 @@ public class Recomendacao
 		//obtemos o XML do filme que foi passado
 		Filme f = XMLParser.parseXML(Paths.get("out/" + filmeId + ".xml"));
 		
+		//caso nao tenha o XML do filme
 		if (f == null)
 			return -1;
 		
@@ -79,7 +80,7 @@ public class Recomendacao
 		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, numFilmesSimilares);
 		List<LuceneResult> listaSimilares = luceneSearch.getMetadado(tipoSimilaridade);
 		
-		//obtemos a média das notas do filme, desconsiderando a tripla atual (que foi passada como parametro)
+		//obtemos a média das notas do filmeId, desconsiderando a tripla atual (que foi passada como parametro)
 		float media_i = userParser.mediaRatingFilme(filmeId, userId);
 		
 		//caso nao tenha como obter os filmes similares, retornaremos a media_i (nao ha o metadado no XML do filmeID)
@@ -93,21 +94,25 @@ public class Recomendacao
 		//pega as avaliacoes dos filmes similares a filmeId que foram avaliadas por userId
 		for (LuceneResult lr : listaSimilares)
 		{
-			FilmeRating filmeRating = userParser.getTripla(userId, lr.getId());
+			FilmeRating filmeRating = userParser.getTripla(userId, lr.getId());//pega o filme similar que foi avaliado por userId
 			
-			if (filmeRating == null)
+			if (filmeRating == null)//se o usuario nao avaliou o filme "lr"
 				continue;
 			
-			float media_j = userParser.mediaRatingFilme(lr.getId(), userId);
+			float media_j = userParser.mediaRatingFilme(lr.getId(), userId);//calcula a media da nota do filme similar 
 			soma += lr.getSimilaridade() * (filmeRating.getRating() - media_j);
 			sim_soma += lr.getSimilaridade();
 		}
 		
 		float nota_predita_u_i;
+		
 		if (soma != 0)//se deu tudo certo
-			nota_predita_u_i = media_i + soma/sim_soma;
+			nota_predita_u_i = media_i + (soma/sim_soma);
 		else//se o usuario nao avaliou nenhum dos filmes similares
 			nota_predita_u_i = media_i;
+		
+		if (nota_predita_u_i > 5)//trunca as notas para o teto (5.0)
+			nota_predita_u_i = 5.0f;
 		
 		return nota_predita_u_i;
 	}
