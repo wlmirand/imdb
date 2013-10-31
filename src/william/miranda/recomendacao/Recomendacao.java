@@ -76,6 +76,9 @@ public class Recomendacao
 		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, numFilmesSimilares);
 		List<LuceneResult> listaSimilares = luceneSearch.getListaSimilaridadeGeneros();
 		
+		if (listaSimilares == null)
+			return;
+		
 		//obtemos a média das notas do filme, desconsiderando a tripla atual (que foi passada como parametro)
 		float media_i = userParser.mediaRatingFilme(filmeId, userId);
 		

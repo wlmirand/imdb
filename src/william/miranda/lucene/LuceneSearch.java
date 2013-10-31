@@ -40,8 +40,15 @@ public class LuceneSearch
 			query += s + " AND ";
 		}
 		
-		query = query.substring(0, query.length()-5);
-		listaSimilaridadeGeneros = luceneDB.searchIndex(query, numResultados);
+		if (!"".equals(query))
+		{
+			query = query.substring(0, query.length()-5);
+			listaSimilaridadeGeneros = luceneDB.searchIndex(query, numResultados);
+		}
+		else
+		{
+			listaSimilaridadeGeneros = null;
+		}
 	}
 	
 	private void getAtoresSimilares()
