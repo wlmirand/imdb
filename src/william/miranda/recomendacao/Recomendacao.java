@@ -2,11 +2,13 @@ package william.miranda.recomendacao;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.model.FilmeRating;
+import william.miranda.imdb.parser.ResultadoPredicao;
 import william.miranda.imdb.parser.UserParser;
 import william.miranda.lucene.LuceneDatabase;
 import william.miranda.lucene.LuceneResult;
@@ -42,8 +44,11 @@ public class Recomendacao
 	}
 	
 	//obtem as triplas do arquivo u.data, chamando o algorito de predicao para cada tripla
-	public void percorrerAvaliacoes(int numFilmesSimilares, TipoSimilaridade tipoSimilaridade)
+	public List<ResultadoPredicao> percorrerAvaliacoes(int numFilmesSimilares, TipoSimilaridade tipoSimilaridade)
 	{
+		//lista que ira conter todos os resultados;
+		List<ResultadoPredicao> resultados = new ArrayList<>();
+		
 		//para cada user, pega a Lista de Reviews
 		for (int userId : mapRatings.keySet())
 		{
@@ -58,9 +63,12 @@ public class Recomendacao
 				//tendo a tripla original do arquivo, jogamos no algoritmo
 				float notaPredita = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
 				
-				System.out.println(userId + "\t"+ filmeId + "\t" + rating + "\t" + notaPredita);
+				//agora gravamos a quadrupla em um arquivo
+				resultados.add(new ResultadoPredicao(userId, filmeId, rating, notaPredita));
 			}
 		}
+		
+		return resultados;
 	}
 	
 	/* Este metodo implementa o algorito de Predição
@@ -118,5 +126,18 @@ public class Recomendacao
 			nota_predita_u_i = 0.0f;
 		
 		return nota_predita_u_i;
+	}
+	
+	public static double RMSE(List<ResultadoPredicao> resultados)
+	{
+		float soma = 0;
+		
+		for (ResultadoPredicao r : resultados)
+		{
+			soma += Math.pow(r.getNotaOriginal()-r.getNotaPredita(), 2);
+		}
+		
+		//RMSE=sqrt(sum(nota_real -nota_predita)^2) / qtde_notas
+		return Math.sqrt(soma)/UserParser.getNumeroAvaliacoes();
 	}
 }

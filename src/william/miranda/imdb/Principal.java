@@ -9,6 +9,7 @@ import java.util.List;
 import william.miranda.imdb.model.Filme;
 import william.miranda.imdb.parser.HtmlParser;
 import william.miranda.imdb.parser.MovieFeeder;
+import william.miranda.imdb.parser.ResultadoPredicao;
 import william.miranda.imdb.parser.Utils;
 import william.miranda.lucene.LuceneDatabase;
 import william.miranda.lucene.LuceneResult;
@@ -169,7 +170,9 @@ public class Principal
 	
 	public static void recomendacao()
 	{
-		Recomendacao r = new Recomendacao();
-		r.percorrerAvaliacoes(5, TipoSimilaridade.GENEROS);
+		Recomendacao recomendacao = new Recomendacao();
+		List<ResultadoPredicao> r = recomendacao.percorrerAvaliacoes(5, TipoSimilaridade.GENEROS);
+		
+		System.out.println(Recomendacao.RMSE(r));
 	}
 }

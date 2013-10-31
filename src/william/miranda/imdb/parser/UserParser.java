@@ -32,8 +32,9 @@ public class UserParser
 	//guarda o conteudo ja parseado, mapeando os usuarios para uma lista dos reviws que este usuario fez
 	private Map<Integer, List<FilmeRating>> userRatings;
 	
-	//media global dos itens
+	//media global dos itens e o numero de entrada do u.data
 	private static float mediaGlobal;
+	private static long numeroAvaliacoes;
 	
 	public UserParser(Path path)
 	{
@@ -49,7 +50,7 @@ public class UserParser
 		
 		//usados para a media global
 		long notas = 0;
-		long count = 0;
+		numeroAvaliacoes = 0;
 		
 		//para cada linha faz o parse
 		for (String linha : ratings)
@@ -71,10 +72,11 @@ public class UserParser
 			
 			//soma todos os ratings para obter a media depois
 			notas += rating;
-			count++;
+			numeroAvaliacoes++;
 		}
 		
-		mediaGlobal = (float) notas / count;
+		//calcula a media global de todos os filmes
+		mediaGlobal = (float) notas / numeroAvaliacoes;
 		
 		return res;
 	}
@@ -100,6 +102,7 @@ public class UserParser
 			}
 		}
 		
+		//se a unica avaliacao do filme foi feita pelo userId, nao temos como calcular a media, entao retorna o valor global
 		if (num == 0)
 			return mediaGlobal;
 		
@@ -128,5 +131,9 @@ public class UserParser
 	
 	public static float getMediaGlobal() {
 		return mediaGlobal;
+	}
+	
+	public static long getNumeroAvaliacoes() {
+		return numeroAvaliacoes;
 	}
 }
