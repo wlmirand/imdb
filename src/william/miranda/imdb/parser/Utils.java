@@ -55,7 +55,7 @@ public class Utils
 		}
 	}
 	
-	public static void saveToFile(Path path, List<String> conteudo)
+	public static <T> void saveToFile(Path path, List<T> conteudo)
 	{
 		try
 		{
@@ -67,11 +67,11 @@ public class Utils
 			
 			BufferedWriter br = Files.newBufferedWriter(path, getCharset(), new OpenOption[] {StandardOpenOption.WRITE});
 			
-			for (String linha : conteudo)
+			for (T linha : conteudo)
 			{
 				if (linha != null)
 				{
-					br.write(linha);
+					br.write(linha.toString());
 					br.write("\r\n");
 				}
 			}

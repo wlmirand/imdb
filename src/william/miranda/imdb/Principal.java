@@ -170,9 +170,25 @@ public class Principal
 	
 	public static void recomendacao()
 	{
-		Recomendacao recomendacao = new Recomendacao();
-		List<ResultadoPredicao> r = recomendacao.percorrerAvaliacoes(5, TipoSimilaridade.GENEROS);
+		//define os parametros
+		TipoSimilaridade[] arrayTipoSimilaridade = {TipoSimilaridade.GENEROS, TipoSimilaridade.ATORES, TipoSimilaridade.CRIADORES, TipoSimilaridade.DIRETORES, TipoSimilaridade.KEYWORDS};
+		int[] arrayNumFilmesSimilares = {2, 5, 10, 20, 30, 40, 50};
 		
-		System.out.println(r.get(r.size()-1));
+		//varia os parametros
+		for (TipoSimilaridade tipoSimilaridade : arrayTipoSimilaridade)
+		{
+			for (int numFilmesSimilares : arrayNumFilmesSimilares)
+			{
+				System.out.println("Rodando o algoritmo para: " + tipoSimilaridade.name() + " e N = " + numFilmesSimilares);
+				
+				//roda o algoritmo
+				Recomendacao recomendacao = new Recomendacao();
+				List<ResultadoPredicao> r = recomendacao.percorrerAvaliacoes(numFilmesSimilares, tipoSimilaridade);
+				
+				//salva os resultados
+				Path path = Paths.get("resultados/resultados_" + tipoSimilaridade.name() + "_" + numFilmesSimilares + ".txt");
+				Utils.saveToFile(path, r);
+			}
+		}
 	}
 }
