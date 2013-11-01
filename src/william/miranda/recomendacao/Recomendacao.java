@@ -138,6 +138,6 @@ public class Recomendacao
 		}
 		
 		//RMSE=sqrt(sum(nota_real -nota_predita)^2) / qtde_notas
-		return Math.sqrt(soma)/UserParser.getNumeroAvaliacoes();
+		return Math.sqrt(soma/UserParser.getNumeroAvaliacoes());
 	}
 }
