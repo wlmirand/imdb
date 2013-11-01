@@ -121,7 +121,6 @@ public class Utils
 			}
 			
 			reader.close();
-			
 			return sb;
 		}
 		catch (IOException e)

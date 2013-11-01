@@ -3,6 +3,7 @@ package william.miranda.recomendacao;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,9 @@ public class Recomendacao
 	//engine do Lucene
 	private LuceneDatabase luceneDB;
 	
+	//estrutura que guarda os Objetos do tipo Filme, que sao gerados a partir de seus XMLs
+	private Map<Integer, Filme> filmes = new HashMap<>();
+	
 	//inicializamos os pre requisitos
 	public Recomendacao()
 	{
@@ -50,7 +54,7 @@ public class Recomendacao
 		List<ResultadoPredicao> resultados = new ArrayList<>();
 		
 		//utilizado para calcular o RMSE, para nao precisar rodar 2x o FOR
-		long soma = 0;
+		double soma = 0;
 		
 		//para cada user, pega a Lista de Reviews
 		for (int userId : mapRatings.keySet())
@@ -66,14 +70,11 @@ public class Recomendacao
 				//tendo a tripla original do arquivo, jogamos no algoritmo
 				float notaPredita = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
 				
-				//agora gravamos a quadrupla em um arquivo
-				ResultadoPredicao ress = new ResultadoPredicao(userId, filmeId, rating, notaPredita);
-				resultados.add(ress);
+				//agora gravamos a quadrupla em um array
+				resultados.add(new ResultadoPredicao(userId, filmeId, rating, notaPredita));
 				
 				//vai somando as parcelas para o calculo do RMSE
 				soma += Math.pow(rating - notaPredita, 2);
-				
-				System.out.println(ress);
 			}
 		}
 		
@@ -93,7 +94,7 @@ public class Recomendacao
 	public float PredizerNota(int userId, int filmeId, int rating, int numFilmesSimilares, TipoSimilaridade tipoSimilaridade)
 	{
 		//obtemos o XML do filme que foi passado
-		Filme f = XMLParser.parseXML(Paths.get("out/" + filmeId + ".xml"));
+		Filme f = parseXmlSeNecessario(filmeId);
 		
 		//obtemos a média das notas do filmeId, desconsiderando a tripla atual (que foi passada como parametro)
 		float media_i = userParser.mediaRatingFilme(filmeId, userId);
@@ -143,6 +144,9 @@ public class Recomendacao
 		return nota_predita_u_i;
 	}
 	
+	/* Metodo utilizado para testes
+	 * Nao sera usado devido a performance, pois o for roda 100 000 vezes.
+	 * Esse calculo eh feito durante o a predicao das notas */
 	public static double RMSE(List<ResultadoPredicao> resultados)
 	{
 		float soma = 0;
@@ -154,5 +158,20 @@ public class Recomendacao
 		
 		//RMSE=sqrt(sum(nota_real -nota_predita)^2) / qtde_notas
 		return Math.sqrt(soma/UserParser.getNumeroAvaliacoes());
+	}
+	
+	/* este metodo preenche sob demanda a variavel "filme", de modo a parsear cada filme no maximo uma vez
+	 * e nao fazer o parse para cada entrada do u.data */
+	private Filme parseXmlSeNecessario(int filmeId)
+	{
+		//verificamos se o filme ja foi parseado
+		if (filmes.containsKey(filmeId))
+			return filmes.get(filmeId);
+		
+		//se ainda nao foi parseado, parseia
+		Path path = Paths.get("out/" + filmeId + ".xml");//pega o path
+		Filme f = XMLParser.parseXML(path);//parseia
+		filmes.put(filmeId, f);	
+		return f;
 	}
 }

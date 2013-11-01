@@ -31,7 +31,7 @@ public class XMLParser
 		
 		Filme filme = new Filme();
 		
-		/*		
+		/* É melhor abrir os arquivos usando a propria API do Jsoup
 		StringBuilder sb = Utils.readStringFromFile(path);
 		
 		if (sb == null)
