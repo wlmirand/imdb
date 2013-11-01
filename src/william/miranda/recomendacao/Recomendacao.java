@@ -30,7 +30,7 @@ public class Recomendacao
 	private LuceneDatabase luceneDB;
 	
 	//estrutura que guarda os Objetos do tipo Filme, que sao gerados a partir de seus XMLs
-	private Map<Integer, Filme> filmes = new HashMap<>();
+	private static Map<Integer, Filme> filmes = new HashMap<>();
 	
 	//inicializamos os pre requisitos
 	public Recomendacao()
