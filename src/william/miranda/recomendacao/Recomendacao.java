@@ -50,7 +50,7 @@ public class Recomendacao
 		List<ResultadoPredicao> resultados = new ArrayList<>();
 		
 		//utilizado para calcular o RMSE, para nao precisar rodar 2x o FOR
-		float soma = 0;
+		long soma = 0;
 		
 		//para cada user, pega a Lista de Reviews
 		for (int userId : mapRatings.keySet())
@@ -67,10 +67,13 @@ public class Recomendacao
 				float notaPredita = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
 				
 				//agora gravamos a quadrupla em um arquivo
-				resultados.add(new ResultadoPredicao(userId, filmeId, rating, notaPredita));
+				ResultadoPredicao ress = new ResultadoPredicao(userId, filmeId, rating, notaPredita);
+				resultados.add(ress);
 				
 				//vai somando as parcelas para o calculo do RMSE
 				soma += Math.pow(rating - notaPredita, 2);
+				
+				System.out.println(ress);
 			}
 		}
 		

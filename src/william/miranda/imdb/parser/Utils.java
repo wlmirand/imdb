@@ -107,6 +107,9 @@ public class Utils
 	{
 		try
 		{
+			if (!Files.exists(path, LinkOption.NOFOLLOW_LINKS))
+				return null;
+			
 			BufferedReader reader = Files.newBufferedReader(path, Utils.getCharset());
 			String s = reader.readLine();
 			StringBuilder sb = new StringBuilder();
@@ -117,12 +120,15 @@ public class Utils
 				s = reader.readLine();
 			}
 			
+			reader.close();
+			
 			return sb;
 		}
 		catch (IOException e)
 		{
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());
 		}
 		
 		return null;
