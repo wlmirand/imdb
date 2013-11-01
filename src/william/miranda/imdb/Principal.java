@@ -173,6 +173,6 @@ public class Principal
 		Recomendacao recomendacao = new Recomendacao();
 		List<ResultadoPredicao> r = recomendacao.percorrerAvaliacoes(5, TipoSimilaridade.GENEROS);
 		
-		System.out.println(Recomendacao.RMSE(r));
+		System.out.println(r.get(r.size()-1));
 	}
 }

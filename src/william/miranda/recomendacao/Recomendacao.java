@@ -26,7 +26,7 @@ public class Recomendacao
 	private UserParser userParser;
 	
 	//engine do Lucene
-	LuceneDatabase luceneDB;
+	private LuceneDatabase luceneDB;
 	
 	//inicializamos os pre requisitos
 	public Recomendacao()
@@ -49,6 +49,9 @@ public class Recomendacao
 		//lista que ira conter todos os resultados;
 		List<ResultadoPredicao> resultados = new ArrayList<>();
 		
+		//utilizado para calcular o RMSE, para nao precisar rodar 2x o FOR
+		float soma = 0;
+		
 		//para cada user, pega a Lista de Reviews
 		for (int userId : mapRatings.keySet())
 		{
@@ -65,8 +68,17 @@ public class Recomendacao
 				
 				//agora gravamos a quadrupla em um arquivo
 				resultados.add(new ResultadoPredicao(userId, filmeId, rating, notaPredita));
+				
+				//vai somando as parcelas para o calculo do RMSE
+				soma += Math.pow(rating - notaPredita, 2);
 			}
 		}
+		
+		//apos fazer todas as predicoes, calculamos o RMSE
+		double rmse = Math.sqrt(soma/UserParser.getNumeroAvaliacoes());
+		
+		//adicionamos o RMSE como um resultado "dummy" no final dos resultados
+		resultados.add(new ResultadoPredicao(-1, -1, -1, rmse));
 		
 		return resultados;
 	}

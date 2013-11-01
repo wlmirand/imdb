@@ -5,9 +5,9 @@ public class ResultadoPredicao
 	private int userId;
 	private int filmeId;
 	private int notaOriginal;
-	private float notaPredita;
+	private double notaPredita;
 	
-	public ResultadoPredicao(int userId, int filmeId, int notaOriginal, float notaPredita)
+	public ResultadoPredicao(int userId, int filmeId, int notaOriginal, double notaPredita)
 	{
 		this.userId = userId;
 		this.filmeId = filmeId;
@@ -34,7 +34,7 @@ public class ResultadoPredicao
 		return notaOriginal;
 	}
 
-	public float getNotaPredita() {
+	public double getNotaPredita() {
 		return notaPredita;
 	}
 }
