@@ -68,13 +68,14 @@ public class Recomendacao
 				int rating = fr.getRating();
 				
 				//tendo a tripla original do arquivo, jogamos no algoritmo
-				float notaPredita = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
+				//float notaPredita = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
+				ResultadoPredicao resPred = PredizerNota(userId, filmeId, rating, numFilmesSimilares, tipoSimilaridade);
 				
 				//agora gravamos a quadrupla em um array
-				resultados.add(new ResultadoPredicao(userId, filmeId, rating, notaPredita));
+				resultados.add(resPred);
 				
 				//vai somando as parcelas para o calculo do RMSE
-				soma += Math.pow(rating - notaPredita, 2);
+				soma += Math.pow(rating - resPred.getNotaPredita(), 2);
 			}
 		}
 		
@@ -91,8 +92,11 @@ public class Recomendacao
 	 * O objetivo eh "adiviinhar" a nota de um usuario U daria para um filme F
 	 * baseado nas outras notas da base de dados.
 	 * A tripla que entra nesse metodo é o "grupo de teste" e todo o resto eh o "grupo de treinamento" */
-	public float PredizerNota(int userId, int filmeId, int rating, int numFilmesSimilares, TipoSimilaridade tipoSimilaridade)
+	public ResultadoPredicao PredizerNota(int userId, int filmeId, int rating, int numFilmesSimilares, TipoSimilaridade tipoSimilaridade)
 	{
+		//variavel que ira guardar a nota predita
+		float nota_predita_u_i;
+		
 		//obtemos o XML do filme que foi passado
 		Filme f = parseXmlSeNecessario(filmeId);
 		
@@ -101,7 +105,10 @@ public class Recomendacao
 		
 		//caso nao tenha o XML do filme (pois nao ha como calcular os dados)
 		if (f == null)
-			return media_i;
+		{
+			nota_predita_u_i = media_i;
+			return new ResultadoPredicao(userId, filmeId, rating, nota_predita_u_i);
+		}
 		
 		//calculamos as similaridades para o filme passado
 		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, numFilmesSimilares);
@@ -109,28 +116,39 @@ public class Recomendacao
 		
 		//caso nao tenha como obter os filmes similares, retornaremos a media_i (nao ha o metadado no XML do filmeID)
 		if (listaSimilares == null || listaSimilares.size() == 0)
-			return media_i;
+		{
+			nota_predita_u_i = media_i;
+			return new ResultadoPredicao(userId, filmeId, rating, nota_predita_u_i);
+		}
 		
 		/*  algoritmo  */
 		float soma = 0;
 		float sim_soma = 0;
 		
-		//pega as avaliacoes dos filmes similares a filmeId que foram avaliadas por userId
+		//verifica de fato quantos filmes similares foram retornados pela engine, de modo a comparar com N
+		int numFilmesSimilaresRetornados = listaSimilares.size();
+		
+		//numero de vezes que nao houve resultados, precisando assim pular um item similar
+		int numFilmesSimilaresSkipados = 0;
+		
+		//varre todos os filmes similares a F baseado no metadado passado
 		for (LuceneResult lr : listaSimilares)
 		{
-			FilmeRating filmeRating = userParser.getTripla(userId, lr.getId());//pega o filme similar que foi avaliado por userId
+			//verifica se o filme similar foi avaliado pelo usuário
+			FilmeRating filmeRating = userParser.getTripla(userId, lr.getId());
 			
 			if (filmeRating == null)//se o usuario nao avaliou o filme "lr"
+			{
+				numFilmesSimilaresSkipados++;
 				continue;
+			}
 			
 			float media_j = userParser.mediaRatingFilme(lr.getId(), userId);//calcula a media da nota do filme similar
 			soma += lr.getSimilaridade() * (filmeRating.getRating() - media_j);
 			sim_soma += lr.getSimilaridade();
 		}
-		
-		float nota_predita_u_i;
-		
-		if (sim_soma != 0)//se deu tudo certo
+			
+		if (sim_soma != 0)//se deu tudo certo (existiu ao menos um filme similar que foi avaliado pelo usuário)
 			nota_predita_u_i = media_i + (soma/sim_soma);
 		else//se o usuario nao avaliou nenhum dos filmes similares
 			nota_predita_u_i = media_i;
@@ -141,7 +159,10 @@ public class Recomendacao
 		if (nota_predita_u_i < 0)//trunca as notas para o piso (0.0)
 			nota_predita_u_i = 0.0f;
 		
-		return nota_predita_u_i;
+		//cria o objeto que ira armazenar todos os resultados e retorna
+		return new ResultadoPredicao(userId, filmeId, rating, nota_predita_u_i, numFilmesSimilaresRetornados, numFilmesSimilaresSkipados);
+		
+		//return nota_predita_u_i;
 	}
 	
 	/* Metodo utilizado para testes

@@ -154,15 +154,19 @@ public class Principal
 		Path localIndex = Paths.get("index/");
 		
 		LuceneDatabase luceneDB = new LuceneDatabase(localXml, localIndex, false);//o construtor ja prepara os indices
+
+		//definimos as variaveis da busca
+		int numResultados = 5;
+		TipoSimilaridade tipo = TipoSimilaridade.GENEROS;
 		
 		//criamos o objeto que ira fazer a busca nos indices e definimos um filme inicial
-		Filme f = XMLParser.parseXML(Paths.get("out/346.xml"));
-		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, 150);
+		Filme f = XMLParser.parseXML(Paths.get("out/2.xml"));
+		LuceneSearch luceneSearch = new LuceneSearch(f, luceneDB, numResultados);
 		
-		System.out.println("Filmes Similares à: " + f.getTitulo());
+		System.out.println("Filmes Similares à: " + f.getTitulo() + " baseado no meta-dado " + tipo.name() + " e N = " + numResultados);
 		System.out.println("-----------------------------");
 		
-		for (LuceneResult r : luceneSearch.getListaSimilaridadeGeneros())
+		for (LuceneResult r : luceneSearch.getMetadado(tipo))
 		{
 			System.out.println(r);
 		}
@@ -171,7 +175,7 @@ public class Principal
 	public static void recomendacao()
 	{
 		//define os parametros
-		TipoSimilaridade[] arrayTipoSimilaridade = {TipoSimilaridade.GENEROS, TipoSimilaridade.ATORES, TipoSimilaridade.CRIADORES, TipoSimilaridade.DIRETORES, TipoSimilaridade.KEYWORDS};
+		TipoSimilaridade[] arrayTipoSimilaridade = {TipoSimilaridade.ATORES, TipoSimilaridade.CRIADORES, TipoSimilaridade.DIRETORES, TipoSimilaridade.KEYWORDS, TipoSimilaridade.GENEROS};
 		int[] arrayNumFilmesSimilares = {2, 5, 10, 20, 30, 40, 50};
 		
 		//varia os parametros

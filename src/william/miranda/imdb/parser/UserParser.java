@@ -82,6 +82,15 @@ public class UserParser
 	}
 	
 	//calcula a media do rating do Filme, removendo a tripla onde usuario = userID
+	/*
+	 * (u1, f, n1)
+	 * (u2, f, n2)
+	 * (u3, f, n3)
+	 * (u4, f, n4)
+	 * (u5, f, n5)
+	 * (u6, f, n6)
+	 * 
+	 * se chamamos mediaRatingFilme(u2, f), iremos retornar:  media = (n1+n3+n4+n5+n6) / 5 */
 	public float mediaRatingFilme(int filmeId, int userId)
 	{
 		int nota = 0;
@@ -110,7 +119,7 @@ public class UserParser
 		return (float) nota / num;
 	}
 	
-	//obtemos uma tripla do arquivo
+	//obtemos uma tripla do arquivo (a avaliacao de um usuario para um determinado filme)
 	public FilmeRating getTripla(int userId, int filmeId)
 	{
 		List<FilmeRating> tmp = userRatings.get(userId);
